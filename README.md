@@ -1,1 +1,2 @@
-# tori.ee
+# www.tori.ee
+# Isa koduleht.
