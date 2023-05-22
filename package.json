@@ -1,0 +1,22 @@
+{
+  "name": "tori.ee",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/siimsams/tori.ee.git"
+  },
+  "author": "siim sams",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/siimsams/tori.ee/issues"
+  },
+  "homepage": "https://github.com/siimsams/tori.ee#readme",
+  "devDependencies": {
+    "parcel": "^2.8.3"
+  }
+}
