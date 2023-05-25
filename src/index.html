@@ -3,16 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="./index.css" rel="stylesheet">
+  <link href="./input.css" rel="stylesheet">
   <title>Tori Matkakeskus</title>
 </head>
 <body>
-  <nav>
+  <nav class="container mx-auto px-28 py-5 center flex items-center justify-between flex-wrap bg-white">
     <language>
       <a>EST</a>
       <a>ENG</a>
     </language>
-    <menu>
+    <menu class="">
       <a>Telli matk</a>
       <a>Hinnad</a>
       <a>Vibujahid</a>
@@ -21,10 +21,16 @@
       <a>Asukoht</a>
     </menu>
   </nav>
-  <header>
-    <h1>Tori Matkakeskus</h1>
-    <p>Elamusterohked kanuumatkad Pärnumaa jõgedel ja vibujahid looduses aastast 1996.</p>
-    <button>Telli matk</button>
+  <header class="relative flex">
+    <div class="absolute text-white">
+      <h1>Tori Matkakeskus</h1>
+      <p>Elamusterohked kanuumatkad Pärnumaa jõgedel ja vibujahid looduses aastast 1996.</p>
+      <button>Telli matk</button>
+    </div>
+    <video class="brightness-[0.75] -z-10 w-full max-w-none" autoplay muted loop id="myVideo">
+      <source src="media/Reordered clips.webm" type="video/webm">
+      <source src="media/Reordered clips.mp4" type="video/mp4">
+    </video>
   </header>
   <section>
     <h2>Arvustused räägivad enda eest</h2>
