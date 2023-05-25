@@ -4,6 +4,10 @@ module.exports = {
     "./src/**/*.{html,js,ts,jsx,tsx}",
   ],
   theme: {
+    fontFamily: {
+      'display': ['Oswald'],
+      'body': ['"Open Sans"'],
+    },
     extend: {},
   },
   plugins: [],
