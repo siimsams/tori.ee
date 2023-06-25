@@ -34,3 +34,4 @@ jobs:
         username: siim.tori.ee
         password: ${{ secrets.password }}
         protocol: ftps
+        dangerous-clean-slate: true
