@@ -6,8 +6,8 @@
   <link href="./input.css" rel="stylesheet">
   <title>Tori Matkakeskus</title>
 </head>
-<body>
-  <nav class="sticky top-0 w-full mx-auto px-28 py-5 center flex items-center justify-between flex-wrap bg-white">
+<body class="h-screen">
+  <nav class="lg:px-36 px-6 z-10 sticky top-0 w-full mx-auto py-5 center flex items-center justify-between flex-wrap bg-white">
     <language>
       <a>EST</a>
       <a>ENG</a>
@@ -21,13 +21,13 @@
       <a>Asukoht</a>
     </menu>
   </nav>
-  <header class="relative flex">
-    <div class="absolute top-1/2 left-0 transform -translate-y-1/2 flex flex-col justify-center px-28 text-white text-left">
+  <header class="max-lg:h-5/6 relative flex">
+    <div class="lg:px-36 pl-6 absolute top-1/2 left-0 transform -translate-y-1/2 flex flex-col justify-center text-white text-left">
       <h1 class="font-sans text-7xl">Tori<br>Matkakeskus</h1>
       <p>Elamusterohked kanuumatkad Pärnumaa jõgedel ja vibujahid looduses aastast 1996.</p>
       <button>Telli matk</button>
     </div>
-    <video class="brightness-[0.75] -z-10 w-full max-w-none" autoplay muted loop id="myVideo">
+    <video class="w-full object-cover max-w-none brightness-[0.75] -z-10" autoplay muted loop id="myVideo">
       <source src="media/Reordered clips.webm" type="video/webm">
       <source src="media/Reordered clips.mp4" type="video/mp4">
     </video>
