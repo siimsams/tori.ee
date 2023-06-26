@@ -12,7 +12,7 @@
       <a>EST</a>
       <a>ENG</a>
     </language>
-    <menu>
+    <menu class="hidden lg:block">
       <a>Telli matk</a>
       <a>Hinnad</a>
       <a>Vibujahid</a>
@@ -20,10 +20,40 @@
       <a>Saunad</a>
       <a>Asukoht</a>
     </menu>
+    <button id="menuButton" class="lg:hidden block z-10">
+      <svg id="openIcon" class="h-6 w-6 fill-current text-gray-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+        <path d="M4 11h16v2H4zm0-8h16v2H4zm0 16h16v2H4z"/>
+      </svg>
+      <svg id="closeIcon" class="h-6 w-6 fill-current text-white hidden" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+        <path d="M6 18L18 6M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>    
+    </button>
+    <div id="menu" class="fixed top-0 left-0 w-screen h-screen bg-black bg-opacity-90 hidden flex justify-center items-center">
+      <ul class="text-white text-xl flex flex-col items-center justify-center">
+          <li class="mb-8">
+              <a href="#">Telli matk</a>
+          </li>
+          <li class="mb-8">
+              <a href="#">Hinnad</a>
+          </li>
+          <li class="mb-8">
+              <a href="#">Vibujahid</a>
+          </li>
+          <li class="mb-8">
+              <a href="#">Kanuumatkad</a>
+          </li>
+          <li class="mb-8">
+            <a href="#">Saunad</a>
+        </li>
+        <li class="mb-8">
+            <a href="#">Asukoht</a>
+        </li>
+      </ul>
+    </div>    
   </nav>
   <header class="h-5/6 grid items-center relative text-white">
     <div class="lg:pl-36 pl-6 z-0">
-      <h1 class="break-all font-sans text-7xl">Tori<br>Matkakeskus</h1>
+      <h1 class="lg:text-7xl text-5xl break-all font-sans">Tori<br>Matkakeskus</h1>
       <p>Elamusterohked kanuumatkad Pärnumaa jõgedel ja vibujahid looduses aastast 1996.</p>
       <button>Telli matk</button>
     </div>
@@ -135,5 +165,23 @@
       </h2>
     </div>
   </section>
+  <script>
+    var menuButton = document.getElementById('menuButton');
+    var openIcon = document.getElementById('openIcon');
+    var closeIcon = document.getElementById('closeIcon');
+    var menu = document.getElementById('menu');
+  
+    menuButton.addEventListener('click', function () {
+      if (menu.classList.contains('hidden')) {
+        menu.classList.remove('hidden');
+        openIcon.classList.add('hidden');
+        closeIcon.classList.remove('hidden');
+      } else {
+        menu.classList.add('hidden');
+        openIcon.classList.remove('hidden');
+        closeIcon.classList.add('hidden');
+      }
+    });
+  </script>
 </body>
 </html>
