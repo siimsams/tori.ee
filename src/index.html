@@ -13,12 +13,12 @@
       <a>ENG</a>
     </language>
     <menu class="hidden lg:block">
-      <a>Telli matk</a>
-      <a>Hinnad</a>
-      <a>Vibujahid</a>
-      <a>Kanuumatkad</a>
-      <a>Saunad</a>
-      <a>Asukoht</a>
+      <a href="#order">Telli matk</a>
+      <a href="#prices">Hinnad</a>
+      <a href="#bow-hunting">Vibujahid</a>
+      <a href="#canoe">Kanuumatkad</a>
+      <a href="#sauna">Saunad</a>
+      <a href="#location">Asukoht</a>
     </menu>
     <button id="menuButton" class="lg:hidden block z-20">
       <svg id="openIcon" class="h-6 w-6 fill-current text-gray-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
@@ -31,22 +31,22 @@
     <div id="menu" class="fixed top-0 left-0 w-screen h-screen bg-white bg-opacity-90 hidden grid place-items-center">
       <ul class="text-xl space-y-8 text-center">
           <li>
-              <a href="#">Telli matk</a>
+              <a href="#order">Telli matk</a>
           </li>
           <li>
-              <a href="#">Hinnad</a>
+              <a href="#prices">Hinnad</a>
           </li>
           <li>
-              <a href="#">Vibujahid</a>
+              <a href="#bow-hunting">Vibujahid</a>
           </li>
           <li>
-              <a href="#">Kanuumatkad</a>
+              <a href="#canoe">Kanuumatkad</a>
           </li>
           <li>
-            <a href="#">Saunad</a>
+            <a href="#sauna">Saunad</a>
           </li>
           <li>
-            <a href="#">Asukoht</a>
+            <a href="#location">Asukoht</a>
           </li>
       </ul>
     </div> 
@@ -77,23 +77,23 @@
     </ul>
   </section>
   <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 py-8">
-    <div class="bg-[url('./media/kanuu.jpg')] bg-cover bg-center bg-blur flex flex-col justify-center items-center text-center text-white p-4 aspect-square flex-shrink-0">
+    <div id="canoe" class="bg-[url('./media/kanuu.jpg')] bg-cover bg-center bg-blur flex flex-col justify-center items-center text-center text-white p-4 aspect-square flex-shrink-0">
       <h2>Kanuumatkad</h2>
       <p>Tori Matkakeskus pakub Soomaa piirkonnas meeldejäävaid kanuumatka elamusi. Kanuumatkad leiavad aset Pärnu jõel, mis on tuntud oma loodusliku ilu ja rahuliku vee poolest. Matka pikkus on kohandatav teie soovide järgi. Gruppidele alates kahest inimesest.</p>
       <button class="mt-4">Loe rohkem</button>
     </div>
-    <div class="bg-[url('./media/vibu.png')] bg-cover bg-center bg-blur flex flex-col justify-center items-center text-center text-white p-4 aspect-square flex-shrink-0">
+    <div id="bow-hunting" class="bg-[url('./media/vibu.png')] bg-cover bg-center bg-blur flex flex-col justify-center items-center text-center text-white p-4 aspect-square flex-shrink-0">
       <h2>Vibujahid</h2>
       <p>Vibujahid toimuvad matkakeskuse lähedal metsas. Seal on üles seatud 12 vibumatiga rada, rajale on paigutatud märklehed, milledel on kujutatud erinevaid loomi ja linde. Võidab enim punkte kogunud noolekütt. Gruppidele alates kuuest inimesest.</p>
       <button class="mt-4">Loe rohkem</button>
     </div>
-    <div class="bg-[url('./media/saun.jpg')] bg-cover bg-center bg-blur flex flex-col justify-center items-center text-center text-white p-4 aspect-square flex-shrink-0">
+    <div id="sauna" class="bg-[url('./media/saun.jpg')] bg-cover bg-center bg-blur flex flex-col justify-center items-center text-center text-white p-4 aspect-square flex-shrink-0">
       <h2>Saunad</h2>
       <p>Pärast aktiivset päeva on võimalik lõõgastuda Pärnu jõe kaldal asuvas kümblustünnis või saunas. Kümblustünn mahutab kuni 10 inimest.</p>
       <button class="mt-4">Loe rohkem</button>
     </div>
   </section>  
-  <section>
+  <section id="prices">
     <ul>
       <li>
         <h2>
@@ -133,7 +133,7 @@
     </ul>
   </section>
   <section>
-    <div>
+    <div id="order">
       <h2>
         Telli matk
       </h2>
@@ -159,7 +159,7 @@
       </p>
       <button>Helista meile</button>
     </div>
-    <div>
+    <div id="location">
       <h2>
         Asukoht
       </h2>
