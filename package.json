@@ -5,7 +5,7 @@
   "default": "index.html",
   "scripts": {
     "test": "test",
-    "serve": "parcel serve src/index.html -p 1234 --open",
+    "serve": "rm -r .parcel-cache dist/ && parcel serve src/index.html -p 1234 --open",
     "tailwind": "tailwindcss -i ./src/input.css -o ./dist/output.css --watch",
     "build:prod": "parcel build src/index.html"
   },
