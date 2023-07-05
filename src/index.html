@@ -9,7 +9,7 @@
 </head>
 
 <body class="text-2xl">
-  <nav
+  <nav id="navBar"
     class="lg:px-36 px-6 py-5 z-20 top-0 w-full mx-auto center flex items-center justify-between flex-wrap bg-white">
     <language class="z-20 space-x-3">
       <a>EST</a>
@@ -34,7 +34,7 @@
           stroke-linejoin="round" />
       </svg>
     </button>
-    <div id="menu" class="fixed top-0 left-0 w-screen h-screen bg-white bg-opacity-90 hidden grid place-items-center">
+    <div id="menu" class="fixed z-10 top-0 left-0 w-screen h-screen bg-white bg-opacity-90 hidden grid place-items-center">
       <ul class="space-y-8 text-center">
         <li>
           <a href="#order">Telli matk</a>
@@ -201,17 +201,20 @@
     var menuButton = document.getElementById('menuButton');
     var openIcon = document.getElementById('openIcon');
     var closeIcon = document.getElementById('closeIcon');
+    var navBar = document.getElementById('navBar');
     var menu = document.getElementById('menu');
 
     menuButton.addEventListener('click', function () {
       if (menu.classList.contains('hidden')) {
-        menu.classList.remove('hidden');
+        navBar.classList.add('sticky')
         openIcon.classList.add('hidden');
         closeIcon.classList.remove('hidden');
+        menu.classList.remove('hidden');
       } else {
         menu.classList.add('hidden');
         openIcon.classList.remove('hidden');
         closeIcon.classList.add('hidden');
+        navBar.classList.remove('sticky')
       }
     });
   </script>
