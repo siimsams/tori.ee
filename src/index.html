@@ -34,7 +34,8 @@
           stroke-linejoin="round" />
       </svg>
     </button>
-    <div id="menu" class="fixed z-10 top-0 left-0 w-screen h-screen bg-white bg-opacity-90 hidden grid place-items-center">
+    <div id="menu"
+      class="fixed z-10 top-0 left-0 w-screen h-screen bg-white bg-opacity-90 hidden grid place-items-center">
       <ul class="space-y-8 text-center">
         <li>
           <a href="#order">Telli matk</a>
@@ -75,13 +76,15 @@
       <ul class="flex overflow-x-auto">
         <li class="flex flex-col items-center flex-shrink-0 px-5">
           <a href="#">
-            <img class="h-[100px] w-[100px] object-contain mx-auto" src="./media/foursquare-logo.svg" alt="Foursquare Logo" />
+            <img class="h-[100px] w-[100px] object-contain mx-auto" src="./media/foursquare-logo.svg"
+              alt="Foursquare Logo" />
             <p>Foursquare</p>
           </a>
         </li>
         <li class="flex flex-col items-center flex-shrink-0 px-5">
           <a href="#">
-            <img class="h-[100px] w-[100px] object-contain mx-auto" src="./media/tripadvisor-logo.svg" alt="Tripadvisor Logo" />
+            <img class="h-[100px] w-[100px] object-contain mx-auto" src="./media/tripadvisor-logo.svg"
+              alt="Tripadvisor Logo" />
             <p>Tripadvisor</p>
           </a>
         </li>
@@ -204,9 +207,11 @@
     var navBar = document.getElementById('navBar');
     var menu = document.getElementById('menu');
 
-    menuButton.addEventListener('click', function () {
+    menuButton.addEventListener('click', toggleMenu);
+
+    function toggleMenu() {
       if (menu.classList.contains('hidden')) {
-        navBar.classList.add('sticky')
+        navBar.classList.add('sticky');
         openIcon.classList.add('hidden');
         closeIcon.classList.remove('hidden');
         menu.classList.remove('hidden');
@@ -214,8 +219,14 @@
         menu.classList.add('hidden');
         openIcon.classList.remove('hidden');
         closeIcon.classList.add('hidden');
-        navBar.classList.remove('sticky')
+        navBar.classList.remove('sticky');
       }
+    }
+
+    document.querySelectorAll('#menu a').forEach((link) => {
+      link.addEventListener('click', () => {
+        toggleMenu();
+      });
     });
   </script>
 </body>
