@@ -62,7 +62,7 @@
     <div class="lg:pl-36 pl-6 z-0">
       <h1 class="lg:text-7xl text-5xl break-all font-sans">Tori<br>Matkakeskus</h1>
       <p class="mb-6 max-w-[520px]">Elamusterohked kanuumatkad Pärnumaa jõgedel ja vibujahid looduses aastast 1996.</p>
-      <a href="#" class="px-10 py-3 border-[3px] border-white border-solid">Telli matk</a>
+      <a href="#order" class="px-10 py-3 border-[3px] border-white border-solid">Telli matk</a>
     </div>
     <video id="myVideo" poster="media/hero_video.jpg" autoplay muted loop playsinline
       class="h-full w-full object-cover max-w-none brightness-[0.75] -z-10 absolute top-0 left-0">
@@ -98,30 +98,31 @@
     </div>
   </section>
   <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 py-8">
-    <div id="canoe"
-      class="bg-[url('./media/kanuu-blur-grain.jpg')] bg-cover bg-center flex flex-col justify-center items-center text-center text-white p-4 aspect-square flex-shrink-0">
-      <h2 class="text-center text-4xl">Kanuumatkad</h2>
-      <p>Tori Matkakeskus pakub Soomaa piirkonnas meeldejäävaid kanuumatka elamusi. Kanuumatkad leiavad aset Pärnu jõel,
-        mis on tuntud oma loodusliku ilu ja rahuliku vee poolest. Matka pikkus on kohandatav teie soovide järgi.
-        Gruppidele alates kahest inimesest.</p>
-      <button class="mt-4 px-10 py-2 border-[3px] border-white border-solid">Loe rohkem</button>
+    <div id="canoe" class="relative">
+      <div class="flex flex-col justify-center items-center text-center text-white p-4 aspect-square flex-shrink-0 relative z-10">
+        <h2 class="text-center text-4xl">Kanuumatkad</h2>
+        <p>Tori Matkakeskus pakub Soomaa piirkonnas meeldejäävaid kanuumatka elamusi. Kanuumatkad leiavad aset Pärnu jõel, mis on tuntud oma loodusliku ilu ja rahuliku vee poolest. Matka pikkus on kohandatav teie soovide järgi. Gruppidele alates kahest inimesest.</p>
+        <button class="mt-4 px-10 py-3 border-[3px] border-white border-solid">Loe rohkem</button>
+      </div>
+      <img src="./media/kanuu-blur-grain.jpg" alt="Canoe" class="absolute inset-0 w-full h-full object-cover object-center filter brightness-[0.40] z-0">
     </div>
-    <div id="bow-hunting"
-      class="bg-[url('./media/vibu-blur-grain.jpg')] bg-cover bg-center flex flex-col justify-center items-center text-center text-white p-4 aspect-square flex-shrink-0">
-      <h2 class="text-center text-4xl">Vibujahid</h2>
-      <p>Vibujahid toimuvad matkakeskuse lähedal metsas. Seal on üles seatud 12 vibumatiga rada, rajale on paigutatud
-        märklehed, milledel on kujutatud erinevaid loomi ja linde. Võidab enim punkte kogunud noolekütt. Gruppidele
-        alates kuuest inimesest.</p>
-      <button class="mt-4 px-10 py-2 border-[3px] border-white border-solid">Loe rohkem</button>
+    <div id="bow-hunting" class="relative">
+      <div class="flex flex-col justify-center items-center text-center text-white p-4 aspect-square flex-shrink-0 relative z-10">
+        <h2 class="text-center text-4xl">Vibujahid</h2>
+        <p>Vibujahid toimuvad matkakeskuse lähedal metsas. Seal on üles seatud 12 vibumatiga rada, rajale on paigutatud märklehed, milledel on kujutatud erinevaid loomi ja linde. Võidab enim punkte kogunud noolekütt. Gruppidele alates kuuest inimesest.</p>
+        <button class="mt-4 px-10 py-3 border-[3px] border-white border-solid">Loe rohkem</button>
+      </div>
+      <img src="./media/vibu-blur-grain.jpg" alt="Bow Hunting" class="absolute inset-0 w-full h-full object-cover object-center filter brightness-[0.60] z-0">
     </div>
-    <div id="sauna"
-      class="bg-[url('./media/saun-blur-grain.jpg')] bg-cover bg-center flex flex-col justify-center items-center text-center text-white p-4 aspect-square flex-shrink-0">
-      <h2 class="text-center text-4xl">Saunad</h2>
-      <p>Pärast aktiivset päeva on võimalik lõõgastuda Pärnu jõe kaldal asuvas kümblustünnis või saunas. Kümblustünn
-        mahutab kuni 10 inimest.</p>
-      <button class="mt-4 px-10 py-2 border-[3px] border-white border-solid">Loe rohkem</button>
+    <div id="sauna" class="relative">
+      <div class="flex flex-col justify-center items-center text-center text-white p-4 aspect-square flex-shrink-0 relative z-10">
+        <h2 class="text-center text-4xl">Saunad</h2>
+        <p>Pärast aktiivset päeva on võimalik lõõgastuda Pärnu jõe kaldal asuvas kümblustünnis või saunas. Kümblustünn mahutab kuni 10 inimest.</p>
+        <button class="mt-4 px-10 py-3 border-[3px] border-white border-solid">Loe rohkem</button>
+      </div>
+      <img src="./media/saun-blur-grain.jpg" alt="Sauna" class="absolute inset-0 w-full h-full object-cover object-center filter brightness-[0.75] z-0">
     </div>
-  </section>
+  </section>   
   <section id="prices">
     <ul class="lg:px-28 px-6 grid grid-cols-1 md:grid-cols-4 gap-4">
       <li class="flex flex-col items-center">
@@ -175,7 +176,7 @@
           </div>
           <div class="flex flex-col items-end">
             <label for="message" class="self-start">Tellimuse kirjeldus</label>
-            <textarea name="message" id="message" cols="30" rows="5"
+            <textarea name="message" id="message" cols="30" rows="7"
               class="w-full border-[3px] border-black border-solid"></textarea>
           </div>
           <button type="submit" class="w-full px-10 py-2 border-[3px] border-black border-solid">Saada tellimus</button>
