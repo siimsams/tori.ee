@@ -1,0 +1,220 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="./input.css" rel="stylesheet">
+  <title data-t>header.title</title>
+</head>
+
+<body class="text-2xl">
+  <nav id="navBar"
+    class="3xl:w-[1950px] xl:px-36 px-6 py-5 z-20 top-0 w-full mx-auto center flex items-center justify-between flex-wrap bg-white">
+    <language class="z-20 space-x-3">
+      <a href="#" class="underline" data-t>language.estonian</a>
+      <a href="#" class="hover:underline" data-t>language.english</a>
+    </language>
+    <menu class="hidden lg:block space-x-3">
+      <a href="#order" class="hover:underline" data-t>menu.order</a>
+      <a href="#prices" class="hover:underline" data-t>menu.prices</a>
+      <a href="more_info.html" class="hover:underline" data-t>menu.services</a>
+      <a href="#sauna" class="hover:underline" data-t>menu.saunas</a>
+      <a href="#location" class="hover:underline" data-t>menu.location</a>
+    </menu>
+    <button id="menuButton" class="lg:hidden block z-20">
+      <svg id="openIcon" class="h-6 w-6 fill-current text-gray-500" xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24">
+        <path d="M4 11h16v2H4zm0-8h16v2H4zm0 16h16v2H4z" />
+      </svg>
+      <svg id="closeIcon" class="h-6 w-6 fill-current text-gray-500 hidden" xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24">
+        <path d="M6 18L18 6M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+          stroke-linejoin="round" />
+      </svg>
+    </button>
+    <div id="menu"
+      class="fixed z-10 top-0 left-0 w-screen h-screen bg-white bg-opacity-90 hidden grid place-items-center">
+      <ul class="space-y-8 text-center">
+        <li>
+          <a href="#order" data-t>menu.order</a>
+        </li>
+        <li>
+          <a href="#prices" data-t>menu.prices</a>
+        </li>
+        <li>
+          <a href="more_info.html" data-t>menu.services</a>
+        </li>
+        <li>
+          <a href="#sauna" data-t>menu.saunas</a>
+        </li>
+        <li>
+          <a href="#location" data-t>menu.location</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <header class="h-[85vh] grid items-center relative text-white">
+    <div class="3xl:w-[1950px] 3xl:mx-auto xl:pl-36 pl-6 z-0">
+      <h1 class="lg:text-7xl text-5xl break-all font-sans" data-t>header.title</h1>
+      <p class="mb-6 max-w-[520px]" data-t>header.subtitle</p>
+      <a href="#order" class="px-10 py-3 border-[3px] border-white border-solid" data-t>menu.order</a>
+    </div>
+    <video id="myVideo" poster="media/hero_video.jpg" autoplay muted loop playsinline
+      class="h-full w-full object-cover max-w-none brightness-[0.75] -z-10 absolute top-0 left-0">
+      <source src="media/hero_video.webm" type="video/webm">
+      <source src="media/hero_video.mp4" type="video/mp4">
+    </video>
+  </header>
+  <section class="flex justify-center flex-col py-8 overflow-hidden text-center">
+    <h2 class="pb-10 text-4xl" data-t>reviews</h2>
+    <div class="flex items-center justify-center">
+      <ul class="flex overflow-x-auto">
+        <li class="flex flex-col items-center flex-shrink-0 px-7">
+          <a href="#">
+            <img class="h-[100px] w-[100px] object-contain mx-auto" src="./media/Google_logo.png" alt="Google Logo" />
+            <p>Google</p>
+          </a>
+        </li>
+        <li class="flex flex-col items-center flex-shrink-0 px-7">
+          <a href="#">
+            <img class="h-[100px] w-[100px] object-contain mx-auto" src="./media/tripadvisor-logo.svg"
+              alt="Tripadvisor Logo" />
+            <p>Tripadvisor</p>
+          </a>
+        </li>
+        <li class="flex flex-col items-center flex-shrink-0 px-7">
+          <a href="#">
+            <img class="h-[100px] w-[100px] object-contain mx-auto" src="./media/foursquare-logo.svg"
+              alt="Foursquare Logo" />
+            <p>Foursquare</p>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </section>
+  <section class="3xl:w-[1950px] mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 py-8">
+    <div id="canoe" class="relative">
+      <div
+        class="flex flex-col justify-center items-center text-center text-white p-4 aspect-square flex-shrink-0 relative z-10">
+        <h2 class="text-center text-4xl" data-t>canoeTrips.title</h2>
+        <p data-t>canoeTrips.description</p>
+        <a href="more_info.html" class="mt-4 px-10 py-3 border-[3px] border-white border-solid" data-t>canoeTrips.readMore</a>
+      </div>
+      <img src="./media/kanuu-blur-grain.jpg" alt="Canoe"
+        class="absolute inset-0 w-full h-full object-cover object-center filter brightness-[0.40] z-0">
+    </div>
+    <div id="bow-hunting" class="relative">
+      <div
+        class="flex flex-col justify-center items-center text-center text-white p-4 aspect-square flex-shrink-0 relative z-10">
+        <h2 class="text-center text-4xl" data-t>bowHunting.title</h2>
+        <p data-t>bowHunting.description</p>
+        <a href="more_info.html" class="mt-4 px-10 py-3 border-[3px] border-white border-solid" data-t>bowHunting.readMore</a>
+      </div>
+      <img src="./media/vibu-blur-grain.jpg" alt="Bow Hunting"
+        class="absolute inset-0 w-full h-full object-cover object-center filter brightness-[0.60] z-0">
+    </div>
+    <div id="sauna" class="relative">
+      <div
+        class="flex flex-col justify-center items-center text-center text-white p-4 aspect-square flex-shrink-0 relative z-10">
+        <h2 class="text-center text-4xl" data-t>sauna</h2>
+        <p data-t>sauna.description</p>
+      </div>
+      <img src="./media/saun-blur-grain.jpg" alt="Sauna"
+        class="absolute inset-0 w-full h-full object-cover object-center filter brightness-[0.75] z-0">
+    </div>
+  </section>
+  <section id="prices" class="3xl:w-[1950px] mx-auto">
+    <ul class="xl:px-36 px-6 grid grid-cols-1 md:grid-cols-4 gap-4">
+      <li class="flex flex-col items-center">
+        <h2 class="text-center text-3xl" data-t>prices.title</h2>
+        <p class="text-center" data-t>prices.description</p>
+      </li>
+      <li class="flex flex-col items-center">
+        <h2 class="text-center text-3xl" data-t>prices.canoe.title</h2>
+        <p class="text-center" data-t>prices.canoe.schoolChildren</p>
+        <p class="text-center" data-t>prices.canoe.adults</p>
+        <p class="text-center" data-t>prices.canoe.hourTrip</p>
+      </li>
+      <li class="flex flex-col items-center">
+        <h2 class="text-center text-3xl" data-t>prices.bow.title</h2>
+        <p class="text-center" data-t>prices.bow.hunt</p>
+      </li>
+      <li class="flex flex-col items-center">
+        <h2 class="text-center text-3xl" data-t>prices.sauna.title</h2>
+        <p class="text-center" data-t>prices.sauna.tub</p>
+        <p class="text-center" data-t>prices.sauna.sauna</p>
+      </li>
+    </ul>
+  </section>
+  <section class="3xl:w-[1950px] mx-auto xl:px-36 px-6 py-10 grid grid-cols-1 md:grid-cols-2 md:gap-5">
+    <div class="md:col-span-1">
+      <div id="order" class="w-full">
+        <h2 class="text-center text-4xl" data-t>orderTrip.title</h2>
+        <form class="space-y-4">
+          <div class="flex flex-col items-end">
+            <label for="name" class="self-start" data-t>orderTrip.fullName</label>
+            <input type="text" name="name" id="name" class="py-2 w-full border-[3px] border-black border-solid">
+          </div>
+          <div class="flex flex-col items-end">
+            <label for="email" class="self-start" data-t>orderTrip.email</label>
+            <input type="email" name="email" id="email" class="py-2 w-full border-[3px] border-black border-solid">
+          </div>
+          <div class="flex flex-col items-end">
+            <label for="phone" class="self-start" data-t>orderTrip.contactPhone</label>
+            <input type="tel" name="phone" id="phone" class="py-2 w-full border-[3px] border-black border-solid">
+          </div>
+          <div class="flex flex-col items-end">
+            <label for="message" class="self-start" data-t>orderTrip.orderDescription</label>
+            <textarea name="message" id="message" cols="30" rows="6"
+              class="w-full border-[3px] border-black border-solid"></textarea>
+          </div>
+          <button type="submit" class="w-full px-10 py-2 border-[3px] border-black border-solid" data-t>orderTrip.sendOrder</button>
+        </form>
+      </div>
+      <div id="contact" class="text-center py-6">
+        <h2 class="text-center text-4xl" data-t>contactUs.title</h2>
+        <p data-t>contactUs.name</p>
+        <p data-t>contactUs.phone</p>
+        <p data-t>contactUs.email</p>
+      </div>
+    </div>
+    <div id="location" class="flex flex-col md:col-span-1 pb-6">
+      <h2 class="text-center text-4xl mb-4" data-t>menu.location</h2>
+      <iframe class="flex-grow w-full min-h-[400px]"
+        src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d8343.075522572108!2d24.8108362!3d58.4815636!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46ece6573013f239%3A0xd97fc28347415a84!2sTori%20Matkakeskus!5e0!3m2!1sen!2see!4v1688407668603!5m2!1sen!2see"
+        allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+  </section>
+  <script>
+    var menuButton = document.getElementById('menuButton');
+    var openIcon = document.getElementById('openIcon');
+    var closeIcon = document.getElementById('closeIcon');
+    var navBar = document.getElementById('navBar');
+    var menu = document.getElementById('menu');
+
+    menuButton.addEventListener('click', toggleMenu);
+
+    function toggleMenu() {
+      if (menu.classList.contains('hidden')) {
+        navBar.classList.add('sticky');
+        openIcon.classList.add('hidden');
+        closeIcon.classList.remove('hidden');
+        menu.classList.remove('hidden');
+      } else {
+        menu.classList.add('hidden');
+        openIcon.classList.remove('hidden');
+        closeIcon.classList.add('hidden');
+        navBar.classList.remove('sticky');
+      }
+    }
+
+    document.querySelectorAll('#menu a').forEach((link) => {
+      link.addEventListener('click', () => {
+        toggleMenu();
+      });
+    });
+  </script>
+</body>
+
+</html>

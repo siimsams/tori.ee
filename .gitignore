@@ -64,3 +64,5 @@ dist/
 .cache/
 .parcel-cache
 .DS_Store
+
+i18n/
