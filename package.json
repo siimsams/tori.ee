@@ -7,7 +7,7 @@
     "test": "test",
     "serve": "rm -rf .parcel-cache dist/ && parcel serve src/index.html src/en/index.html -p 1234 --open",
     "tailwind": "tailwindcss -i ./src/input.css -o ./dist/output.css --watch",
-    "build:prod": "parcel build src/index.html src/en/index.html",
+    "build:prod": "parcel build src/index.html src/en/index.html && cp www/form.php dist/",
     "i18n": "npx static-i18n -l ee -i ee -i en www --outputDir src",
     "watch": "nodemon --watch www/ -e json,html -x \"npm run i18n\""
   },
