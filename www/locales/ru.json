@@ -3,12 +3,12 @@
     "est": {
       "title": "ЭСТ",
       "class": "hover:underline",
-      "link": ""
+      "link": "./../"
     },
     "eng": {
       "title": "АНГ",
       "class": "hover:underline",
-      "link": ""
+      "link": "./../en/"
     },
     "rus": {
       "title": "РУС",

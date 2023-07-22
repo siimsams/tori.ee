@@ -3,7 +3,7 @@
     "est": {
       "title": "EST",
       "class": "hover:underline",
-      "link": "./../index.html"
+      "link": "./../"
     },
     "eng": {
       "title": "ENG",
@@ -13,7 +13,7 @@
     "rus": {
       "title": "RUS",
       "class": "hover:underline",
-      "link": ""
+      "link": "./../ru/"
     }
   },
   "menu": {

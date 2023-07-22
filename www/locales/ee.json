@@ -8,12 +8,12 @@
     "eng": {
       "title":"ENG",
       "class":"hover:underline", 
-      "link":"./en/index.html"
+      "link":"./en/"
     },
     "rus": {
       "title":"RUS",
       "class":"hover:underline", 
-      "link":""
+      "link":"./ru/"
     }
   },
   "menu": {
