@@ -1,65 +1,79 @@
 {
-    "language": {
-        "estonian": "EST",
-        "english": "ENG"
+  "language": {
+    "est": {
+      "title": "EST",
+      "class": "hover:underline",
+      "link": ""
     },
-    "menu": {
-        "order": "Order Trip",
-        "prices": "Prices",
-        "services": "Services",
-        "saunas": "Saunas",
-        "location": "Location"
+    "eng": {
+      "title": "ENG",
+      "class": "underline",
+      "link": ""
     },
-    "header": {
-        "title": "Tori Adventure Center",
-        "subtitle": "Memorable canoe trips on the rivers of Pärnu County and archery hunts in nature since 1996."
+    "rus": {
+      "title": "RUS",
+      "class": "hover:underline",
+      "link": ""
+    }
+  },
+  "menu": {
+    "order": "Order Trip",
+    "prices": "Prices",
+    "services": "Services",
+    "saunas": "Saunas",
+    "location": "Location"
+  },
+  "header": {
+    "title": "Tori Adventure Center",
+    "subtitle": "Memorable canoe trips on the rivers of Pärnu County and archery hunts in nature since 1996.",
+    "posterUrl": "../media/hero_video.jpg"
+  },
+  "reviews": "Reviews speak for themselves",
+  "canoeTrips": {
+    "title": "Canoe Trips",
+    "description": "Tori Adventure Center offers memorable canoe trips in the Soomaa region. The canoe trips take place on the Pärnu River, known for its natural beauty and calm waters. The length of the trip can be adjusted according to your preferences. Suitable for groups of two or more people.",
+    "readMore": "Read More"
+  },
+  "bowHunting": {
+    "title": "Bow Hunting",
+    "description": "Bow hunting takes place in the forest near the adventure center. There are 12 archery tracks set up, each featuring targets depicting various animals and birds. The winner is the archer who collects the most points. Suitable for groups of six or more people.",
+    "readMore": "Read More"
+  },
+  "sauna": {
+    "title": "Saunas",
+    "description": "After an active day, you can relax in the hot tub or sauna located by the Pärnu River. The hot tub can accommodate up to 10 people."
+  },
+  "prices": {
+    "title": "Prices",
+    "description": "Discounts depending on the group size and the day of the trip. Inquire about discounts via email or phone. All prices include VAT.",
+    "canoe": {
+      "title": "Canoe",
+      "schoolChildren": "School Children: €10 per person",
+      "adults": "Adults: €25 per person",
+      "hourTrip": "One-hour Trip in Tori: €10 per person"
     },
-    "reviews": "Reviews speak for themselves",
-    "canoeTrips": {
-        "title": "Canoe Trips",
-        "description": "Tori Adventure Center offers memorable canoe trips in the Soomaa region. The canoe trips take place on the Pärnu River, known for its natural beauty and calm waters. The length of the trip can be adjusted according to your preferences. Suitable for groups of two or more people.",
-        "readMore": "Read More"
-    },
-    "bowHunting": {
-        "title": "Bow Hunting",
-        "description": "Bow hunting takes place in the forest near the adventure center. There are 12 archery tracks set up, each featuring targets depicting various animals and birds. The winner is the archer who collects the most points. Suitable for groups of six or more people.",
-        "readMore": "Read More"
+    "bow": {
+      "title": "Bow",
+      "hunt": "Bow Hunting: €20 per person"
     },
     "sauna": {
-        "title": "Saunas",
-        "description": "After an active day, you can relax in the hot tub or sauna located by the Pärnu River. The hot tub can accommodate up to 10 people."
-    },
-    "prices": {
-        "title": "Prices",
-        "description": "Discounts depending on the group size and the day of the trip. Inquire about discounts via email or phone. All prices include VAT.",
-        "canoe": {
-            "title": "Canoe",
-            "schoolChildren": "School Children: €10 per person",
-            "adults": "Adults: €25 per person",
-            "hourTrip": "One-hour Trip in Tori: €10 per person"
-        },
-        "bow": {
-            "title": "Bow",
-            "hunt": "Bow Hunting: €20 per person"
-        },
-        "sauna": {
-            "title": "Sauna",
-            "tub": "Hot Tub: €100 per evening",
-            "sauna": "Sauna: €100 per evening"
-        }
-    },
-    "orderTrip": {
-        "title": "Order Trip",
-        "fullName": "Full Name",
-        "email": "Email",
-        "contactPhone": "Contact Phone",
-        "orderDescription": "Order Description",
-        "sendOrder": "Send Order"
-    },
-    "contactUs": {
-        "title": "Or give us a call",
-        "name": "Silver Sams",
-        "phone": "+372 511 4245",
-        "email": "silver@tori.ee"
+      "title": "Sauna",
+      "tub": "Hot Tub: €100 per evening",
+      "sauna": "Sauna: €100 per evening"
     }
+  },
+  "orderTrip": {
+    "title": "Order Trip",
+    "fullName": "Full Name",
+    "email": "Email",
+    "contactPhone": "Contact Phone",
+    "orderDescription": "Order Description",
+    "sendOrder": "Send Order"
+  },
+  "contactUs": {
+    "title": "Or give us a call",
+    "name": "Silver Sams",
+    "phone": "+372 511 4245",
+    "email": "silver@tori.ee"
+  }
 }

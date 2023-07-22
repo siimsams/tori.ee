@@ -1,66 +1,79 @@
 {
-    "language": {
-      "estonian": "EST",
-      "english": "ENG"
+  "language": {
+    "est": {
+      "title":"EST",
+      "class":"underline", 
+      "link":""
     },
-    "menu": {
-      "order": "Telli matk",
-      "prices": "Hinnad",
-      "services": "Teenustest",
-      "saunas": "Saunad",
-      "location": "Asukoht"
+    "eng": {
+      "title":"ENG",
+      "class":"hover:underline", 
+      "link":"./en/index.html"
     },
-    "header": {
-      "title": "Tori Matkakeskus",
-      "subtitle": "Elamusterohked kanuumatkad Pärnumaa jõgedel ja vibujahid looduses aastast 1996."
+    "rus": {
+      "title":"RUS",
+      "class":"hover:underline", 
+      "link":""
+    }
+  },
+  "menu": {
+    "order": "Telli matk",
+    "prices": "Hinnad",
+    "services": "Teenustest",
+    "saunas": "Saunad",
+    "location": "Asukoht"
+  },
+  "header": {
+    "title": "Tori Matkakeskus",
+    "subtitle": "Elamusterohked kanuumatkad Pärnumaa jõgedel ja vibujahid looduses aastast 1996.",
+    "posterUrl": "media/hero_video.jpg"
+  },
+  "reviews": "Arvustused räägivad enda eest",
+  "canoeTrips": {
+    "title": "Kanuumatkad",
+    "description": "Tori Matkakeskus pakub Soomaa piirkonnas meeldejäävaid kanuumatka elamusi. Kanuumatkad leiavad aset Pärnu jõel, mis on tuntud oma loodusliku ilu ja rahuliku vee poolest. Matka pikkus on kohandatav teie soovide järgi. Gruppidele alates kahest inimesest.",
+    "readMore": "Loe rohkem"
+  },
+  "bowHunting": {
+    "title": "Vibujahid",
+    "description": "Vibujahid toimuvad matkakeskuse lähedal metsas. Seal on üles seatud 12 vibumatiga rada, rajale on paigutatud märklehed, milledel on kujutatud erinevaid loomi ja linde. Võidab enim punkte kogunud noolekütt. Gruppidele alates kuuest inimesest.",
+    "readMore": "Loe rohkem"
+  },
+  "sauna": {
+    "title": "Saunad",
+    "description": "Pärast aktiivset päeva on võimalik lõõgastuda Pärnu jõe kaldal asuvas kümblustünnis või saunas. Kümblustünn mahutab kuni 10 inimest."
+  },
+  "prices": {
+    "title": "Hinnad",
+    "description": "Soodustused sõltuvalt grupi suurusest ja matka toimumise päevast. Küsi soodustust meilitsi või telefonitsi. Kõik hinnad sisaldavad käibemaksu.",
+    "canoe": {
+      "title": "Kanuu",
+      "schoolChildren": "Koolilapsed: 10€ inimene",
+      "adults": "Täiskasvanud: 25€ inimene",
+      "hourTrip": "Tunnisõit Toris: 10€ inimene"
     },
-    "reviews": "Arvustused räägivad enda eest",
-    "canoeTrips": {
-      "title": "Kanuumatkad",
-      "description": "Tori Matkakeskus pakub Soomaa piirkonnas meeldejäävaid kanuumatka elamusi. Kanuumatkad leiavad aset Pärnu jõel, mis on tuntud oma loodusliku ilu ja rahuliku vee poolest. Matka pikkus on kohandatav teie soovide järgi. Gruppidele alates kahest inimesest.",
-      "readMore": "Loe rohkem"
-    },
-    "bowHunting": {
-      "title": "Vibujahid",
-      "description": "Vibujahid toimuvad matkakeskuse lähedal metsas. Seal on üles seatud 12 vibumatiga rada, rajale on paigutatud märklehed, milledel on kujutatud erinevaid loomi ja linde. Võidab enim punkte kogunud noolekütt. Gruppidele alates kuuest inimesest.",
-      "readMore": "Loe rohkem"
+    "bow": {
+      "title": "Vibu",
+      "hunt": "Vibujaht: 20€ inimene"
     },
     "sauna": {
-      "title": "Saunad",
-      "description": "Pärast aktiivset päeva on võimalik lõõgastuda Pärnu jõe kaldal asuvas kümblustünnis või saunas. Kümblustünn mahutab kuni 10 inimest."
-    },
-    "prices": {
-      "title": "Hinnad",
-      "description": "Soodustused sõltuvalt grupi suurusest ja matka toimumise päevast. Küsi soodustust meilitsi või telefonitsi. Kõik hinnad sisaldavad käibemaksu.",
-      "canoe": {
-        "title": "Kanuu",
-        "schoolChildren": "Koolilapsed: 10€ inimene",
-        "adults": "Täiskasvanud: 25€ inimene",
-        "hourTrip": "Tunnisõit Toris: 10€ inimene"
-      },
-      "bow": {
-        "title": "Vibu",
-        "hunt": "Vibujaht: 20€ inimene"
-      },
-      "sauna": {
-        "title": "Saun",
-        "tub": "Kümblustünn: 100€ õhtu",
-        "sauna": "Saun: 100€ õhtu"
-      }
-    },
-    "orderTrip": {
-      "title": "Telli matk",
-      "fullName": "Täisnimi",
-      "email": "Email",
-      "contactPhone": "Kontakttelefon",
-      "orderDescription": "Tellimuse kirjeldus",
-      "sendOrder": "Saada tellimus"
-    },
-    "contactUs": {
-      "title": "Või helista meile",
-      "name": "Silver Sams",
-      "phone": "+372 511 4245",
-      "email": "silver@tori.ee"
+      "title": "Saun",
+      "tub": "Kümblustünn: 100€ õhtu",
+      "sauna": "Saun: 100€ õhtu"
     }
+  },
+  "orderTrip": {
+    "title": "Telli matk",
+    "fullName": "Täisnimi",
+    "email": "Email",
+    "contactPhone": "Kontakttelefon",
+    "orderDescription": "Tellimuse kirjeldus",
+    "sendOrder": "Saada tellimus"
+  },
+  "contactUs": {
+    "title": "Või helista meile",
+    "name": "Silver Sams",
+    "phone": "+372 511 4245",
+    "email": "silver@tori.ee"
   }
-  
+}

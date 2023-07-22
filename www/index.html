@@ -12,8 +12,8 @@
   <nav id="navBar"
     class="3xl:w-[1950px] xl:px-36 px-6 py-5 z-20 top-0 w-full mx-auto center flex items-center justify-between flex-wrap bg-white">
     <language class="z-20 space-x-3">
-      <a href="#" class="underline" data-t>language.estonian</a>
-      <a href="#" class="hover:underline" data-t>language.english</a>
+      <a data-attr-t href-t="language.est.link" class-t="language.est.class" data-t>language.est.title</a>
+      <a data-attr-t href-t="language.eng.link" class-t="language.eng.class" data-t>language.eng.title</a>
     </language>
     <menu class="hidden lg:block space-x-3">
       <a href="#order" class="hover:underline" data-t>menu.order</a>
@@ -60,7 +60,7 @@
       <p class="mb-6 max-w-[520px]" data-t>header.subtitle</p>
       <a href="#order" class="px-10 py-3 border-[3px] border-white border-solid" data-t>menu.order</a>
     </div>
-    <video id="myVideo" poster="media/hero_video.jpg" autoplay muted loop playsinline
+    <video id="myVideo" data-attr-t poster-t="header.posterUrl" autoplay muted loop playsinline
       class="h-full w-full object-cover max-w-none brightness-[0.75] -z-10 absolute top-0 left-0">
       <source src="media/hero_video.webm" type="video/webm">
       <source src="media/hero_video.mp4" type="video/mp4">
