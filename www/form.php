@@ -5,7 +5,7 @@ $phone = $_POST['number'];
 $message = $_POST['message'];
 $response = $_POST['token'];
 $formcontent=" Nimi: $name \n Telefon: $phone \n E-mail: $email \n Sõnum: \n $message";
-$recipient = "siimsams@tdl.ee, silver@tori.ee";
+$recipient = "siimsams@tdl.ee";
 $subject = "Võimalik matk // $phone // $email";
 $mailheader = "From: $email \r\n";
 
