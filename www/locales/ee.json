@@ -76,5 +76,34 @@
     "name": "Silver Sams",
     "phone": "+372 511 4245",
     "email": "silver@tori.ee"
+  },
+  "moreInfo": {
+    "header_title": "Kanuumatkad",
+    "header_description": "Kanuumatkad toimuvad Pärnu jõestikus, kulgevad Lemmjõe, Raudna, Halliste, Navesti ja Pärnu jõel, kust avaneb imeline vaade Soomaa kallastele ning Tori põrgule. Allpool on toodud välja ühed populaarsemad marsruudid, mille seast on teil võimalik valida endale sobiva pikkuse ning raskusastmega variant. Juhul kui ükski allpool märgitud marsruutidest teile ei sobi, võtke meiega ühendust, leiame kindlasti sobiva marsruudi.",
+    "header_button": "Telli matk",
+    "trip_1_title": "Tunni sõit Toris",
+    "trip_1_description": "Tunni sõit on parim Torist läbisõitvatele inimestele. Kuna hind on kanuu kohta, siis sobib see suurepäraselt peredele, kellel on väikseid lapsi (keskmisele istmele mahub istuma kaks last). Tunniga jõuab sõuda vaatama Tori põrgut ja kui õnged kaasa võtta, võib hea õnne korral nii mõnegi kala püüda.",
+    "trip_1_duration": "Kestvus: 1 tund",
+    "trip_2_title": "Viira-Jõesuu-Tori",
+    "trip_2_description": "Matk algab Tori Matkakeskusest, kust teid viiakse Viira rippsilla juurde. Jõe ääres instrueeritakse teid ja antakse kätte varustus. Matka alguses on jõgi rahulik ja lai ning teil on piisavalt aega kanuujuhtimist õppida ja harjutada koostööd oma paadikaaslasega. Siis hakkab aeg ajalt ette tulema vanu veski tamme, mille ületamist te veel kaua mäletate. Matka lõpus möödute ka Tori põrgust, mille kohal asub vanakuradikivi. Matk lõppeb Tori Matkakeskuses.",
+    "trip_2_duration": "Kestvus: 2-5 tundi",
+    "trip_3_title": "Riisa laudrada-Tori",
+    "trip_3_description": "Matk algab Tori Matkakeskuse juurest, kust teid viiakse Riisa laudraja algusse. Laudrada on ligikaudu 3 km pikk ja seda läbides tutvute tüüpilise rabataimestiku ja maastikuga. Seejärel jõuate Navesti jõe äärde, kus teid instrueeritakse ja jagatakse kätte varustus. Poole matka ajal jõuate Jõesuu külani, kus Navesti jõgi ühineb Pärnu jõega. Seal lõigul on jõgi rahulik ja lai. Siis hakkab aeg ajalt ette tulema vanu veski tamme, mis on jää poolt ära lõhutud ja mille ületamine pakub mõnusat närvikõdi. Matka lõpupoole möödute Tori põrgust, mille kohal asub vanakuradikivi. Matk lõppeb Tori Matkakeskuses.",
+    "trip_3_duration": "Kestvus: 3-6 tundi",
+    "trip_4_title": "Kaansoo-Toonoja-Jõesuu-Tori",
+    "trip_4_description": "Matk algab Torist, kust teid viiakse Kaansoo külla, instrueeritakse, ja jagatakse kätte varustus. Peale mõnetunnist sõudmist mööda Navesti jõge jõuate Täkusaare talukoha juurde. Seal soovitame teil paadist kaldale minna, võtta kaasa piknikusöök ja minna mööda looduskaunist matkarada Toonoja külla Mardi talu suitsusauna juurde ja pidada piknikku. Peale seda, kui te olete Toonojal käinud, võite sõuda veel mõned kilomeetrid allavoolu ja jääda telkima. Teisel päeval möödute Riisa laudrajast, kus võite käia laukaid vaatamas. Jõgi hakkab vähehaaval laiemaks muutuma ja teil tuleb ületada esimene tõsisem kärestik. Edasi sõuate Viira rippsilla alt läbi ja varsti jõuate Jõesuu külla, kus võite kohalikus kõrtsis keha kinnitada. Jõesuus ühineb Navesti jõgi Pärnu jõega ja jõgi läheb laiemaks. Peale seda möödute Päästla Hiiesaarest ja jõuate Vanksi paisu juurde, mis on üks tõsisemaid kärestikke matka jooksul. Mõned kilomeetrid allavoolu ja tuleb Levi veskipais koos sellele järgneva pika kärestikuga. Peale seda hakkab paistma Tori põrgu. Matk lõppeb Tori Matkakeskuses.",
+    "trip_4_duration": "Kestvus: ligikaudu 2 päeva",
+    "archery_title": "Vibujahid",
+    "archery_description": "Kogunetakse Tori Matkakeskuse juures, kust sõidetakse edasi vibujahi toimumispaika. Seal antakse tülevaade ohutustehnikast ning seejärel jagatakse kätte varustus. Jaht koosneb 12-st punktist, rajale on paigutatud märklehed, milledel on kujutatud erinevaid loomi ja linde. Punktiarvestus käib esimese tabatud noole järgi. Iga märklehe tabamiseks on jahtijal kolm noolt, juhul kui kolme katset ebaõnnestusid, arvestatakse jahtijale null punkti. Võidab enim punkte kogunud noolekütt.",
+    "archery_button": "Telli matk",
+    "archery_safety_title": "Ohutusreeglid vibulaskmisel",
+    "archery_safety_list": [
+      "Vibulaskmise ajal peavad pealtvaatajad asuma laskejoonest kaks meetrit tagapool.",
+      "Nooli võib lasta ainult selleks ettenähtud märklauda.",
+      "Juhul, kui lasketiirul on korraga mitu vibulaskjat, tuleb jälgida, et keegi ei läheks lastud nooli ära tooma enne, kui kõik on laskmise lõpetanud.",
+      "Juhul, kui laskejoonest ettepoole satub inimesi, loomi, linde, tuleb laskmine koheselt lõpetada ja laskmist võib jätkata alles siis, kui laskeväli on vaba.",
+      "Juhul, kui lasketiirus on korraga mitu vibulaskjat, tuleb kõigil lasta samalt distantsilt.",
+      "Kõik vibulasketiirus viibivad inimesed peavad olema kained."
+    ]
   }
 }

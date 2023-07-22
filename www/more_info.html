@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="./input.css" rel="stylesheet">
-  <title>Tori Matkakeskus</title>
+  <title data-t>title</title>
 </head>
 
 <body class="text-2xl">
@@ -16,11 +16,11 @@
       <a data-attr-t data-attr-t-interpolate href-t="{{language.eng.link}}more_info.html" class-t="{{language.eng.class}}" data-t>language.eng.title</a>
     </language>
     <menu class="hidden lg:block space-x-3">
-      <a href="index.html#order" class="hover:underline">Telli matk</a>
-      <a href="index.html#prices" class="hover:underline">Hinnad</a>
-      <a href="more_info.html" class="underline">Teenustest</a>
-      <a href="index.html#sauna" class="hover:underline">Saunad</a>
-      <a href="index.html#location" class="hover:underline">Asukoht</a>
+      <a href="index.html#order" class="hover:underline" data-t>menu.order</a>
+      <a href="index.html#prices" class="hover:underline" data-t>menu.prices</a>
+      <a href="more_info.html" class="underline" data-t>menu.services</a>
+      <a href="index.html#sauna" class="hover:underline" data-t>menu.saunas</a>
+      <a href="index.html#location" class="hover:underline" data-t>menu.location</a>
     </menu>
     <button id="menuButton" class="lg:hidden block z-20">
       <svg id="openIcon" class="h-6 w-6 fill-current text-gray-500" xmlns="http://www.w3.org/2000/svg"
@@ -37,99 +37,75 @@
       class="fixed z-10 top-0 left-0 w-screen h-screen bg-white bg-opacity-90 hidden grid place-items-center">
       <ul class="space-y-8 text-center">
         <li>
-          <a href="index.html#order">Telli matk</a>
+          <a href="index.html#order" data-t>menu.order</a>
         </li>
         <li>
-          <a href="index.html#prices">Hinnad</a>
+          <a href="index.html#prices" data-t>menu.prices</a>
         </li>
         <li>
-          <a href="more_info.html" class="underline">Teenustest</a>
+          <a href="more_info.html" class="underline" data-t>menu.services</a>
         </li>
         <li>
-          <a href="index.html#sauna">Saunad</a>
+          <a href="index.html#sauna" data-t>menu.saunas</a>
         </li>
         <li>
-          <a href="index.html#location">Asukoht</a>
+          <a href="index.html#location" data-t>menu.location</a>
         </li>
       </ul>
     </div>
   </nav>
   <header class="3xl:w-[1950px] mx-auto relative grid grid-cols-1 md:grid-cols-2">
     <div class="my-20 md:mx-5 pb-4 text-center z-20 relative md:col-span-1">
-      <h2 class="text-5xl pb-3 md:text-black text-white">
-        Kanuumatkad
-      </h2>
-      <p class="mb-6 max-w-[520px] mx-auto md:text-black text-white">Kanuumatkad toimuvad Pärnu jõestikus, kulgevad Lemmjõe, Raudna, Halliste, Navesti ja Pärnu jõel, kust avaneb imeline vaade Soomaa kallastele ning Tori põrgule. Allpool on toodud välja ühed populaarsemad marsruudid, mille seast on teil võimalik valida endale sobiva pikkuse ning raskusastmega variant. Juhul kui ükski allpool märgitud marsruutidest teile ei sobi, võtke meiega ühendust, leiame kindlasti sobiva marsruudi.</p>
-      <a href="index.html#order" class="px-10 py-3 border-[3px] md:border-black border-white border-solid md:text-black text-white">Telli matk</a>
+      <h2 class="text-5xl pb-3 md:text-black text-white" data-t>moreInfo.header_title</h2>
+      <p class="mb-6 max-w-[520px] mx-auto md:text-black text-white" data-t>moreInfo.header_description</p>
+      <a href="index.html#order" class="px-10 py-3 border-[3px] md:border-black border-white border-solid md:text-black text-white" data-t>moreInfo.header_button</a>
     </div>
     <div class="absolute inset-0 z-10 md:relative md:col-span-1">
-      <img src="./media/kanuu.jpg" alt="Canoe" class="w-full h-full object-cover md:brightness-100 brightness-[0.35]"/>
+      <img src="./media/kanuu.jpg" alt="Canoe" class="w-full h-full object-cover md:brightness-100 brightness-[0.35]" />
     </div>
   </header>
+  
   <section class="3xl:w-[1950px] mx-auto xl:px-36 grid-cols-1 md:grid-cols-2 md:gap-5 px-6 py-10 grid">
     <div class="md:col-span-1 pb-4">
-      <h2 class="text-center text-4xl pb-3">
-        Tunni sõit Toris
-      </h2>
-      <p class="md:text-left text-center">Tunni sõit on parim Torist läbisõitvatele inimestele. Kuna hind on kanuu kohta, siis sobib see suurepäraselt peredele, kellel on väikseid lapsi (keskmisele istmele mahub istuma kaks last). Tunniga jõuab sõuda vaatama Tori põrgut ja kui õnged kaasa võtta, võib hea õnne korral nii mõnegi kala püüda.</p>
-      <p class="md:text-left text-center font-semibold pt-1">Kestvus: 1 tund</p>
+      <h2 class="text-center text-4xl pb-3" data-t>moreInfo.trip_1_title</h2>
+      <p class="md:text-left text-center" data-t>moreInfo.trip_1_description</p>
+      <p class="md:text-left text-center font-semibold pt-1" data-t>moreInfo.trip_1_duration</p>
     </div>
     <div class="md:col-span-1 pb-4">
-      <h2 class="text-center text-4xl pb-3">
-        Viira-Jõesuu-Tori
-      </h2>
-      <p class="md:text-left text-center">Matk algab Tori Matkakeskusest, kust teid viiakse Viira rippsilla juurde. Jõe ääres instrueeritakse teid ja antakse kätte varustus. Matka alguses on jõgi rahulik ja lai ning teil on piisavalt aega kanuujuhtimist õppida ja harjutada koostööd oma paadikaaslasega. Siis hakkab aeg ajalt ette tulema vanu veski tamme, mille ületamist te veel kaua mäletate. Matka lõpus möödute ka Tori põrgust, mille kohal asub vanakuradikivi. Matk lõppeb Tori Matkakeskuses.</p>
-      <p class="md:text-left text-center font-semibold pt-1">Kestvus: 2-5 tundi</p>
+      <h2 class="text-center text-4xl pb-3" data-t>moreInfo.trip_2_title</h2>
+      <p class="md:text-left text-center" data-t>moreInfo.trip_2_description</p>
+      <p class="md:text-left text-center font-semibold pt-1" data-t>moreInfo.trip_2_duration</p>
     </div>
     <div class="md:col-span-1 pb-4">
-      <h2 class="text-center text-4xl pb-3">
-        Riisa laudrada-Tori
-      </h2>
-      <p class="md:text-left text-center">Matk algab Tori Matkakeskuse juurest, kust teid viiakse Riisa laudraja algusse. Laudrada on ligikaudu 3 km pikk ja seda läbides tutvute tüüpilise rabataimestiku ja maastikuga. Seejärel jõuate Navesti jõe äärde, kus teid instrueeritakse ja jagatakse kätte varustus. Poole matka ajal jõuate Jõesuu külani, kus Navesti jõgi ühineb Pärnu jõega. Seal lõigul on jõgi rahulik ja lai. Siis hakkab aeg ajalt ette tulema vanu veski tamme, mis on jää poolt ära lõhutud ja mille ületamine pakub mõnusat närvikõdi. Matka lõpupoole möödute Tori põrgust, mille kohal asub vanakuradikivi. Matk lõppeb Tori Matkakeskuses.</p>
-      <p class="md:text-left text-center font-semibold pt-1">Kestvus: 3-6 tundi</p>
+      <h2 class="text-center text-4xl pb-3" data-t>moreInfo.trip_3_title</h2>
+      <p class="md:text-left text-center" data-t>moreInfo.trip_3_description</p>
+      <p class="md:text-left text-center font-semibold pt-1" data-t>moreInfo.trip_3_duration</p>
     </div>
     <div class="md:col-span-1 pb-4">
-      <h2 class="text-center text-4xl pb-3">
-        Kaansoo-Toonoja-Jõesuu-Tori
-      </h2>
-      <p class="md:text-left text-center">Matk algab Torist, kust teid viiakse Kaansoo külla, instrueeritakse, ja jagatakse kätte varustus. Peale mõnetunnist sõudmist mööda Navesti jõge jõuate Täkusaare talukoha juurde. Seal soovitame teil paadist kaldale minna, võtta kaasa piknikusöök ja minna mööda looduskaunist matkarada Toonoja külla Mardi talu suitsusauna juurde ja pidada piknikku. Peale seda, kui te olete Toonojal käinud, võite sõuda veel mõned kilomeetrid allavoolu ja jääda telkima. Teisel päeval möödute Riisa laudrajast, kus võite käia laukaid vaatamas. Jõgi hakkab vähehaaval laiemaks muutuma ja teil tuleb ületada esimene tõsisem kärestik. Edasi sõuate Viira rippsilla alt läbi ja varsti jõuate Jõesuu külla, kus võite kohalikus kõrtsis keha kinnitada. Jõesuus ühineb Navesti jõgi Pärnu jõega ja jõgi läheb laiemaks. Peale seda möödute Päästla Hiiesaarest ja jõuate Vanksi paisu juurde, mis on üks tõsisemaid kärestikke matka jooksul. Mõned kilomeetrid allavoolu ja tuleb Levi veskipais koos sellele järgneva pika kärestikuga. Peale seda hakkab paistma Tori põrgu. Matk lõppeb Tori Matkakeskuses.</p>
-      <p class="md:text-left text-center font-semibold pt-1">Kestvus: ligikaudu 2 päeva</p>
+      <h2 class="text-center text-4xl pb-3" data-t>moreInfo.trip_4_title</h2>
+      <p class="md:text-left text-center" data-t>moreInfo.trip_4_description</p>
+      <p class="md:text-left text-center font-semibold pt-1" data-t>moreInfo.trip_4_duration</p>
     </div>
   </section>
+  
   <section class="3xl:w-[1950px] mx-auto relative grid grid-cols-2">
     <div class="relative py-20 text-center z-20 md:col-span-1 col-span-2">
       <div class="absolute inset-0 z-10">
-        <img src="./media/vibu.png" alt="Canoe" class="w-full h-full object-cover brightness-50"/>
+        <img src="./media/vibu.png" alt="Canoe" class="w-full h-full object-cover brightness-50" />
       </div>
-      <h2 class="relative z-20 text-5xl pb-3 text-white">
-        Vibujahid
-      </h2>
-      <p class="relative z-20 mb-6 max-w-[520px] mx-auto text-white">Kogunetakse Tori Matkakeskuse juures, kust sõidetakse edasi vibujahi toimumispaika. Seal antakse tülevaade ohutustehnikast ning seejärel jagatakse kätte varustus. Jaht koosneb 12-st punktist, rajale on paigutatud märklehed, milledel on kujutatud erinevaid loomi ja linde. Punktiarvestus käib esimese tabatud noole järgi. Iga märklehe tabamiseks on jahtijal kolm noolt, juhul kui kolme katset ebaõnnestusid, arvestatakse jahtijale null punkti. Võidab enim punkte kogunud noolekütt.</p>
-      <a href="index.html#order" class="relative z-20 px-10 py-3 border-[3px] border-white border-solid text-white">Telli matk</a>
+      <h2 class="relative z-20 text-5xl pb-3 text-white" data-t>moreInfo.archery_title</h2>
+      <p class="relative z-20 mb-6 max-w-[520px] mx-auto text-white" data-t>moreInfo.archery_description</p>
+      <a href="index.html#order" class="relative z-20 px-10 py-3 border-[3px] border-white border-solid text-white" data-t>moreInfo.archery_button</a>
     </div>
     <div class="my-20 mx-5 pb-4 z-20 relative md:col-span-1 col-span-2">
-      <h2 class="text-5xl pb-3 text-black text-center">
-        Ohutusreeglid vibulaskmisel
-      </h2>
+      <h2 class="text-5xl pb-3 text-black text-center" data-t>moreInfo.archery_safety_title</h2>
       <ul class="list-disc pl-10">
-        <li>
-          Vibulaskmise ajal peavad pealtvaatajad asuma laskejoonest kaks meetrit tagapool.
-        </li>
-        <li>
-          Nooli võib lasta ainult selleks ettenähtud märklauda.
-        </li>
-        <li>
-          Juhul, kui lasketiirul on korraga mitu vibulaskjat, tuleb jälgida, et keegi ei läheks lastud nooli ära tooma enne, kui kõik on laskmise lõpetanud.
-        </li>
-        <li>
-          Juhul, kui laskejoonest ettepoole satub inimesi, loomi, linde, tuleb laskmine koheselt löppetada ja laskmist võib jätkata alles siis, kui laskeväli on vaba.
-        </li>
-        <li>
-          Juhul, kui lasketiirus on korraga mitu vibulaskjat, tuleb kõigil lasta samalt distantsilt.
-        </li>
-        <li>
-          Kõik vibulasketiirus viibivad inimesed peavad olema kained.
-        </li>
+        <li data-t>moreInfo.archery_safety_list.0</li>
+        <li data-t>moreInfo.archery_safety_list.1</li>
+        <li data-t>moreInfo.archery_safety_list.2</li>
+        <li data-t>moreInfo.archery_safety_list.3</li>
+        <li data-t>moreInfo.archery_safety_list.4</li>
+        <li data-t>moreInfo.archery_safety_list.5</li>
       </ul>
     </div>
   </section>

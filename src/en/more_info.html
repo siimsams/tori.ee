@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href=".././input.css" rel="stylesheet">
-  <title>Tori Matkakeskus</title>
+  <title>Tori Adventure Center</title>
 </head>
 
 <body class="text-2xl">
@@ -15,11 +15,11 @@
       <a href="more_info.html" class="underline">ENG</a>
     </language>
     <menu class="hidden lg:block space-x-3">
-      <a href="index.html#order" class="hover:underline">Telli matk</a>
-      <a href="index.html#prices" class="hover:underline">Hinnad</a>
-      <a href="more_info.html" class="underline">Teenustest</a>
-      <a href="index.html#sauna" class="hover:underline">Saunad</a>
-      <a href="index.html#location" class="hover:underline">Asukoht</a>
+      <a href="index.html#order" class="hover:underline">Order Trip</a>
+      <a href="index.html#prices" class="hover:underline">Prices</a>
+      <a href="more_info.html" class="underline">Services</a>
+      <a href="index.html#sauna" class="hover:underline">Saunas</a>
+      <a href="index.html#location" class="hover:underline">Location</a>
     </menu>
     <button id="menuButton" class="lg:hidden block z-20">
       <svg id="openIcon" class="h-6 w-6 fill-current text-gray-500" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24">
@@ -32,99 +32,75 @@
     <div id="menu" class="fixed z-10 top-0 left-0 w-screen h-screen bg-white bg-opacity-90 hidden grid place-items-center">
       <ul class="space-y-8 text-center">
         <li>
-          <a href="index.html#order">Telli matk</a>
+          <a href="index.html#order">Order Trip</a>
         </li>
         <li>
-          <a href="index.html#prices">Hinnad</a>
+          <a href="index.html#prices">Prices</a>
         </li>
         <li>
-          <a href="more_info.html" class="underline">Teenustest</a>
+          <a href="more_info.html" class="underline">Services</a>
         </li>
         <li>
-          <a href="index.html#sauna">Saunad</a>
+          <a href="index.html#sauna">Saunas</a>
         </li>
         <li>
-          <a href="index.html#location">Asukoht</a>
+          <a href="index.html#location">Location</a>
         </li>
       </ul>
     </div>
   </nav>
   <header class="3xl:w-[1950px] mx-auto relative grid grid-cols-1 md:grid-cols-2">
     <div class="my-20 md:mx-5 pb-4 text-center z-20 relative md:col-span-1">
-      <h2 class="text-5xl pb-3 md:text-black text-white">
-        Kanuumatkad
-      </h2>
-      <p class="mb-6 max-w-[520px] mx-auto md:text-black text-white">Kanuumatkad toimuvad Pärnu jõestikus, kulgevad Lemmjõe, Raudna, Halliste, Navesti ja Pärnu jõel, kust avaneb imeline vaade Soomaa kallastele ning Tori põrgule. Allpool on toodud välja ühed populaarsemad marsruudid, mille seast on teil võimalik valida endale sobiva pikkuse ning raskusastmega variant. Juhul kui ükski allpool märgitud marsruutidest teile ei sobi, võtke meiega ühendust, leiame kindlasti sobiva marsruudi.</p>
-      <a href="index.html#order" class="px-10 py-3 border-[3px] md:border-black border-white border-solid md:text-black text-white">Telli matk</a>
+      <h2 class="text-5xl pb-3 md:text-black text-white">Canoe Trips</h2>
+      <p class="mb-6 max-w-[520px] mx-auto md:text-black text-white">Canoe trips take place on the Pärnu River system, including the Lemmjõe, Raudna, Halliste, Navesti, and Pärnu rivers, offering stunning views of Soomaa's shores and Tori Hell. Below are some popular routes from which you can choose the one that suits your preferred length and difficulty level. If none of the routes below fit your requirements, feel free to contact us, and we will find a suitable option for you.</p>
+      <a href="index.html#order" class="px-10 py-3 border-[3px] md:border-black border-white border-solid md:text-black text-white">Order Trip</a>
     </div>
     <div class="absolute inset-0 z-10 md:relative md:col-span-1">
       <img src=".././media/kanuu.jpg" alt="Canoe" class="w-full h-full object-cover md:brightness-100 brightness-[0.35]">
     </div>
   </header>
+  
   <section class="3xl:w-[1950px] mx-auto xl:px-36 grid-cols-1 md:grid-cols-2 md:gap-5 px-6 py-10 grid">
     <div class="md:col-span-1 pb-4">
-      <h2 class="text-center text-4xl pb-3">
-        Tunni sõit Toris
-      </h2>
-      <p class="md:text-left text-center">Tunni sõit on parim Torist läbisõitvatele inimestele. Kuna hind on kanuu kohta, siis sobib see suurepäraselt peredele, kellel on väikseid lapsi (keskmisele istmele mahub istuma kaks last). Tunniga jõuab sõuda vaatama Tori põrgut ja kui õnged kaasa võtta, võib hea õnne korral nii mõnegi kala püüda.</p>
-      <p class="md:text-left text-center font-semibold pt-1">Kestvus: 1 tund</p>
+      <h2 class="text-center text-4xl pb-3">One-Hour Trip in Tori</h2>
+      <p class="md:text-left text-center">The one-hour trip is perfect for those passing through Tori. Since the price is per canoe, it's great for families with small children (two kids can sit on the middle seat). In one hour, you can paddle to see Tori Hell, and if you bring fishing gear, you might catch some fish with a little luck.</p>
+      <p class="md:text-left text-center font-semibold pt-1">Duration: 1 hour</p>
     </div>
     <div class="md:col-span-1 pb-4">
-      <h2 class="text-center text-4xl pb-3">
-        Viira-Jõesuu-Tori
-      </h2>
-      <p class="md:text-left text-center">Matk algab Tori Matkakeskusest, kust teid viiakse Viira rippsilla juurde. Jõe ääres instrueeritakse teid ja antakse kätte varustus. Matka alguses on jõgi rahulik ja lai ning teil on piisavalt aega kanuujuhtimist õppida ja harjutada koostööd oma paadikaaslasega. Siis hakkab aeg ajalt ette tulema vanu veski tamme, mille ületamist te veel kaua mäletate. Matka lõpus möödute ka Tori põrgust, mille kohal asub vanakuradikivi. Matk lõppeb Tori Matkakeskuses.</p>
-      <p class="md:text-left text-center font-semibold pt-1">Kestvus: 2-5 tundi</p>
+      <h2 class="text-center text-4xl pb-3">Viira-Jõesuu-Tori</h2>
+      <p class="md:text-left text-center">The trip starts from the Tori Adventure Center, where you'll be taken to Viira suspension bridge. There, you'll receive instructions and equipment. At the beginning of the trip, the river is calm and wide, giving you time to learn canoeing and cooperate with your paddling partner. Along the way, you'll encounter old mill oak trees, which you'll remember for a long time. The trip ends at the Tori Adventure Center.</p>
+      <p class="md:text-left text-center font-semibold pt-1">Duration: 2-5 hours</p>
     </div>
     <div class="md:col-span-1 pb-4">
-      <h2 class="text-center text-4xl pb-3">
-        Riisa laudrada-Tori
-      </h2>
-      <p class="md:text-left text-center">Matk algab Tori Matkakeskuse juurest, kust teid viiakse Riisa laudraja algusse. Laudrada on ligikaudu 3 km pikk ja seda läbides tutvute tüüpilise rabataimestiku ja maastikuga. Seejärel jõuate Navesti jõe äärde, kus teid instrueeritakse ja jagatakse kätte varustus. Poole matka ajal jõuate Jõesuu külani, kus Navesti jõgi ühineb Pärnu jõega. Seal lõigul on jõgi rahulik ja lai. Siis hakkab aeg ajalt ette tulema vanu veski tamme, mis on jää poolt ära lõhutud ja mille ületamine pakub mõnusat närvikõdi. Matka lõpupoole möödute Tori põrgust, mille kohal asub vanakuradikivi. Matk lõppeb Tori Matkakeskuses.</p>
-      <p class="md:text-left text-center font-semibold pt-1">Kestvus: 3-6 tundi</p>
+      <h2 class="text-center text-4xl pb-3">Riisa Boardwalk-Tori</h2>
+      <p class="md:text-left text-center">The trip starts from the Tori Adventure Center, where you'll be taken to the beginning of the Riisa boardwalk. The boardwalk is about 3 km long and offers a typical bog landscape and vegetation. Then, you'll reach the Navesti River, where you'll receive instructions and equipment. Halfway through the trip, you'll arrive at Jõesuu village, where Navesti River joins the Pärnu River. The river is calm and wide in that section. Soon, you'll encounter old mill oak trees, offering an exciting challenge to overcome. Towards the end of the trip, you'll pass Tori Hell, located above the Old Devil's Stone. The trip concludes at the Tori Adventure Center.</p>
+      <p class="md:text-left text-center font-semibold pt-1">Duration: 3-6 hours</p>
     </div>
     <div class="md:col-span-1 pb-4">
-      <h2 class="text-center text-4xl pb-3">
-        Kaansoo-Toonoja-Jõesuu-Tori
-      </h2>
-      <p class="md:text-left text-center">Matk algab Torist, kust teid viiakse Kaansoo külla, instrueeritakse, ja jagatakse kätte varustus. Peale mõnetunnist sõudmist mööda Navesti jõge jõuate Täkusaare talukoha juurde. Seal soovitame teil paadist kaldale minna, võtta kaasa piknikusöök ja minna mööda looduskaunist matkarada Toonoja külla Mardi talu suitsusauna juurde ja pidada piknikku. Peale seda, kui te olete Toonojal käinud, võite sõuda veel mõned kilomeetrid allavoolu ja jääda telkima. Teisel päeval möödute Riisa laudrajast, kus võite käia laukaid vaatamas. Jõgi hakkab vähehaaval laiemaks muutuma ja teil tuleb ületada esimene tõsisem kärestik. Edasi sõuate Viira rippsilla alt läbi ja varsti jõuate Jõesuu külla, kus võite kohalikus kõrtsis keha kinnitada. Jõesuus ühineb Navesti jõgi Pärnu jõega ja jõgi läheb laiemaks. Peale seda möödute Päästla Hiiesaarest ja jõuate Vanksi paisu juurde, mis on üks tõsisemaid kärestikke matka jooksul. Mõned kilomeetrid allavoolu ja tuleb Levi veskipais koos sellele järgneva pika kärestikuga. Peale seda hakkab paistma Tori põrgu. Matk lõppeb Tori Matkakeskuses.</p>
-      <p class="md:text-left text-center font-semibold pt-1">Kestvus: ligikaudu 2 päeva</p>
+      <h2 class="text-center text-4xl pb-3">Kaansoo-Toonoja-Jõesuu-Tori</h2>
+      <p class="md:text-left text-center">The trip starts from Tori, where you'll be taken to Kaansoo village, receive instructions, and get the equipment. After a few hours of paddling on the Navesti River, you'll reach Täkusaare farmstead. There, we recommend going ashore, having a picnic, and taking a scenic hike to Mardi farmstead's smoke sauna. Afterward, you can paddle a few more kilometers downstream and set up camp. On the second day, you'll pass the Riisa boardwalk, where you can take a walk to see the bog pools. The river gradually widens, and you'll encounter the first serious rapid. Later, you'll pass under the Viira suspension bridge and soon reach Jõesuu village, where you can enjoy local refreshments at the tavern. At Jõesuu, the Navesti River joins the Pärnu River, and the river becomes wider. You'll pass Päästla Hiiesaar and reach Vanksi dam, one of the most challenging rapids during the trip. After that, you'll catch a glimpse of Tori Hell. The trip ends at the Tori Adventure Center.</p>
+      <p class="md:text-left text-center font-semibold pt-1">Duration: Approximately 2 days</p>
     </div>
   </section>
+  
   <section class="3xl:w-[1950px] mx-auto relative grid grid-cols-2">
     <div class="relative py-20 text-center z-20 md:col-span-1 col-span-2">
       <div class="absolute inset-0 z-10">
         <img src=".././media/vibu.png" alt="Canoe" class="w-full h-full object-cover brightness-50">
       </div>
-      <h2 class="relative z-20 text-5xl pb-3 text-white">
-        Vibujahid
-      </h2>
-      <p class="relative z-20 mb-6 max-w-[520px] mx-auto text-white">Kogunetakse Tori Matkakeskuse juures, kust sõidetakse edasi vibujahi toimumispaika. Seal antakse tülevaade ohutustehnikast ning seejärel jagatakse kätte varustus. Jaht koosneb 12-st punktist, rajale on paigutatud märklehed, milledel on kujutatud erinevaid loomi ja linde. Punktiarvestus käib esimese tabatud noole järgi. Iga märklehe tabamiseks on jahtijal kolm noolt, juhul kui kolme katset ebaõnnestusid, arvestatakse jahtijale null punkti. Võidab enim punkte kogunud noolekütt.</p>
-      <a href="index.html#order" class="relative z-20 px-10 py-3 border-[3px] border-white border-solid text-white">Telli matk</a>
+      <h2 class="relative z-20 text-5xl pb-3 text-white">Archery Hunts</h2>
+      <p class="relative z-20 mb-6 max-w-[520px] mx-auto text-white">Meet at the Tori Adventure Center, where you'll be transported to the archery hunt location. There, you'll receive a safety briefing and get the equipment. The hunt consists of 12 target points, and the course features images of various animals and birds. Points are awarded based on the first arrow hit. Each participant has three arrows to shoot at each target. If all three attempts fail to hit the target, no points are awarded. The winner is the participant with the highest points.</p>
+      <a href="index.html#order" class="relative z-20 px-10 py-3 border-[3px] border-white border-solid text-white">Order Trip</a>
     </div>
     <div class="my-20 mx-5 pb-4 z-20 relative md:col-span-1 col-span-2">
-      <h2 class="text-5xl pb-3 text-black text-center">
-        Ohutusreeglid vibulaskmisel
-      </h2>
+      <h2 class="text-5xl pb-3 text-black text-center">Archery Safety Rules</h2>
       <ul class="list-disc pl-10">
-        <li>
-          Vibulaskmise ajal peavad pealtvaatajad asuma laskejoonest kaks meetrit tagapool.
-        </li>
-        <li>
-          Nooli võib lasta ainult selleks ettenähtud märklauda.
-        </li>
-        <li>
-          Juhul, kui lasketiirul on korraga mitu vibulaskjat, tuleb jälgida, et keegi ei läheks lastud nooli ära tooma enne, kui kõik on laskmise lõpetanud.
-        </li>
-        <li>
-          Juhul, kui laskejoonest ettepoole satub inimesi, loomi, linde, tuleb laskmine koheselt löppetada ja laskmist võib jätkata alles siis, kui laskeväli on vaba.
-        </li>
-        <li>
-          Juhul, kui lasketiirus on korraga mitu vibulaskjat, tuleb kõigil lasta samalt distantsilt.
-        </li>
-        <li>
-          Kõik vibulasketiirus viibivad inimesed peavad olema kained.
-        </li>
+        <li>During archery, spectators must stand two meters behind the shooting line.</li>
+        <li>Arrows must be shot only at designated targets.</li>
+        <li>If there are multiple archers at the shooting range, ensure that no one goes to retrieve arrows until all archers have finished shooting.</li>
+        <li>If there are people, animals, or birds in front of the shooting line, immediately stop shooting until the shooting range is clear.</li>
+        <li>If multiple archers are present, all must shoot from the same distance.</li>
+        <li>All participants in the archery range must be sober.</li>
       </ul>
     </div>
   </section>

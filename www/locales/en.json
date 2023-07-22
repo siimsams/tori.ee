@@ -32,7 +32,7 @@
   "reviews": "Reviews speak for themselves",
   "canoeTrips": {
     "title": "Canoe Trips",
-    "description": "Tori Adventure Center offers memorable canoe trips in the Soomaa region. The canoe trips take place on the Pärnu River, known for its natural beauty and calm waters. The length of the trip can be adjusted according to your preferences. Suitable for groups of two or more people.",
+    "description": "Tori Adventure Center offers memorable canoeing experiences in the Soomaa region. Canoe trips take place on the Pärnu River, known for its natural beauty and calm waters. The length of the trip can be tailored to your preferences. Suitable for groups of two or more people.",
     "readMore": "Read More"
   },
   "bowHunting": {
@@ -42,20 +42,20 @@
   },
   "sauna": {
     "title": "Saunas",
-    "description": "After an active day, you can relax in the hot tub or sauna located by the Pärnu River. The hot tub can accommodate up to 10 people."
+    "description": "After an active day, you can relax in a hot tub or sauna located on the bank of the Pärnu River. The hot tub can accommodate up to 10 people."
   },
   "prices": {
     "title": "Prices",
-    "description": "Discounts depending on the group size and the day of the trip. Inquire about discounts via email or phone. All prices include VAT.",
+    "description": "Discounts available based on group size and the day of the trip. Inquire about discounts via email or phone. All prices include VAT.",
     "canoe": {
       "title": "Canoe",
       "schoolChildren": "School Children: €10 per person",
       "adults": "Adults: €25 per person",
-      "hourTrip": "One-hour Trip in Tori: €10 per person"
+      "hourTrip": "One-Hour Trip in Tori: €10 per person"
     },
     "bow": {
-      "title": "Bow",
-      "hunt": "Bow Hunting: €20 per person"
+      "title": "Archery",
+      "hunt": "Archery Hunt: €20 per person"
     },
     "sauna": {
       "title": "Sauna",
@@ -76,5 +76,34 @@
     "name": "Silver Sams",
     "phone": "+372 511 4245",
     "email": "silver@tori.ee"
+  },
+  "moreInfo": {
+    "header_title": "Canoe Trips",
+    "header_description": "Canoe trips take place on the Pärnu River system, including the Lemmjõe, Raudna, Halliste, Navesti, and Pärnu rivers, offering stunning views of Soomaa's shores and Tori Hell. Below are some popular routes from which you can choose the one that suits your preferred length and difficulty level. If none of the routes below fit your requirements, feel free to contact us, and we will find a suitable option for you.",
+    "header_button": "Order Trip",
+    "trip_1_title": "One-Hour Trip in Tori",
+    "trip_1_description": "The one-hour trip is perfect for those passing through Tori. Since the price is per canoe, it's great for families with small children (two kids can sit on the middle seat). In one hour, you can paddle to see Tori Hell, and if you bring fishing gear, you might catch some fish with a little luck.",
+    "trip_1_duration": "Duration: 1 hour",
+    "trip_2_title": "Viira-Jõesuu-Tori",
+    "trip_2_description": "The trip starts from the Tori Adventure Center, where you'll be taken to Viira suspension bridge. There, you'll receive instructions and equipment. At the beginning of the trip, the river is calm and wide, giving you time to learn canoeing and cooperate with your paddling partner. Along the way, you'll encounter old mill oak trees, which you'll remember for a long time. The trip ends at the Tori Adventure Center.",
+    "trip_2_duration": "Duration: 2-5 hours",
+    "trip_3_title": "Riisa Boardwalk-Tori",
+    "trip_3_description": "The trip starts from the Tori Adventure Center, where you'll be taken to the beginning of the Riisa boardwalk. The boardwalk is about 3 km long and offers a typical bog landscape and vegetation. Then, you'll reach the Navesti River, where you'll receive instructions and equipment. Halfway through the trip, you'll arrive at Jõesuu village, where Navesti River joins the Pärnu River. The river is calm and wide in that section. Soon, you'll encounter old mill oak trees, offering an exciting challenge to overcome. Towards the end of the trip, you'll pass Tori Hell, located above the Old Devil's Stone. The trip concludes at the Tori Adventure Center.",
+    "trip_3_duration": "Duration: 3-6 hours",
+    "trip_4_title": "Kaansoo-Toonoja-Jõesuu-Tori",
+    "trip_4_description": "The trip starts from Tori, where you'll be taken to Kaansoo village, receive instructions, and get the equipment. After a few hours of paddling on the Navesti River, you'll reach Täkusaare farmstead. There, we recommend going ashore, having a picnic, and taking a scenic hike to Mardi farmstead's smoke sauna. Afterward, you can paddle a few more kilometers downstream and set up camp. On the second day, you'll pass the Riisa boardwalk, where you can take a walk to see the bog pools. The river gradually widens, and you'll encounter the first serious rapid. Later, you'll pass under the Viira suspension bridge and soon reach Jõesuu village, where you can enjoy local refreshments at the tavern. At Jõesuu, the Navesti River joins the Pärnu River, and the river becomes wider. You'll pass Päästla Hiiesaar and reach Vanksi dam, one of the most challenging rapids during the trip. After that, you'll catch a glimpse of Tori Hell. The trip ends at the Tori Adventure Center.",
+    "trip_4_duration": "Duration: Approximately 2 days",
+    "archery_title": "Archery Hunts",
+    "archery_description": "Meet at the Tori Adventure Center, where you'll be transported to the archery hunt location. There, you'll receive a safety briefing and get the equipment. The hunt consists of 12 target points, and the course features images of various animals and birds. Points are awarded based on the first arrow hit. Each participant has three arrows to shoot at each target. If all three attempts fail to hit the target, no points are awarded. The winner is the participant with the highest points.",
+    "archery_button": "Order Trip",
+    "archery_safety_title": "Archery Safety Rules",
+    "archery_safety_list": [
+      "During archery, spectators must stand two meters behind the shooting line.",
+      "Arrows must be shot only at designated targets.",
+      "If there are multiple archers at the shooting range, ensure that no one goes to retrieve arrows until all archers have finished shooting.",
+      "If there are people, animals, or birds in front of the shooting line, immediately stop shooting until the shooting range is clear.",
+      "If multiple archers are present, all must shoot from the same distance.",
+      "All participants in the archery range must be sober."
+    ]
   }
 }
