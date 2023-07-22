@@ -8,7 +8,8 @@
     "serve": "rm -rf .parcel-cache dist/ && parcel serve src/index.html -p 1234 --open",
     "tailwind": "tailwindcss -i ./src/input.css -o ./dist/output.css --watch",
     "build:prod": "parcel build src/index.html",
-    "i18n": "npx static-i18n -l ee -i ee -i en www"
+    "i18n": "npx static-i18n -l ee -i ee -i en www --outputDir src",
+    "watch": "nodemon --watch www/ -e json,html -x \"npm run i18n\""
   },
   "repository": {
     "type": "git",
@@ -22,6 +23,7 @@
   "homepage": "https://github.com/siimsams/tori.ee#readme",
   "devDependencies": {
     "autoprefixer": "^10.4.14",
+    "nodemon": "^3.0.1",
     "parcel": "^2.8.3",
     "postcss": "^8.4.24",
     "tailwindcss": "^3.3.2"

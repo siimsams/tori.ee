@@ -4,8 +4,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="./input.css" rel="stylesheet">
-  <title>Tori Matkakeskus</title>
+  <link href=".././input.css" rel="stylesheet">
+  <title>Tori Adventure Center</title>
 </head>
 
 <body class="text-2xl">
@@ -15,11 +15,11 @@
       <a href="#" class="hover:underline">ENG</a>
     </language>
     <menu class="hidden lg:block space-x-3">
-      <a href="#order" class="hover:underline">Telli matk</a>
-      <a href="#prices" class="hover:underline">Hinnad</a>
-      <a href="more_info.html" class="hover:underline">Teenustest</a>
-      <a href="#sauna" class="hover:underline">Saunad</a>
-      <a href="#location" class="hover:underline">Asukoht</a>
+      <a href="#order" class="hover:underline">Order Trip</a>
+      <a href="#prices" class="hover:underline">Prices</a>
+      <a href="more_info.html" class="hover:underline">Services</a>
+      <a href="#sauna" class="hover:underline">Saunas</a>
+      <a href="#location" class="hover:underline">Location</a>
     </menu>
     <button id="menuButton" class="lg:hidden block z-20">
       <svg id="openIcon" class="h-6 w-6 fill-current text-gray-500" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24">
@@ -32,53 +32,53 @@
     <div id="menu" class="fixed z-10 top-0 left-0 w-screen h-screen bg-white bg-opacity-90 hidden grid place-items-center">
       <ul class="space-y-8 text-center">
         <li>
-          <a href="#order">Telli matk</a>
+          <a href="#order">Order Trip</a>
         </li>
         <li>
-          <a href="#prices">Hinnad</a>
+          <a href="#prices">Prices</a>
         </li>
         <li>
-          <a href="more_info.html">Teenustest</a>
+          <a href="more_info.html">Services</a>
         </li>
         <li>
-          <a href="#sauna">Saunad</a>
+          <a href="#sauna">Saunas</a>
         </li>
         <li>
-          <a href="#location">Asukoht</a>
+          <a href="#location">Location</a>
         </li>
       </ul>
     </div>
   </nav>
   <header class="h-[85vh] grid items-center relative text-white">
     <div class="3xl:w-[1950px] 3xl:mx-auto xl:pl-36 pl-6 z-0">
-      <h1 class="lg:text-7xl text-5xl break-all font-sans">Tori Matkakeskus</h1>
-      <p class="mb-6 max-w-[520px]">Elamusterohked kanuumatkad Pärnumaa jõgedel ja vibujahid looduses aastast 1996.</p>
-      <a href="#order" class="px-10 py-3 border-[3px] border-white border-solid">Telli matk</a>
+      <h1 class="lg:text-7xl text-5xl break-all font-sans">Tori Adventure Center</h1>
+      <p class="mb-6 max-w-[520px]">Memorable canoe trips on the rivers of Pärnu County and archery hunts in nature since 1996.</p>
+      <a href="#order" class="px-10 py-3 border-[3px] border-white border-solid">Order Trip</a>
     </div>
     <video id="myVideo" poster="media/hero_video.jpg" autoplay muted loop playsinline class="h-full w-full object-cover max-w-none brightness-[0.75] -z-10 absolute top-0 left-0">
-      <source src="media/hero_video.webm" type="video/webm">
-      <source src="media/hero_video.mp4" type="video/mp4">
+      <source src="../media/hero_video.webm" type="video/webm">
+      <source src="../media/hero_video.mp4" type="video/mp4">
     </video>
   </header>
   <section class="flex justify-center flex-col py-8 overflow-hidden text-center">
-    <h2 class="pb-10 text-4xl">Arvustused räägivad enda eest</h2>
+    <h2 class="pb-10 text-4xl">Reviews speak for themselves</h2>
     <div class="flex items-center justify-center">
       <ul class="flex overflow-x-auto">
         <li class="flex flex-col items-center flex-shrink-0 px-7">
           <a href="#">
-            <img class="h-[100px] w-[100px] object-contain mx-auto" src="./media/Google_logo.png" alt="Google Logo">
+            <img class="h-[100px] w-[100px] object-contain mx-auto" src=".././media/Google_logo.png" alt="Google Logo">
             <p>Google</p>
           </a>
         </li>
         <li class="flex flex-col items-center flex-shrink-0 px-7">
           <a href="#">
-            <img class="h-[100px] w-[100px] object-contain mx-auto" src="./media/tripadvisor-logo.svg" alt="Tripadvisor Logo">
+            <img class="h-[100px] w-[100px] object-contain mx-auto" src=".././media/tripadvisor-logo.svg" alt="Tripadvisor Logo">
             <p>Tripadvisor</p>
           </a>
         </li>
         <li class="flex flex-col items-center flex-shrink-0 px-7">
           <a href="#">
-            <img class="h-[100px] w-[100px] object-contain mx-auto" src="./media/foursquare-logo.svg" alt="Foursquare Logo">
+            <img class="h-[100px] w-[100px] object-contain mx-auto" src=".././media/foursquare-logo.svg" alt="Foursquare Logo">
             <p>Foursquare</p>
           </a>
         </li>
@@ -88,58 +88,58 @@
   <section class="3xl:w-[1950px] mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 py-8">
     <div id="canoe" class="relative">
       <div class="flex flex-col justify-center items-center text-center text-white p-4 aspect-square flex-shrink-0 relative z-10">
-        <h2 class="text-center text-4xl">Kanuumatkad</h2>
-        <p>Tori Matkakeskus pakub Soomaa piirkonnas meeldejäävaid kanuumatka elamusi. Kanuumatkad leiavad aset Pärnu jõel, mis on tuntud oma loodusliku ilu ja rahuliku vee poolest. Matka pikkus on kohandatav teie soovide järgi. Gruppidele alates kahest inimesest.</p>
-        <a href="more_info.html" class="mt-4 px-10 py-3 border-[3px] border-white border-solid">Loe rohkem</a>
+        <h2 class="text-center text-4xl">Canoe Trips</h2>
+        <p>Tori Adventure Center offers memorable canoe trips in the Soomaa region. The canoe trips take place on the Pärnu River, known for its natural beauty and calm waters. The length of the trip can be adjusted according to your preferences. Suitable for groups of two or more people.</p>
+        <a href="more_info.html" class="mt-4 px-10 py-3 border-[3px] border-white border-solid">Read More</a>
       </div>
-      <img src="./media/kanuu-blur-grain.jpg" alt="Canoe" class="absolute inset-0 w-full h-full object-cover object-center filter brightness-[0.40] z-0">
+      <img src=".././media/kanuu-blur-grain.jpg" alt="Canoe" class="absolute inset-0 w-full h-full object-cover object-center filter brightness-[0.40] z-0">
     </div>
     <div id="bow-hunting" class="relative">
       <div class="flex flex-col justify-center items-center text-center text-white p-4 aspect-square flex-shrink-0 relative z-10">
-        <h2 class="text-center text-4xl">Vibujahid</h2>
-        <p>Vibujahid toimuvad matkakeskuse lähedal metsas. Seal on üles seatud 12 vibumatiga rada, rajale on paigutatud märklehed, milledel on kujutatud erinevaid loomi ja linde. Võidab enim punkte kogunud noolekütt. Gruppidele alates kuuest inimesest.</p>
-        <a href="more_info.html" class="mt-4 px-10 py-3 border-[3px] border-white border-solid">Loe rohkem</a>
+        <h2 class="text-center text-4xl">Bow Hunting</h2>
+        <p>Bow hunting takes place in the forest near the adventure center. There are 12 archery tracks set up, each featuring targets depicting various animals and birds. The winner is the archer who collects the most points. Suitable for groups of six or more people.</p>
+        <a href="more_info.html" class="mt-4 px-10 py-3 border-[3px] border-white border-solid">Read More</a>
       </div>
-      <img src="./media/vibu-blur-grain.jpg" alt="Bow Hunting" class="absolute inset-0 w-full h-full object-cover object-center filter brightness-[0.60] z-0">
+      <img src=".././media/vibu-blur-grain.jpg" alt="Bow Hunting" class="absolute inset-0 w-full h-full object-cover object-center filter brightness-[0.60] z-0">
     </div>
     <div id="sauna" class="relative">
       <div class="flex flex-col justify-center items-center text-center text-white p-4 aspect-square flex-shrink-0 relative z-10">
         <h2 class="text-center text-4xl">sauna</h2>
-        <p>Pärast aktiivset päeva on võimalik lõõgastuda Pärnu jõe kaldal asuvas kümblustünnis või saunas. Kümblustünn mahutab kuni 10 inimest.</p>
+        <p>After an active day, you can relax in the hot tub or sauna located by the Pärnu River. The hot tub can accommodate up to 10 people.</p>
       </div>
-      <img src="./media/saun-blur-grain.jpg" alt="Sauna" class="absolute inset-0 w-full h-full object-cover object-center filter brightness-[0.75] z-0">
+      <img src=".././media/saun-blur-grain.jpg" alt="Sauna" class="absolute inset-0 w-full h-full object-cover object-center filter brightness-[0.75] z-0">
     </div>
   </section>
   <section id="prices" class="3xl:w-[1950px] mx-auto">
     <ul class="xl:px-36 px-6 grid grid-cols-1 md:grid-cols-4 gap-4">
       <li class="flex flex-col items-center">
-        <h2 class="text-center text-3xl">Hinnad</h2>
-        <p class="text-center">Soodustused sõltuvalt grupi suurusest ja matka toimumise päevast. Küsi soodustust meilitsi või telefonitsi. Kõik hinnad sisaldavad käibemaksu.</p>
+        <h2 class="text-center text-3xl">Prices</h2>
+        <p class="text-center">Discounts depending on the group size and the day of the trip. Inquire about discounts via email or phone. All prices include VAT.</p>
       </li>
       <li class="flex flex-col items-center">
-        <h2 class="text-center text-3xl">Kanuu</h2>
-        <p class="text-center">Koolilapsed: 10€ inimene</p>
-        <p class="text-center">Täiskasvanud: 25€ inimene</p>
-        <p class="text-center">Tunnisõit Toris: 10€ inimene</p>
+        <h2 class="text-center text-3xl">Canoe</h2>
+        <p class="text-center">School Children: €10 per person</p>
+        <p class="text-center">Adults: €25 per person</p>
+        <p class="text-center">One-hour Trip in Tori: €10 per person</p>
       </li>
       <li class="flex flex-col items-center">
-        <h2 class="text-center text-3xl">Vibu</h2>
-        <p class="text-center">Vibujaht: 20€ inimene</p>
+        <h2 class="text-center text-3xl">Bow</h2>
+        <p class="text-center">Bow Hunting: €20 per person</p>
       </li>
       <li class="flex flex-col items-center">
-        <h2 class="text-center text-3xl">Saun</h2>
-        <p class="text-center">Kümblustünn: 100€ õhtu</p>
-        <p class="text-center">Saun: 100€ õhtu</p>
+        <h2 class="text-center text-3xl">Sauna</h2>
+        <p class="text-center">Hot Tub: €100 per evening</p>
+        <p class="text-center">Sauna: €100 per evening</p>
       </li>
     </ul>
   </section>
   <section class="3xl:w-[1950px] mx-auto xl:px-36 px-6 py-10 grid grid-cols-1 md:grid-cols-2 md:gap-5">
     <div class="md:col-span-1">
       <div id="order" class="w-full">
-        <h2 class="text-center text-4xl">Telli matk</h2>
+        <h2 class="text-center text-4xl">Order Trip</h2>
         <form class="space-y-4">
           <div class="flex flex-col items-end">
-            <label for="name" class="self-start">Täisnimi</label>
+            <label for="name" class="self-start">Full Name</label>
             <input type="text" name="name" id="name" class="py-2 w-full border-[3px] border-black border-solid">
           </div>
           <div class="flex flex-col items-end">
@@ -147,25 +147,25 @@
             <input type="email" name="email" id="email" class="py-2 w-full border-[3px] border-black border-solid">
           </div>
           <div class="flex flex-col items-end">
-            <label for="phone" class="self-start">Kontakttelefon</label>
+            <label for="phone" class="self-start">Contact Phone</label>
             <input type="tel" name="phone" id="phone" class="py-2 w-full border-[3px] border-black border-solid">
           </div>
           <div class="flex flex-col items-end">
-            <label for="message" class="self-start">Tellimuse kirjeldus</label>
+            <label for="message" class="self-start">Order Description</label>
             <textarea name="message" id="message" cols="30" rows="6" class="w-full border-[3px] border-black border-solid"></textarea>
           </div>
-          <button type="submit" class="w-full px-10 py-2 border-[3px] border-black border-solid">Saada tellimus</button>
+          <button type="submit" class="w-full px-10 py-2 border-[3px] border-black border-solid">Send Order</button>
         </form>
       </div>
       <div id="contact" class="text-center py-6">
-        <h2 class="text-center text-4xl">Või helista meile</h2>
+        <h2 class="text-center text-4xl">Or give us a call</h2>
         <p>Silver Sams</p>
         <p>+372 511 4245</p>
         <p>silver@tori.ee</p>
       </div>
     </div>
     <div id="location" class="flex flex-col md:col-span-1 pb-6">
-      <h2 class="text-center text-4xl mb-4">Asukoht</h2>
+      <h2 class="text-center text-4xl mb-4">Location</h2>
       <iframe class="flex-grow w-full min-h-[400px]" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d8343.075522572108!2d24.8108362!3d58.4815636!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46ece6573013f239%3A0xd97fc28347415a84!2sTori%20Matkakeskus!5e0!3m2!1sen!2see!4v1688407668603!5m2!1sen!2see" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
   </section>
