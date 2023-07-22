@@ -1,2 +1,4 @@
-# www.tori.ee
-# Isa koduleht.
+My father's canoe business homepage. 
+
+PROD: www.tori.ee
+STAGING: www.uus.tori.ee
