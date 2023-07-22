@@ -3,7 +3,7 @@
     "est": {
       "title": "EST",
       "class": "hover:underline",
-      "link": ""
+      "link": "./../index.html"
     },
     "eng": {
       "title": "ENG",
