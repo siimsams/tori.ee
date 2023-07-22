@@ -1,10 +1,12 @@
 on: push
-name: 🚀 Deploy website to 'www.uus.tori.ee'
+name: 🚀 Deploy website
 jobs:
-  web-deploy:
+  staging:
     name: 🎉 Deploy
     runs-on: ubuntu-latest
-    environment: STAGING
+    environment: 
+      name: STAGING
+      url: www.uus.tori.ee
     steps:
     - name: 🚚 Get latest code
       uses: actions/checkout@v3
