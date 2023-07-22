@@ -12,17 +12,17 @@ $mailheader = "From: $email \r\n";
 $env = parse_ini_file('.env');
 $secret = $env["RECAPTCHA_SECRET"];
 
-function validated() {
+function validated($response, $secret) {
     $url = "https://www.google.com/recaptcha/api/siteverify?secret=".$secret."&response=".$response;
 
     return json_decode(file_get_contents($url))->success;
 }
 
-if ($name and $email and $phone and $message and validated()) {
+if ($name and $email and $phone and $message and validated($response, $secret)) {
   mail($recipient, $subject, $formcontent, $mailheader) or die("Error!");
-  header("Location: form.html?success=true");
+  echo "success";
   exit;
 }
-header("Location: form.html?success=false");
+echo "fail";
 exit;
 ?>
