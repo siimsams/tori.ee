@@ -1,7 +1,7 @@
 <?php
-$name = $_POST['fullname'];
+$name = $_POST['name'];
 $email = $_POST['email'];
-$phone = $_POST['number'];
+$phone = $_POST['phone'];
 $message = $_POST['message'];
 $response = $_POST['token'];
 $formcontent=" Nimi: $name \n Telefon: $phone \n E-mail: $email \n Sõnum: \n $message";
