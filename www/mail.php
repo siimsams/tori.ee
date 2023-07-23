@@ -4,6 +4,7 @@ $email = $_POST['email'];
 $phone = $_POST['phone'];
 $message = $_POST['message'];
 $response = $_POST['token'];
+
 $formcontent=" Nimi: $name \n Telefon: $phone \n E-mail: $email \n Sõnum: \n $message";
 $recipient = "siimsams@tdl.ee";
 $subject = "Võimalik matk // $phone // $email";
@@ -19,10 +20,14 @@ function validated($response, $secret) {
 }
 
 if ($name and $email and $phone and $message and validated($response, $secret)) {
-  mail($recipient, $subject, $formcontent, $mailheader) or die("Error!");
-  echo "success";
+  if (mail($recipient, $subject, $formcontent, $mailheader)) {
+    echo json_encode(['success' => true]);
+  } else {
+    echo json_encode(['success' => false, 'message' => 'Error!']);
+  }
   exit;
 }
-echo "fail";
+
+echo json_encode(['success' => false, 'message' => 'fail']);
 exit;
 ?>

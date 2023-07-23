@@ -171,7 +171,7 @@
           </div>
           <input id="hiddentoken" type="hidden" name="token">
           <button 
-            type="submit" 
+            type="button" 
             class="g-recaptcha w-full px-10 py-2 border-[3px] border-black border-solid" 
             data-sitekey="6Lf97qkaAAAAAEm2DF9a2gyaRilWaekl7Zu4_FlB" 
             data-callback='onSubmit' 
@@ -200,6 +200,7 @@
     var closeIcon = document.getElementById('closeIcon');
     var navBar = document.getElementById('navBar');
     var menu = document.getElementById('menu');
+    var form = document.getElementById("order-form");
 
     menuButton.addEventListener('click', toggleMenu);
 
@@ -225,7 +226,23 @@
 
     function onSubmit(token) {
       document.getElementById("hiddentoken").value = token;
-      document.getElementById("order-form").submit();
+
+      // use Fetch API to send the form data
+      fetch(form.action, {
+          method: form.method,
+          body: new FormData(form),
+      })
+      .then(response => response.json())
+      .then(data => {
+          if (data.success) {
+              form.reset();  // reset form if the submission was successful
+          } else {
+              console.log(data.message);  // handle error message if present
+          }
+      })
+      .catch((error) => {
+          console.error('Error:', error);
+      });
     }
   </script>
 </body>
