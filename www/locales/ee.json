@@ -70,7 +70,8 @@
     "contactPhone": "Kontakttelefon",
     "orderDescription": "Tellimuse kirjeldus",
     "sendOrder": "Saada tellimus",
-    "success": "Tellimus edastati edukalt"
+    "success": "Tellimus edastati edukalt",
+    "failure": "Meil läks midagi valesti. Proovi uuesti või helista meile."
   },
   "contactUs": {
     "title": "Või helista meile",

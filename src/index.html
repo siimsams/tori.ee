@@ -132,11 +132,7 @@
   <section class="3xl:w-[1950px] mx-auto xl:px-36 px-6 py-10 grid grid-cols-1 md:grid-cols-2 md:gap-5">
     <div class="md:col-span-1">
       <div id="order" class="w-full">
-        <h2 class="text-center text-4xl">Telli matk</h2>
-        <div id="success" class="h-[622px] flex flex-col justify-center items-center hidden">
-          <img class="h-[400px] w-[400px]" src="./media/circle_green_checkmark.svg">
-          <h2 class="text-center text-4xl pt-4">Tellimus edastati edukalt</h2>
-        </div>      
+        <h2 class="text-center text-4xl">Telli matk</h2>    
         <form id="order-form" class="space-y-4" method="post" action="mail.php">
           <div class="flex flex-col items-end">
             <label for="name" class="self-start">Täisnimi</label>
@@ -157,6 +153,11 @@
           <input id="hiddentoken" type="hidden" name="token">
           <button type="button" class="g-recaptcha w-full px-10 py-2 border-[3px] border-black border-solid" data-sitekey="6Lf97qkaAAAAAEm2DF9a2gyaRilWaekl7Zu4_FlB" data-callback="onSubmit" data-action="submit">Saada tellimus</button>
         </form>
+        <div id="success" class="h-[622px] flex flex-col justify-center items-center hidden">
+          <img class="h-[400px] w-[400px]" src="./media/circle_green_checkmark.svg">
+          <h2 class="text-center text-4xl pt-4">Tellimus edastati edukalt</h2>
+        </div>  
+        <h2 id="failure" class="text-red-500 pt-3 text-center hidden">Meil läks midagi valesti. Proovi uuesti või helista meile.</h2>
       </div>
       <div id="contact" class="text-center py-6">
         <h2 class="text-center text-4xl">Või helista meile</h2>
@@ -172,13 +173,14 @@
   </section>
   <script src="https://www.google.com/recaptcha/api.js"></script>
   <script>
-    var menuButton = document.getElementById('menuButton');
-    var openIcon = document.getElementById('openIcon');
-    var closeIcon = document.getElementById('closeIcon');
-    var navBar = document.getElementById('navBar');
-    var menu = document.getElementById('menu');
-    var success = document.getElementById("success");
-    var form = document.getElementById("order-form");
+    const menuButton = document.getElementById('menuButton');
+    const openIcon = document.getElementById('openIcon');
+    const closeIcon = document.getElementById('closeIcon');
+    const navBar = document.getElementById('navBar');
+    const menu = document.getElementById('menu');
+    const success = document.getElementById("success");
+    const failure = document.getElementById("failure");
+    const form = document.getElementById("order-form");
 
     menuButton.addEventListener('click', toggleMenu);
 
@@ -221,12 +223,13 @@
               form.reset();  // reset form if the submission was successful
               success.classList.remove('hidden');
               form.classList.add('hidden');
+              failure.classList.add('hidden');
           } else {
-              console.log(data.message);  // handle error message if present
+              failure.classList.remove('hidden');
           }
       })
       .catch((error) => {
-          console.error('Error:', error);
+        failure.classList.remove('hidden');
       });
     }
   </script>

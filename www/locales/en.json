@@ -70,7 +70,8 @@
     "contactPhone": "Contact Phone",
     "orderDescription": "Order Description",
     "sendOrder": "Send Order",
-    "success": "Order was sent successfully"
+    "success": "Order was sent successfully",
+    "failure": "Something went wrong. Please try again or call us."
   },
   "contactUs": {
     "title": "Or give us a call",
