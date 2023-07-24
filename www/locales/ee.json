@@ -69,7 +69,8 @@
     "email": "Email",
     "contactPhone": "Kontakttelefon",
     "orderDescription": "Tellimuse kirjeldus",
-    "sendOrder": "Saada tellimus"
+    "sendOrder": "Saada tellimus",
+    "success": "Tellimus edastati edukalt"
   },
   "contactUs": {
     "title": "Või helista meile",

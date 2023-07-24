@@ -69,7 +69,8 @@
     "email": "Email",
     "contactPhone": "Contact Phone",
     "orderDescription": "Order Description",
-    "sendOrder": "Send Order"
+    "sendOrder": "Send Order",
+    "success": "Order was sent successfully"
   },
   "contactUs": {
     "title": "Or give us a call",

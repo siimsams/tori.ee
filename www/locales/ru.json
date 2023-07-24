@@ -69,7 +69,8 @@
     "email": "Email",
     "contactPhone": "Контактный телефон",
     "orderDescription": "Описание заказа",
-    "sendOrder": "Отправить заказ"
+    "sendOrder": "Отправить заказ",
+    "success": "Заказ был успешно отправлен"
   },
   "contactUs": {
     "title": "Или свяжитесь с нами",

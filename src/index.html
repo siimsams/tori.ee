@@ -133,6 +133,10 @@
     <div class="md:col-span-1">
       <div id="order" class="w-full">
         <h2 class="text-center text-4xl">Telli matk</h2>
+        <div id="success" class="h-[622px] flex flex-col justify-center items-center hidden">
+          <img class="h-[400px] w-[400px]" src="./media/circle_green_checkmark.svg">
+          <h2 class="text-center text-4xl pt-4">Tellimus edastati edukalt</h2>
+        </div>      
         <form id="order-form" class="space-y-4" method="post" action="mail.php">
           <div class="flex flex-col items-end">
             <label for="name" class="self-start">Täisnimi</label>
@@ -209,6 +213,8 @@
       .then(data => {
           if (data.success) {
               form.reset();  // reset form if the submission was successful
+              success.classList.remove('hidden');
+              form.classList.add('hidden');
           } else {
               console.log(data.message);  // handle error message if present
           }
