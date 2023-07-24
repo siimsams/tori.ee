@@ -200,6 +200,7 @@
     var closeIcon = document.getElementById('closeIcon');
     var navBar = document.getElementById('navBar');
     var menu = document.getElementById('menu');
+    var success = document.getElementById("success");
     var form = document.getElementById("order-form");
 
     menuButton.addEventListener('click', toggleMenu);
@@ -226,7 +227,7 @@
 
     function onSubmit(token) {
       // Check if the form is valid
-      if (!form.checkValidity()) {
+      if (!form.reportValidity()) {
           return;
       }
 
