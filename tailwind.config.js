@@ -6,7 +6,7 @@ module.exports = {
   theme: {
     fontFamily: {
       'display': ['Oswald'],
-      'body': ['"Open Sans"'],
+      'body': ['Open Sans'],
     },
     extend: {
       screens: {
