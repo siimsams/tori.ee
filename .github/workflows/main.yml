@@ -39,6 +39,49 @@ jobs:
       with:
         local-dir: ./dist/
         server: tori.ee
-        username: siim.tori.ee
-        password: ${{ secrets.password }}
+        username: staging.tori.ee
+        password: ${{ secrets.PASSWORD }}
         protocol: ftps
+  
+  production:
+    name: 🍾 Production
+    runs-on: ubuntu-latest
+    environment: 
+      name: PROD
+      url: https://tori.ee/
+    needs: [staging]
+    steps:
+      - name: 🚚 Get latest code
+        uses: actions/checkout@v3
+            
+      - name: ☕ Use Node.js 18
+        uses: actions/setup-node@v3
+        with:
+           node-version: '18'
+      
+      - name: 📁 Cache dependencies
+        uses: actions/cache@v3
+        with:
+          path: ~/.npm  # npm cache files are stored in `~/.npm` on Linux/macOS
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+              
+      - name: 🔨 Build Project
+        run: |
+          npm ci
+          npm run build:prod
+      
+      - name: ✍️ Create .env file
+        run: |
+          echo '${{ secrets.RECAPTCHA }}' > ./dist/.env
+          echo '${{ vars.RECIPIENT }}' >> ./dist/.env
+              
+      - name: 📂 Sync files
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+        with:
+          local-dir: ./dist/
+          server: tori.ee
+          username: production.tori.ee
+          password: ${{ secrets.PASSWORD }}
+          protocol: ftps
