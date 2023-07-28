@@ -20,7 +20,7 @@
 <body class="text-2xl">
   <nav id="navBar"
     class="3xl:w-[1950px] xl:px-36 px-6 py-5 z-20 top-0 w-full mx-auto center flex items-center justify-between flex-wrap bg-white">
-    <language class="z-20 space-x-3">
+    <language class="z-40 space-x-3">
       <a data-attr-t data-attr-t-interpolate href-t="{{language.est.link}}more_info.html" class-t="{{language.est.class}}" data-t>language.est.title</a>
       <a data-attr-t data-attr-t-interpolate href-t="{{language.eng.link}}more_info.html" class-t="{{language.eng.class}}" data-t>language.eng.title</a>
     </language>
@@ -30,7 +30,7 @@
       <a href="more_info.html" class="underline" data-t>menu.services</a>
       <a href="index.html#location" class="hover:underline" data-t>menu.location</a>
     </menu>
-    <button id="menuButton" class="lg:hidden block z-20">
+    <button id="menuButton" class="lg:hidden block z-40">
       <svg id="openIcon" class="h-6 w-6 fill-current text-gray-500" xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 24 24">
         <path d="M4 11h16v2H4zm0-8h16v2H4zm0 16h16v2H4z" />
@@ -60,12 +60,12 @@
     </div>
   </nav>
   <header class="3xl:w-[1950px] mx-auto relative grid grid-cols-1 md:grid-cols-2">
-    <div class="my-20 md:mx-5 pb-4 text-center z-20 relative md:col-span-1">
+    <div class="my-20 md:mx-5 pb-4 text-center relative md:col-span-1">
       <h2 class="text-5xl pb-5 md:text-black text-white" data-t>moreInfo.header_title</h2>
       <p class="pb-9 max-w-[520px] mx-auto md:text-black text-white" data-t>moreInfo.header_description</p>
       <a href="index.html#order" class="px-10 py-3 border-[3px] md:border-black border-white border-solid md:text-black text-white" data-t>moreInfo.header_button</a>
     </div>
-    <div class="absolute inset-0 z-10 md:relative md:col-span-1">
+    <div class="absolute inset-0 -z-10 md:relative md:col-span-1">
       <img src="./media/kanuu.jpg" alt="Canoe" class="w-full h-full object-cover md:brightness-100 brightness-[0.35]" />
     </div>
   </header>
@@ -94,15 +94,15 @@
   </section>
   
   <section class="3xl:w-[1950px] mx-auto relative grid grid-cols-2">
-    <div class="relative py-20 text-center z-20 md:col-span-1 col-span-2">
-      <div class="absolute inset-0 z-10">
+    <div class="relative py-20 text-center md:col-span-1 col-span-2">
+      <div class="absolute inset-0 -z-10">
         <img src="./media/vibu.png" alt="Canoe" class="w-full h-full object-cover brightness-50" />
       </div>
-      <h2 class="relative z-20 text-5xl pb-5 text-white" data-t>moreInfo.archery_title</h2>
-      <p class="relative z-20 pb-9 max-w-[520px] mx-auto text-white" data-t>moreInfo.archery_description</p>
-      <a href="index.html#order" class="relative z-20 px-10 py-3 border-[3px] border-white border-solid text-white" data-t>moreInfo.archery_button</a>
+      <h2 class="relative text-5xl pb-5 text-white" data-t>moreInfo.archery_title</h2>
+      <p class="relative pb-9 max-w-[520px] mx-auto text-white" data-t>moreInfo.archery_description</p>
+      <a href="index.html#order" class="relative px-10 py-3 border-[3px] border-white border-solid text-white" data-t>moreInfo.archery_button</a>
     </div>
-    <div class="my-20 mx-5 pb-4 z-20 relative md:col-span-1 col-span-2">
+    <div class="my-20 mx-5 pb-4 relative md:col-span-1 col-span-2">
       <h2 class="text-5xl pb-5 text-black text-center" data-t>moreInfo.archery_safety_title</h2>
       <ul class="list-disc pl-10">
         <li data-t>moreInfo.archery_safety_list.0</li>
@@ -115,18 +115,18 @@
     </div>
   </section>
   <section class="3xl:w-[1950px] mx-auto relative grid grid-cols-2 pb-14">
-    <div class="my-20 mx-5 pb-4 z-20 relative md:col-span-1 col-span-2">
+    <div class="my-20 mx-5 pb-4 relative md:col-span-1 col-span-2">
       <h2 class="text-5xl pb-5 text-black text-center" data-t>moreInfo.grant_title</h2>
       <p class="text-center pb-9" data-t>moreInfo.grant_text</p>
       <img src="./media/euro.jpg" alt="euro support" />
     </div>
-    <div class="relative py-20 text-center z-20 md:col-span-1 col-span-2">
-      <div class="absolute inset-0 z-10">
+    <div class="relative py-20 text-center md:col-span-1 col-span-2">
+      <div class="absolute inset-0 -z-10">
         <img src="./media/saun-blur-grain.jpg" alt="hot tub" class="w-full h-full object-cover brightness-50" />
       </div>
-      <h2 class="relative z-20 text-5xl pb-5 text-white" data-t>moreInfo.sauna_title</h2>
-      <p class="relative z-20 max-w-[520px] mx-auto text-white pb-9" data-t>moreInfo.sauna_description</p>
-      <a href="index.html#order" class="relative z-20 px-10 py-3 border-[3px] border-white border-solid text-white" data-t>moreInfo.archery_button</a>
+      <h2 class="relative text-5xl pb-5 text-white" data-t>moreInfo.sauna_title</h2>
+      <p class="relative max-w-[520px] mx-auto text-white pb-9" data-t>moreInfo.sauna_description</p>
+      <a href="index.html#order" class="relative px-10 py-3 border-[3px] border-white border-solid text-white" data-t>moreInfo.archery_button</a>
     </div>
   </section>
   <script>
