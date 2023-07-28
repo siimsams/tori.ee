@@ -41,8 +41,8 @@
     "readMore": "Loe rohkem"
   },
   "sauna": {
-    "title": "Saunad",
-    "description": "Pärast aktiivset päeva on võimalik lõõgastuda Pärnu jõe kaldal asuvas kümblustünnis või saunas. Kümblustünn mahutab kuni 10 inimest."
+    "title": "Kümblustünn",
+    "description": "Pärast aktiivset päeva on võimalik lõõgastuda Pärnu jõe kaldal asuvas kümblustünnis. Kümblustünn mahutab kuni 10 inimest."
   },
   "prices": {
     "title": "Hinnad",
@@ -58,9 +58,8 @@
       "hunt": "Vibujaht: 20€ inimene"
     },
     "sauna": {
-      "title": "Saun",
-      "tub": "Kümblustünn: 100€ õhtu",
-      "sauna": "Saun: 100€ õhtu"
+      "title": "Kümblustünn",
+      "tub": "Kümblustünn: 100€ õhtu"
     }
   },
   "orderTrip": {
@@ -87,7 +86,7 @@
     "trip_1_description": "Tunni sõit on parim Torist läbisõitvatele inimestele. Kuna hind on kanuu kohta, siis sobib see suurepäraselt peredele, kellel on väikseid lapsi (keskmisele istmele mahub istuma kaks last). Tunniga jõuab sõuda vaatama Tori põrgut ja kui õnged kaasa võtta, võib hea õnne korral nii mõnegi kala püüda.",
     "trip_1_duration": "Kestvus: 1 tund",
     "trip_2_title": "Viira-Jõesuu-Tori",
-    "trip_2_description": "Matk algab Tori Matkakeskusest, kust teid viiakse Viira rippsilla juurde. Jõe ääres instrueeritakse teid ja antakse kätte varustus. Matka alguses on jõgi rahulik ja lai ning teil on piisavalt aega kanuujuhtimist õppida ja harjutada koostööd oma paadikaaslasega. Siis hakkab aeg ajalt ette tulema vanu veski tamme, mille ületamist te veel kaua mäletate. Matka lõpus möödute ka Tori põrgust, mille kohal asub vanakuradikivi. Matk lõppeb Tori Matkakeskuses.",
+    "trip_2_description": "Matk algab Tori Matkakeskusest, kust teid viiakse Viira rippsilla juurde. Jõe ääres instrueeritakse teid ja antakse kätte varustus. Matka alguses on jõgi rahulik ja lai ning teil on piisavalt aega kanuujuhtimist õppida ja harjutada koostööd oma paadikaaslasega. Siis hakkab aeg ajalt ette tulema vanu veski tammesid§, mille ületamist te veel kaua mäletate. Matka lõpus möödute ka Tori põrgust, mille kohal asub vanakuradikivi. Matk lõppeb Tori Matkakeskuses.",
     "trip_2_duration": "Kestvus: 2-5 tundi",
     "trip_3_title": "Riisa laudrada-Tori",
     "trip_3_description": "Matk algab Tori Matkakeskuse juurest, kust teid viiakse Riisa laudraja algusse. Laudrada on ligikaudu 3 km pikk ja seda läbides tutvute tüüpilise rabataimestiku ja maastikuga. Seejärel jõuate Navesti jõe äärde, kus teid instrueeritakse ja jagatakse kätte varustus. Poole matka ajal jõuate Jõesuu külani, kus Navesti jõgi ühineb Pärnu jõega. Seal lõigul on jõgi rahulik ja lai. Siis hakkab aeg ajalt ette tulema vanu veski tamme, mis on jää poolt ära lõhutud ja mille ületamine pakub mõnusat närvikõdi. Matka lõpupoole möödute Tori põrgust, mille kohal asub vanakuradikivi. Matk lõppeb Tori Matkakeskuses.",
@@ -106,6 +105,10 @@
       "Juhul, kui laskejoonest ettepoole satub inimesi, loomi, linde, tuleb laskmine koheselt lõpetada ja laskmist võib jätkata alles siis, kui laskeväli on vaba.",
       "Juhul, kui lasketiirus on korraga mitu vibulaskjat, tuleb kõigil lasta samalt distantsilt.",
       "Kõik vibulasketiirus viibivad inimesed peavad olema kained."
-    ]
+    ],
+    "sauna_title": "Kümblustünn",
+    "sauna_description": "Lõõgastu Pärnu jõe ääres asuvas avaras mullivannis, mis mahutab mugavalt kuni 10 inimest. Pärast põnevat kanuumatka kogune oma sõprade või perega ning lase vee soojusel leevendada väsinud lihaseid. Ümbritsetud looduse iluga on see ideaalne võimalus lõõgastuda ja luua unustamatuid mälestusi. Avasta Tori Matkakeskuse rahu ja sukeldu täiuslikku lõõgastuskogemusse juba täna.",
+    "grant_title": "Projekti selgitus",
+    "grant_text": "Projekti käigus uuendatakse 2004 aastal rajatud terrass ning lisaks paigaldatakse kümblustünn kuni 10 inimesele. Projekti eesmärgiks on mitmekesistada Tori Matkakeskuse poolt pakutavaid teenuseid Tulemusena on valminud uus, vastupidav (betoon postidel) terrass, millele on paigaldatud innovaatiline kümblustünn, mida võib korraga kasutada kuni 10 inimest."
   }
 }

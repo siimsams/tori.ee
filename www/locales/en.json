@@ -42,7 +42,7 @@
   },
   "sauna": {
     "title": "Saunas",
-    "description": "After an active day, you can relax in a hot tub or sauna located on the bank of the Pärnu River. The hot tub can accommodate up to 10 people."
+    "description": "After an active day, you can relax in a hot tub located on the bank of the Pärnu River. The hot tub can accommodate up to 10 people."
   },
   "prices": {
     "title": "Prices",
@@ -58,9 +58,8 @@
       "hunt": "Archery Hunt: €20 per person"
     },
     "sauna": {
-      "title": "Sauna",
-      "tub": "Hot Tub: €100 per evening",
-      "sauna": "Sauna: €100 per evening"
+      "title": "Hot Tub",
+      "tub": "Hot Tub: €100 per evening"
     }
   },
   "orderTrip": {
@@ -106,6 +105,10 @@
       "If there are people, animals, or birds in front of the shooting line, immediately stop shooting until the shooting range is clear.",
       "If multiple archers are present, all must shoot from the same distance.",
       "All participants in the archery range must be sober."
-    ]
+    ],
+    "sauna_title": "Hot Tub",
+    "sauna_description": "Relax in a spacious hot tub located by the Pärnu River, comfortably accommodating up to 10 people. After an exciting canoe trip, gather with your friends or family and let the warmth of the water relieve your tired muscles. Surrounded by the beauty of nature, it's the perfect opportunity to unwind and create unforgettable memories. Discover the tranquility of Tori Hiking Center and immerse yourself in a perfect relaxation experience today.",
+    "grant_title": "Project Explanation",
+    "grant_text": "During the project, the terrace, originally built in 2004, will be renovated, and a wooden hot tub for up to 10 people will be installed. The aim of the project is to diversify the services offered by Tori Hiking Center. As a result, a new, durable (concrete posts) terrace will be completed, with an innovative wooden hot tub installed, accommodating up to 10 people at a time."
   }
 }
