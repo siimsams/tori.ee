@@ -66,7 +66,11 @@
       <a href="index.html#order" class="px-10 py-3 border-[3px] md:border-black border-white border-solid md:text-black text-white" data-t>moreInfo.header_button</a>
     </div>
     <div class="absolute inset-0 -z-10 md:relative md:col-span-1">
-      <img src="./media/kanuu.jpg" alt="Canoe" class="w-full h-full object-cover md:brightness-100 brightness-[0.35]" />
+      <picture>
+        <source  data-attr-t data-attr-t-interpolate srcset-t="{{language.est.link}}./media/kanuu.jpg?as=avif" type="image/avif">
+        <source  data-attr-t data-attr-t-interpolate srcset-t="{{language.est.link}}./media/kanuu.jpg?as=webp" type="image/webp">
+        <img src="./media/kanuu.jpg" alt="anoe" class="w-full h-full object-cover md:brightness-100 brightness-[0.35]">
+      </picture>
     </div>
   </header>
   
@@ -96,7 +100,11 @@
   <section class="3xl:w-[1950px] mx-auto relative grid grid-cols-2">
     <div class="relative py-20 text-center md:col-span-1 col-span-2">
       <div class="absolute inset-0 -z-10">
-        <img src="./media/vibu.png" alt="Canoe" class="w-full h-full object-cover brightness-50" />
+        <picture>
+          <source  data-attr-t data-attr-t-interpolate srcset-t="{{language.est.link}}./media/vibu.png?as=avif" type="image/avif">
+          <source  data-attr-t data-attr-t-interpolate srcset-t="{{language.est.link}}./media/vibu.png?as=webp" type="image/webp">
+          <img src="./media/vibu.png" alt="bow hunt" class="w-full h-full object-cover brightness-50">
+        </picture>
       </div>
       <h2 class="relative text-5xl pb-5 text-white" data-t>moreInfo.archery_title</h2>
       <p class="relative pb-9 max-w-[520px] mx-auto text-white px-6" data-t>moreInfo.archery_description</p>
@@ -118,11 +126,19 @@
     <div class="my-20 mx-5 pb-4 relative md:col-span-1 col-span-2">
       <h2 class="text-5xl pb-5 text-black text-center" data-t>moreInfo.grant_title</h2>
       <p class="text-center pb-9" data-t>moreInfo.grant_text</p>
-      <img src="./media/euro.jpg" alt="euro support" />
+      <picture>
+        <source  data-attr-t data-attr-t-interpolate srcset-t="{{language.est.link}}./media/euro.jpg?as=avif" type="image/avif">
+        <source  data-attr-t data-attr-t-interpolate srcset-t="{{language.est.link}}./media/euro.jpg?as=webp" type="image/webp">
+        <img src="./media/euro.jpg" alt="euro support">
+      </picture>
     </div>
     <div class="relative py-20 text-center md:col-span-1 col-span-2">
       <div class="absolute inset-0 -z-10">
-        <img src="./media/saun-blur-grain.jpg" alt="hot tub" class="w-full h-full object-cover brightness-50" />
+        <picture>
+          <source  data-attr-t data-attr-t-interpolate srcset-t="{{language.est.link}}./media/saun-blur-grain.jpg?as=avif" type="image/avif">
+          <source  data-attr-t data-attr-t-interpolate srcset-t="{{language.est.link}}./media/saun-blur-grain.jpg?as=webp" type="image/webp">
+          <img src="./media/saun-blur-grain.jpg" alt="hot tub" class="w-full h-full object-cover brightness-50">
+        </picture>
       </div>
       <h2 class="relative text-5xl pb-5 text-white" data-t>moreInfo.sauna_title</h2>
       <p class="relative max-w-[520px] mx-auto text-white pb-9 px-6" data-t>moreInfo.sauna_description</p>
