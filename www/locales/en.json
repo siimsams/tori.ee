@@ -1,6 +1,7 @@
 {
   "title": "Tori Adventure Center",
   "language": {
+    "language": "en",
     "est": {
       "title": "EST",
       "class": "hover:underline",

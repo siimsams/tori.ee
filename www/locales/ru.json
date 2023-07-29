@@ -1,6 +1,7 @@
 {
   "title": "Туристический центр Тори",
   "language": {
+    "language": "ru",
     "est": {
       "title": "ЭСТ",
       "class": "hover:underline",
