@@ -281,6 +281,7 @@
               success.classList.remove('hidden');
               form.classList.add('hidden');
               failure.classList.add('hidden');
+              window.history.replaceState(null, null, "#success");
           } else {
               failure.classList.remove('hidden');
           }
