@@ -261,6 +261,19 @@
       });
     });
 
+    function gtag_report_conversion(url) {
+      var callback = function () {
+        if (typeof(url) != 'undefined') {
+          window.location = url;
+        }
+      };
+      gtag('event', 'conversion', {
+          'send_to': 'AW-11274608498/ZAhyCN6O-soYEPK-k4Aq',
+          'event_callback': callback
+      });
+      return false;
+    }
+
     function onSubmit(token) {
       // Check if the form is valid
       if (!form.reportValidity()) {
@@ -281,7 +294,7 @@
               success.classList.remove('hidden');
               form.classList.add('hidden');
               failure.classList.add('hidden');
-              window.history.replaceState(null, null, "#success");
+              gtag_report_conversion();
           } else {
               failure.classList.remove('hidden');
           }
