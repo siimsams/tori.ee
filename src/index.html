@@ -21,14 +21,14 @@
   <meta name="theme-color" content="#ffffff">
   <!--Google ads-->
   <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-3B8KNM2LVT">
-  </script>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-11274608498"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
 
-    gtag('config', 'G-3B8KNM2LVT');
+    gtag('config', 'AW-11274608498');
   </script>
 </head>
 
@@ -240,6 +240,19 @@
       });
     });
 
+    function gtag_report_conversion(url) {
+      var callback = function () {
+        if (typeof(url) != 'undefined') {
+          window.location = url;
+        }
+      };
+      gtag('event', 'conversion', {
+          'send_to': 'AW-11274608498/ZAhyCN6O-soYEPK-k4Aq',
+          'event_callback': callback
+      });
+      return false;
+    }
+
     function onSubmit(token) {
       // Check if the form is valid
       if (!form.reportValidity()) {
@@ -260,7 +273,7 @@
               success.classList.remove('hidden');
               form.classList.add('hidden');
               failure.classList.add('hidden');
-              window.history.replaceState(null, null, "#success");
+              gtag_report_conversion();
           } else {
               failure.classList.remove('hidden');
           }
