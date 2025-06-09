@@ -50,9 +50,9 @@
     "description": "Discounts available based on group size and the day of the trip. Inquire about discounts via email or phone. All prices include VAT.",
     "canoe": {
       "title": "Canoe",
-      "schoolChildren": "School Children: €10 per person",
+      "schoolChildren": "School Children: €15 per person",
       "adults": "Adults: €25 per person",
-      "hourTrip": "One-Hour Trip in Tori: €10 per person"
+      "hourTrip": "One-Hour Trip in Tori: €15 per person"
     },
     "bow": {
       "title": "Archery",

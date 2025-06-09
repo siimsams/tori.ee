@@ -50,9 +50,9 @@
     "description": "Soodustused sõltuvalt grupi suurusest ja matka toimumise päevast. Küsi soodustust meilitsi või telefonitsi. Kõik hinnad sisaldavad käibemaksu.",
     "canoe": {
       "title": "Kanuu",
-      "schoolChildren": "Koolilapsed: 10€ inimene",
+      "schoolChildren": "Koolilapsed: 15€ inimene",
       "adults": "Täiskasvanud: 25€ inimene",
-      "hourTrip": "Tunnisõit Toris: 10€ inimene"
+      "hourTrip": "Tunnisõit Toris: 15€ inimene"
     },
     "bow": {
       "title": "Vibu",
