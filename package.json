@@ -20,6 +20,7 @@
   "homepage": "https://github.com/siimsams/tori.ee#readme",
   "devDependencies": {
     "astro": "^6.1.8",
+    "modern-normalize": "^3.0.1",
     "typescript": "^6.0.3"
   }
 }
