@@ -14,18 +14,20 @@
   --color-rule: rgba(28, 26, 21, 0.14);
 }
 
-html,
-body {
-  background: var(--color-bone);
-  color: var(--color-ink);
-  font-family: var(--font-body);
-  font-weight: 400;
-  font-size: 17px;
-  line-height: 1.65;
-}
+@layer base {
+  html,
+  body {
+    background: var(--color-bone);
+    color: var(--color-ink);
+    font-family: var(--font-body);
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 1.65;
+  }
 
-a {
-  color: var(--color-moss);
+  a {
+    color: var(--color-moss);
+  }
 }
 
 .hidden {
