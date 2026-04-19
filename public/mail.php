@@ -6,8 +6,10 @@ $message = $_POST['message'];
 $response = $_POST['token'];
 
 $formcontent=" Nimi: $name \n Telefon: $phone \n E-mail: $email \n Sõnum: \n $message";
-$subject = "Võimalik matk // $phone // $email";
-$mailheader = "From: $email \r\n";
+$safeEmail = preg_replace('/[\r\n]+/', '', $email);
+$safePhone = preg_replace('/[\r\n]+/', '', $phone);
+$subject = "Võimalik matk // $safePhone // $safeEmail";
+$mailheader = "From: noreply@tori.ee\r\nReply-To: $safeEmail\r\n";
 
 $env = parse_ini_file('.env');
 $secret = $env["RECAPTCHA_SECRET"];

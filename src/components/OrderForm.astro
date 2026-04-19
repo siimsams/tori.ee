@@ -41,14 +41,8 @@ const orLabels: Record<Lang, string> = {
       <textarea name="message" id="message" rows="5" required></textarea>
     </div>
     <input id="hiddentoken" type="hidden" name="token" />
-    <button
-      title="Send message"
-      type="button"
-      class="g-recaptcha submit"
-      data-sitekey="6Lf97qkaAAAAAEm2DF9a2gyaRilWaekl7Zu4_FlB"
-      data-callback="onSubmit"
-      data-action="submit"
-    >
+    <div id="recaptcha-container"></div>
+    <button title="Send message" type="button" id="submit-btn" class="submit">
       {t(lang, 'orderTrip.sendOrder')}
     </button>
   </form>
@@ -66,27 +60,55 @@ const orLabels: Record<Lang, string> = {
     const success = document.getElementById('success');
     const failure = document.getElementById('failure');
     const hiddenToken = document.getElementById('hiddentoken');
-    if (!form || !success || !failure || !hiddenToken) return;
+    const submitBtn = document.getElementById('submit-btn');
+    if (!form || !success || !failure || !hiddenToken || !submitBtn) return;
+
+    const SITEKEY = '6Lf97qkaAAAAAEm2DF9a2gyaRilWaekl7Zu4_FlB';
+    let widgetId = null;
+    let pendingExecute = false;
+    let recaptchaLoaded = false;
 
     function gtagReportConversion() {
       if (typeof gtag !== 'function') return;
       gtag('event', 'conversion', { send_to: 'AW-11274608498/ZAhyCN6O-soYEPK-k4Aq' });
     }
 
-    let recaptchaLoaded = false;
+    window.onRecaptchaLoad = function () {
+      widgetId = grecaptcha.render('recaptcha-container', {
+        sitekey: SITEKEY,
+        size: 'invisible',
+        callback: onSubmit,
+      });
+      if (pendingExecute) {
+        pendingExecute = false;
+        grecaptcha.execute(widgetId);
+      }
+    };
+
     function loadRecaptcha() {
       if (recaptchaLoaded) return;
       recaptchaLoaded = true;
       const s = document.createElement('script');
-      s.src = 'https://www.google.com/recaptcha/api.js';
+      s.src = 'https://www.google.com/recaptcha/api.js?onload=onRecaptchaLoad&render=explicit';
       s.async = true;
       document.head.appendChild(s);
     }
+
     form.addEventListener('focusin', loadRecaptcha, { once: true });
+    form.addEventListener('input', loadRecaptcha, { once: true });
     form.addEventListener('pointerdown', loadRecaptcha, { once: true });
 
-    window.onSubmit = function (token) {
+    submitBtn.addEventListener('click', function (e) {
       if (!form.reportValidity()) return;
+      if (widgetId !== null) {
+        grecaptcha.execute(widgetId);
+      } else {
+        pendingExecute = true;
+        loadRecaptcha();
+      }
+    });
+
+    function onSubmit(token) {
       hiddenToken.value = token;
       fetch(form.action, { method: form.method, body: new FormData(form) })
         .then((r) => r.json())
@@ -100,9 +122,13 @@ const orLabels: Record<Lang, string> = {
           } else {
             failure.classList.remove('hidden');
           }
+          if (widgetId !== null) grecaptcha.reset(widgetId);
         })
-        .catch(() => failure.classList.remove('hidden'));
-    };
+        .catch(() => {
+          failure.classList.remove('hidden');
+          if (widgetId !== null) grecaptcha.reset(widgetId);
+        });
+    }
   })();
 </script>
 
