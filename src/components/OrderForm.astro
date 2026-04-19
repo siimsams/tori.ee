@@ -66,7 +66,6 @@ const orLabels: Record<Lang, string> = {
     const SITEKEY = '6Lf97qkaAAAAAEm2DF9a2gyaRilWaekl7Zu4_FlB';
     let widgetId = null;
     let pendingExecute = false;
-    let recaptchaLoaded = false;
 
     function gtagReportConversion() {
       if (typeof gtag !== 'function') return;
@@ -85,26 +84,18 @@ const orLabels: Record<Lang, string> = {
       }
     };
 
-    function loadRecaptcha() {
-      if (recaptchaLoaded) return;
-      recaptchaLoaded = true;
-      const s = document.createElement('script');
-      s.src = 'https://www.google.com/recaptcha/api.js?onload=onRecaptchaLoad&render=explicit';
-      s.async = true;
-      document.head.appendChild(s);
-    }
+    const s = document.createElement('script');
+    s.src = 'https://www.google.com/recaptcha/api.js?onload=onRecaptchaLoad&render=explicit';
+    s.async = true;
+    s.defer = true;
+    document.head.appendChild(s);
 
-    form.addEventListener('focusin', loadRecaptcha, { once: true });
-    form.addEventListener('input', loadRecaptcha, { once: true });
-    form.addEventListener('pointerdown', loadRecaptcha, { once: true });
-
-    submitBtn.addEventListener('click', function (e) {
+    submitBtn.addEventListener('click', function () {
       if (!form.reportValidity()) return;
       if (widgetId !== null) {
         grecaptcha.execute(widgetId);
       } else {
         pendingExecute = true;
-        loadRecaptcha();
       }
     });
 
