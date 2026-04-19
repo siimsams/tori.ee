@@ -54,13 +54,12 @@ const orLabels: Record<Lang, string> = {
   </form>
 
   <div id="success" class="success hidden">
-    <img src="/circle_green_checkmark.svg" alt="" width="96" height="96" />
+    <img src="/circle_green_checkmark.svg" alt="" width="96" height="96" loading="lazy" decoding="async" />
     <h2 class="tori-display">{t(lang, 'orderTrip.success')}</h2>
   </div>
   <p id="failure" class="failure hidden">{t(lang, 'orderTrip.failure')}</p>
 </section>
 
-<script is:inline async src="https://www.google.com/recaptcha/api.js"></script>
 <script is:inline>
   (function () {
     const form = document.getElementById('order-form');
@@ -73,6 +72,18 @@ const orLabels: Record<Lang, string> = {
       if (typeof gtag !== 'function') return;
       gtag('event', 'conversion', { send_to: 'AW-11274608498/ZAhyCN6O-soYEPK-k4Aq' });
     }
+
+    let recaptchaLoaded = false;
+    function loadRecaptcha() {
+      if (recaptchaLoaded) return;
+      recaptchaLoaded = true;
+      const s = document.createElement('script');
+      s.src = 'https://www.google.com/recaptcha/api.js';
+      s.async = true;
+      document.head.appendChild(s);
+    }
+    form.addEventListener('focusin', loadRecaptcha, { once: true });
+    form.addEventListener('pointerdown', loadRecaptcha, { once: true });
 
     window.onSubmit = function (token) {
       if (!form.reportValidity()) return;

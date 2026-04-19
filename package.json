@@ -19,9 +19,7 @@
   },
   "homepage": "https://github.com/siimsams/tori.ee#readme",
   "devDependencies": {
-    "@tailwindcss/vite": "^4.1.8",
-    "astro": "^5.1.0",
-    "tailwindcss": "^4.1.8",
-    "typescript": "^5.7.0"
+    "astro": "^6.1.8",
+    "typescript": "^6.0.3"
   }
 }

@@ -50,22 +50,23 @@ const coords = '58.4815°N · 24.8109°E';
   </a>
 
   <figure class="hero-media">
-    <video
-      autoplay
-      muted
-      loop
-      playsinline
-      poster="/media/hero_video.jpg"
-    >
-      <source src="/media/hero_video.webm" type="video/webm" />
-      <source src="/media/hero_video.mp4" type="video/mp4" />
-    </video>
+    <div class="hero-video">
+      <video
+        autoplay
+        muted
+        loop
+        playsinline
+        poster="/media/hero_video.jpg"
+      >
+        <source src="/media/hero_video.webm" type="video/webm" />
+        <source src="/media/hero_video.mp4" type="video/mp4" />
+      </video>
+    </div>
+    <figcaption class="hero-caption">
+      <span class="tori-mono">{captions[lang]}</span>
+      <span class="tori-mono">{coords}</span>
+    </figcaption>
   </figure>
-
-  <figcaption class="hero-caption">
-    <span class="tori-mono">{captions[lang]}</span>
-    <span class="tori-mono">{coords}</span>
-  </figcaption>
 </header>
 
 <style>
@@ -133,14 +134,17 @@ const coords = '58.4815°N · 24.8109°E';
   .hero-media {
     margin: clamp(2rem, 5vw, 4rem) auto 0;
     max-width: 960px;
+    padding: 0;
+  }
+
+  .hero-video {
     border-radius: 999px 999px 20px 20px;
     overflow: hidden;
     border: 1px solid var(--color-rule);
     position: relative;
-    padding: 0;
   }
 
-  .hero-media video {
+  .hero-video video {
     width: 100%;
     aspect-ratio: 16 / 10;
     object-fit: cover;
@@ -148,7 +152,7 @@ const coords = '58.4815°N · 24.8109°E';
     filter: saturate(0.88) contrast(0.98) brightness(0.96);
   }
 
-  .hero-media::after {
+  .hero-video::after {
     content: '';
     position: absolute;
     inset: 0;
@@ -161,7 +165,6 @@ const coords = '58.4815°N · 24.8109°E';
   }
 
   .hero-caption {
-    max-width: 960px;
     margin: 1rem auto 0;
     display: flex;
     justify-content: space-between;

@@ -33,10 +33,10 @@ const otherLangs = LANGS.filter((l) => l !== lang);
       type="button"
       aria-label="Open menu"
     >
-      <svg id="openIcon" class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+      <svg id="openIcon" width="24" height="24" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
         <path d="M4 11h16v2H4zm0-8h16v2H4zm0 16h16v2H4z" fill="currentColor" />
       </svg>
-      <svg id="closeIcon" class="w-6 h-6 hidden" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+      <svg id="closeIcon" width="24" height="24" class="hidden" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
         <path
           d="M6 18L18 6M6 6l12 12"
           stroke="currentColor"
@@ -48,7 +48,7 @@ const otherLangs = LANGS.filter((l) => l !== lang);
       </svg>
     </button>
 
-    <a class="nav-crest" href={langPath(lang, 'index')}>Tori · Matkakeskus</a>
+    <a class="nav-crest" href={langPath(lang, 'index')}>Tori Matkakeskus</a>
 
     <div class="nav-langs-wrap">
       <div class="nav-langs-inline">
