@@ -14,48 +14,274 @@ const pricesHref = page === 'index' ? '#prices' : `${langPath(lang, 'index')}#pr
 const locationHref = page === 'index' ? '#location' : `${langPath(lang, 'index')}#location`;
 const servicesHref = langPath(lang, 'more_info');
 
-const servicesClass = page === 'more_info' ? 'underline' : 'hover:underline';
+const menuItems: { href: string; label: string; active: boolean }[] = [
+  { href: orderHref, label: t(lang, 'menu.order'), active: false },
+  { href: pricesHref, label: t(lang, 'menu.prices'), active: false },
+  { href: servicesHref, label: t(lang, 'menu.services'), active: page === 'more_info' },
+  { href: locationHref, label: t(lang, 'menu.location'), active: false },
+];
+
+const otherLangs = LANGS.filter((l) => l !== lang);
 ---
 
-<nav
-  id="navBar"
-  class="3xl:w-[1950px] xl:px-36 px-6 py-5 z-20 top-0 w-full mx-auto center flex items-center justify-between flex-wrap bg-white"
->
-  <div class="z-20 space-x-3">
-    {LANGS.map((l) => (
-      <a href={langPath(l, page)} class={l === lang ? 'underline' : 'hover:underline'}>
-        {LANG_LABELS[l]}
-      </a>
-    ))}
+<nav class="site-nav">
+  <div class="nav-top">
+    <button
+      title="menu"
+      id="menuButton"
+      class="nav-burger"
+      type="button"
+      aria-label="Open menu"
+    >
+      <svg id="openIcon" class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M4 11h16v2H4zm0-8h16v2H4zm0 16h16v2H4z" fill="currentColor" />
+      </svg>
+      <svg id="closeIcon" class="w-6 h-6 hidden" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+        <path
+          d="M6 18L18 6M6 6l12 12"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          fill="none"
+        />
+      </svg>
+    </button>
+
+    <a class="nav-crest" href={langPath(lang, 'index')}>Tori · Matkakeskus</a>
+
+    <div class="nav-langs-wrap">
+      <div class="nav-langs-inline">
+        {LANGS.map((l) => (
+          <a href={langPath(l, page)} class={l === lang ? 'on' : ''}>{LANG_LABELS[l]}</a>
+        ))}
+      </div>
+
+      <details class="nav-langs-dropdown" id="langDropdown">
+        <summary aria-label="Select language">
+          <span>{LANG_LABELS[lang]}</span>
+          <svg viewBox="0 0 12 8" aria-hidden="true">
+            <path d="M1 1l5 5 5-5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </summary>
+        <ul>
+          {otherLangs.map((l) => (
+            <li><a href={langPath(l, page)}>{LANG_LABELS[l]}</a></li>
+          ))}
+        </ul>
+      </details>
+    </div>
   </div>
-  <menu class="hidden lg:block space-x-3">
-    <a href={orderHref} class="hover:underline">{t(lang, 'menu.order')}</a>
-    <a href={pricesHref} class="hover:underline">{t(lang, 'menu.prices')}</a>
-    <a href={servicesHref} class={servicesClass}>{t(lang, 'menu.services')}</a>
-    <a href={locationHref} class="hover:underline">{t(lang, 'menu.location')}</a>
-  </menu>
-  <button
-    title="hamburger menu button"
-    id="menuButton"
-    class="lg:hidden block z-20"
-    type="button"
-  >
-    <svg id="openIcon" class="h-6 w-6 fill-current text-gray-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-      <path d="M4 11h16v2H4zm0-8h16v2H4zm0 16h16v2H4z" />
-    </svg>
-    <svg id="closeIcon" class="h-6 w-6 fill-current text-gray-500 hidden" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-      <path d="M6 18L18 6M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-    </svg>
-  </button>
-  <div
-    id="menu"
-    class="fixed z-10 top-0 left-0 w-screen h-screen bg-white bg-opacity-90 hidden grid place-items-center"
-  >
-    <ul class="space-y-8 text-center">
-      <li><a href={orderHref}>{t(lang, 'menu.order')}</a></li>
-      <li><a href={pricesHref}>{t(lang, 'menu.prices')}</a></li>
-      <li><a href={servicesHref} class={servicesClass}>{t(lang, 'menu.services')}</a></li>
-      <li><a href={locationHref}>{t(lang, 'menu.location')}</a></li>
+
+  <div id="menu" class="nav-overlay hidden">
+    <ul>
+      {menuItems.map((item) => (
+        <li><a href={item.href} class={item.active ? 'on' : ''}>{item.label}</a></li>
+      ))}
     </ul>
   </div>
 </nav>
+
+<script>
+  const dropdown = document.getElementById('langDropdown') as HTMLDetailsElement | null;
+  if (dropdown) {
+    document.addEventListener('click', (e) => {
+      if (!dropdown.open) return;
+      if (!dropdown.contains(e.target as Node)) {
+        dropdown.removeAttribute('open');
+      }
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && dropdown.open) {
+        dropdown.removeAttribute('open');
+      }
+    });
+  }
+</script>
+
+<style>
+  .site-nav {
+    position: relative;
+    z-index: 50;
+    border-bottom: 1px solid var(--color-rule);
+    background: var(--color-bone);
+  }
+
+  .nav-top {
+    position: relative;
+    z-index: 2;
+    background: var(--color-bone);
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    gap: clamp(0.6rem, 2vw, 1.6rem);
+    padding: 1rem clamp(0.8rem, 4vw, 1.8rem);
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .nav-crest {
+    font-family: var(--font-display);
+    font-size: clamp(0.92rem, 3.4vw, 1.15rem);
+    letter-spacing: 0.04em;
+    text-align: center;
+    color: var(--color-ink);
+    text-decoration: none;
+    white-space: nowrap;
+  }
+
+  .nav-burger {
+    justify-self: start;
+    background: transparent;
+    border: none;
+    padding: 0.3rem;
+    color: var(--color-moss);
+    cursor: pointer;
+  }
+
+  /* Language switcher — shared wrapper */
+  .nav-langs-wrap {
+    justify-self: end;
+    position: relative;
+  }
+
+  /* Desktop: inline list */
+  .nav-langs-inline {
+    display: none;
+    gap: clamp(0.6rem, 2.4vw, 1.4rem);
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    letter-spacing: 0.22em;
+  }
+
+  .nav-langs-inline a {
+    text-decoration: none;
+    color: var(--color-ink);
+    border-bottom: 1px solid transparent;
+    padding-bottom: 0.15rem;
+    transition: color 0.2s, border-color 0.2s;
+  }
+
+  .nav-langs-inline a:hover,
+  .nav-langs-inline a.on {
+    color: var(--color-copper);
+    border-color: var(--color-copper);
+  }
+
+  /* Mobile: dropdown */
+  .nav-langs-dropdown {
+    display: block;
+    position: relative;
+  }
+
+  .nav-langs-dropdown summary {
+    list-style: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.25rem 0.1rem;
+    font-family: var(--font-mono);
+    font-size: 0.74rem;
+    letter-spacing: 0.14em;
+    color: var(--color-copper);
+    cursor: pointer;
+    user-select: none;
+    line-height: 1;
+    border-bottom: 1px solid var(--color-copper);
+    border-radius: 0;
+  }
+
+  .nav-langs-dropdown summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .nav-langs-dropdown summary svg {
+    width: 0.6rem;
+    height: 0.45rem;
+    transition: transform 0.2s ease;
+  }
+
+  .nav-langs-dropdown[open] summary svg {
+    transform: rotate(180deg);
+  }
+
+  .nav-langs-dropdown ul {
+    list-style: none;
+    margin: 0;
+    padding: 0.25rem 0;
+    position: absolute;
+    top: calc(100% + 0.5rem);
+    right: 0;
+    min-width: 3.6rem;
+    background: var(--color-bone);
+    border: 1px solid var(--color-rule);
+    border-radius: 8px;
+    box-shadow: 0 10px 28px rgba(28, 26, 21, 0.1);
+    z-index: 50;
+  }
+
+  .nav-langs-dropdown ul a {
+    display: block;
+    padding: 0.45rem 0.9rem;
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    color: var(--color-ink);
+    text-decoration: none;
+    text-align: center;
+    transition: color 0.2s, background 0.2s;
+  }
+
+  .nav-langs-dropdown ul a:hover {
+    color: var(--color-copper);
+    background: var(--color-bone-2);
+  }
+
+  @media (min-width: 640px) {
+    .nav-langs-inline {
+      display: flex;
+    }
+    .nav-langs-dropdown {
+      display: none;
+    }
+  }
+
+  .nav-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 1;
+    background: rgba(246, 241, 231, 0.97);
+    backdrop-filter: blur(6px);
+    display: grid;
+    place-items: center;
+  }
+
+  .nav-overlay.hidden {
+    display: none;
+  }
+
+  .nav-overlay ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .nav-overlay a {
+    font-family: var(--font-display);
+    font-size: 1.8rem;
+    color: var(--color-ink);
+    text-decoration: none;
+  }
+
+  .nav-overlay a.on {
+    color: var(--color-copper);
+  }
+
+  .site-nav :global(#menuButton .hidden) {
+    display: none;
+  }
+</style>

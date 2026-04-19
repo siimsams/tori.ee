@@ -7,27 +7,110 @@ interface Props {
 }
 
 const { lang } = Astro.props;
+
+const kickers: Record<Lang, string> = {
+  ee: 'Hinnakiri · 2026',
+  en: 'Price list · 2026',
+  ru: 'Прайс-лист · 2026',
+};
+
+const perPerson: Record<Lang, string> = {
+  ee: '1 inimene',
+  en: '1 person',
+  ru: '1 человек',
+};
+
+const perEvening: Record<Lang, string> = {
+  ee: 'õhtu, kuni 10 inimest',
+  en: 'evening, up to 10 people',
+  ru: 'вечер, до 10 человек',
+};
+
+const rows = [
+  { label: t(lang, 'prices.canoe.title') + ' ·' + t(lang, 'prices.canoe.schoolChildren').split(':')[0], small: perPerson[lang], cost: '15 €' },
+  { label: t(lang, 'prices.canoe.title') + ' ·' + t(lang, 'prices.canoe.adults').split(':')[0], small: perPerson[lang], cost: '25 €' },
+  { label: t(lang, 'prices.canoe.hourTrip').split(':')[0], small: perPerson[lang], cost: '15 €' },
+  { label: t(lang, 'prices.bow.hunt').split(':')[0], small: perPerson[lang], cost: '20 €' },
+  { label: t(lang, 'prices.sauna.title'), small: perEvening[lang], cost: '100 €' },
+];
 ---
 
-<section id="prices" class="3xl:w-[1950px] mx-auto">
-  <ul class="xl:px-36 px-6 grid grid-cols-1 md:grid-cols-4 gap-4">
-    <li class="flex flex-col items-center">
-      <h2 class="text-center text-3xl mb-3">{t(lang, 'prices.title')}</h2>
-      <p class="text-center">{t(lang, 'prices.description')}</p>
-    </li>
-    <li class="flex flex-col items-center">
-      <h2 class="text-center text-3xl mb-3">{t(lang, 'prices.canoe.title')}</h2>
-      <p class="text-center">{t(lang, 'prices.canoe.schoolChildren')}</p>
-      <p class="text-center">{t(lang, 'prices.canoe.adults')}</p>
-      <p class="text-center">{t(lang, 'prices.canoe.hourTrip')}</p>
-    </li>
-    <li class="flex flex-col items-center">
-      <h2 class="text-center text-3xl mb-3">{t(lang, 'prices.bow.title')}</h2>
-      <p class="text-center">{t(lang, 'prices.bow.hunt')}</p>
-    </li>
-    <li class="flex flex-col items-center">
-      <h2 class="text-center text-3xl mb-3">{t(lang, 'prices.sauna.title')}</h2>
-      <p class="text-center">{t(lang, 'prices.sauna.tub')}</p>
-    </li>
-  </ul>
+<section id="prices" class="prices">
+  <p class="tori-mono">{kickers[lang]}</p>
+  <h2 class="tori-display prices-title">{t(lang, 'prices.title')}</h2>
+  <p class="prices-lead">{t(lang, 'prices.description')}</p>
+
+  <div class="rows">
+    {rows.map((r) => (
+      <div class="row">
+        <span class="label">{r.label}<small>{r.small}</small></span>
+        <span class="cost">{r.cost}</span>
+      </div>
+    ))}
+  </div>
 </section>
+
+<style>
+  .prices {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: clamp(3rem, 5vw, 4rem) clamp(2rem, 4vw, 3rem);
+    border: 1px solid var(--color-rule);
+    border-radius: 16px;
+    background: var(--color-bone-2);
+    text-align: center;
+  }
+
+  .prices-title {
+    font-size: clamp(2.2rem, 4vw, 3.2rem);
+    margin-top: 0.6rem;
+  }
+
+  .prices-lead {
+    max-width: 44ch;
+    margin: 1rem auto 2.5rem;
+    font-family: var(--font-display);
+    color: #4b4838;
+  }
+
+  .rows {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .row {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 1rem;
+    padding: 0.8rem 0;
+    text-align: left;
+    border-bottom: 1px dashed var(--color-rule);
+  }
+
+  .row:last-child {
+    border-bottom: none;
+  }
+
+  .label {
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    color: var(--color-ink);
+    display: flex;
+    flex-direction: column;
+  }
+
+  .label small {
+    font-family: var(--font-body);
+    font-size: 0.82rem;
+    color: var(--color-moss-soft);
+    margin-top: 0.15rem;
+    font-weight: 400;
+  }
+
+  .cost {
+    font-family: var(--font-display);
+    font-size: 1.4rem;
+    color: var(--color-copper);
+    align-self: center;
+  }
+</style>

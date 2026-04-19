@@ -7,6 +7,8 @@ import Prices from '../Prices.astro';
 import OrderForm from '../OrderForm.astro';
 import Contact from '../Contact.astro';
 import LocationMap from '../LocationMap.astro';
+import Divider from '../Divider.astro';
+import Signature from '../Signature.astro';
 import type { Lang } from '../../i18n';
 
 interface Props {
@@ -18,14 +20,16 @@ const { lang } = Astro.props;
 
 <Layout lang={lang} page="index">
   <Header lang={lang} />
-  <Reviews lang={lang} />
+  <Divider leaf="sprig" />
   <Services lang={lang} />
+  <Divider leaf="fern" />
   <Prices lang={lang} />
-  <section class="3xl:w-[1950px] mx-auto xl:px-36 px-6 py-10 grid grid-cols-1 md:grid-cols-2 md:gap-5">
-    <div class="md:col-span-1">
-      <OrderForm lang={lang} />
-      <Contact lang={lang} />
-    </div>
-    <LocationMap lang={lang} />
-  </section>
+  <Divider leaf="willow" />
+  <Reviews lang={lang} />
+  <Divider leaf="sprig" />
+  <OrderForm lang={lang} />
+  <Contact lang={lang} />
+  <Divider leaf="fern" />
+  <LocationMap lang={lang} />
+  <Signature lang={lang} />
 </Layout>

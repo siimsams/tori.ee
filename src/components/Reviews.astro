@@ -7,38 +7,103 @@ interface Props {
 }
 
 const { lang } = Astro.props;
+
+const kickers: Record<Lang, string> = {
+  ee: 'Arvustused',
+  en: 'Reviews',
+  ru: 'Отзывы',
+};
 ---
 
-<section class="flex justify-center flex-col py-8 overflow-hidden text-center">
-  <h2 class="pb-10 text-4xl">{t(lang, 'reviews')}</h2>
-  <div class="flex items-center justify-center">
-    <ul class="flex overflow-x-auto">
-      <li class="flex flex-col items-center flex-shrink-0 px-7">
-        <a
-          target="_blank"
-          rel="noopener"
-          href="https://www.google.com/maps/place/Tori+Matkakeskus/@58.4815636,24.8108362,17z/data=!4m8!3m7!1s0x46ece6573013f239:0xd97fc28347415a84!8m2!3d58.4815636!4d24.8108362!9m1!1b1!16s%2Fg%2F11c2jw2vr1?entry=ttu"
-        >
-          <img class="h-[100px] w-[100px] object-contain mx-auto" src="/Google_logo.png" alt="Google Logo" />
-          <p>Google</p>
-        </a>
-      </li>
-      <li class="flex flex-col items-center flex-shrink-0 px-7">
-        <a target="_blank" rel="noopener" href="https://www.facebook.com/torimatkakeskus">
-          <img class="h-[100px] w-[100px] object-contain mx-auto" src="/facebook_logo.svg" alt="Facebook Logo" />
-          <p>Facebook</p>
-        </a>
-      </li>
-      <li class="flex flex-col items-center flex-shrink-0 px-7">
-        <a
-          target="_blank"
-          rel="noopener"
-          href="https://www.tripadvisor.com/Attraction_Review-g3296605-d26436166-Reviews-Tori_Adventure_Center-Tori_Parnu_County.html"
-        >
-          <img class="h-[100px] w-[100px] object-contain mx-auto" src="/tripadvisor-logo.svg" alt="Tripadvisor Logo" />
-          <p>Tripadvisor</p>
-        </a>
-      </li>
-    </ul>
-  </div>
+<section class="reviews">
+  <p class="tori-mono">{kickers[lang]}</p>
+  <h2 class="tori-display reviews-title">{t(lang, 'reviews')}</h2>
+
+  <ul class="review-list">
+    <li>
+      <a
+        target="_blank"
+        rel="noopener"
+        href="https://www.google.com/maps/place/Tori+Matkakeskus/@58.481500348077596,24.810938771713452,17z/data=!4m8!3m7!1s0x46ece6573013f239:0xd97fc28347415a84!8m2!3d58.481500348077596!4d24.810938771713452!9m1!1b1!16s%2Fg%2F11c2jw2vr1?entry=ttu"
+      >
+        <img src="/Google_logo.png" alt="Google" />
+        <span>Google</span>
+      </a>
+    </li>
+    <li>
+      <a target="_blank" rel="noopener" href="https://www.facebook.com/torimatkakeskus">
+        <img src="/facebook_logo.svg" alt="Facebook" />
+        <span>Facebook</span>
+      </a>
+    </li>
+    <li>
+      <a
+        target="_blank"
+        rel="noopener"
+        href="https://www.tripadvisor.com/Attraction_Review-g3296605-d26436166-Reviews-Tori_Adventure_Center-Tori_Parnu_County.html"
+      >
+        <img src="/tripadvisor-logo.svg" alt="Tripadvisor" />
+        <span>Tripadvisor</span>
+      </a>
+    </li>
+  </ul>
 </section>
+
+<style>
+  .reviews {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: clamp(2rem, 5vw, 4rem) clamp(1.5rem, 4vw, 3rem);
+    text-align: center;
+  }
+
+  .reviews-title {
+    font-size: clamp(2rem, 4vw, 3rem);
+    max-width: 22ch;
+    margin: 0.8rem auto 0;
+  }
+
+  .review-list {
+    list-style: none;
+    padding: 0;
+    margin: clamp(2rem, 4vw, 3rem) 0 0;
+    display: flex;
+    gap: clamp(2rem, 5vw, 4rem);
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .review-list a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.6rem;
+    text-decoration: none;
+    color: var(--color-ink);
+    transition: transform 0.3s;
+  }
+
+  .review-list a:hover {
+    transform: translateY(-3px);
+  }
+
+  .review-list img {
+    width: 72px;
+    height: 72px;
+    object-fit: contain;
+    opacity: 0.8;
+    transition: opacity 0.3s;
+  }
+
+  .review-list a:hover img {
+    opacity: 1;
+  }
+
+  .review-list span {
+    font-family: var(--font-mono);
+    font-size: 0.74rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--color-moss-soft);
+  }
+</style>

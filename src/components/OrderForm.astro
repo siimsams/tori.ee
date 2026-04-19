@@ -7,38 +7,44 @@ interface Props {
 }
 
 const { lang } = Astro.props;
+
+const orLabels: Record<Lang, string> = {
+  ee: 'Või helista otse:',
+  en: 'Or give us a call:',
+  ru: 'Или позвоните:',
+};
 ---
 
-<div id="order" class="w-full">
-  <h2 class="text-center text-4xl">{t(lang, 'orderTrip.title')}</h2>
-  <form id="order-form" class="space-y-4" action="/mail.php" method="post">
-    <div class="flex flex-col items-end">
-      <label for="name" class="self-start">{t(lang, 'orderTrip.fullName')}</label>
-      <input type="text" name="name" id="name" class="p-2 w-full border-[3px] border-black border-solid" required />
+<section id="order" class="order">
+  <p class="tori-mono">{t(lang, 'orderTrip.title')}</p>
+  <h2 class="tori-display order-title">{t(lang, 'orderTrip.title')}</h2>
+  <p class="order-lead">
+    {orLabels[lang]}
+    <a class="phone-link" href="tel:+37251142533">{t(lang, 'contactUs.phone')}</a>
+  </p>
+
+  <form id="order-form" action="/mail.php" method="post">
+    <div class="field">
+      <label for="name">{t(lang, 'orderTrip.fullName')}</label>
+      <input type="text" name="name" id="name" required />
     </div>
-    <div class="flex flex-col items-end">
-      <label for="email" class="self-start">{t(lang, 'orderTrip.email')}</label>
-      <input type="email" name="email" id="email" class="p-2 w-full border-[3px] border-black border-solid" required />
+    <div class="field">
+      <label for="email">{t(lang, 'orderTrip.email')}</label>
+      <input type="email" name="email" id="email" required />
     </div>
-    <div class="flex flex-col items-end">
-      <label for="phone" class="self-start">{t(lang, 'orderTrip.contactPhone')}</label>
-      <input type="tel" name="phone" id="phone" class="p-2 w-full border-[3px] border-black border-solid" required />
+    <div class="field">
+      <label for="phone">{t(lang, 'orderTrip.contactPhone')}</label>
+      <input type="tel" name="phone" id="phone" required />
     </div>
-    <div class="flex flex-col items-end">
-      <label for="message" class="self-start">{t(lang, 'orderTrip.orderDescription')}</label>
-      <textarea
-        name="message"
-        id="message"
-        cols="30"
-        rows="6"
-        class="p-2 w-full border-[3px] border-black border-solid"
-        required></textarea>
+    <div class="field">
+      <label for="message">{t(lang, 'orderTrip.orderDescription')}</label>
+      <textarea name="message" id="message" rows="5" required></textarea>
     </div>
     <input id="hiddentoken" type="hidden" name="token" />
     <button
       title="Send message"
       type="button"
-      class="g-recaptcha w-full px-10 py-2 border-[3px] border-black border-solid"
+      class="g-recaptcha submit"
       data-sitekey="6Lf97qkaAAAAAEm2DF9a2gyaRilWaekl7Zu4_FlB"
       data-callback="onSubmit"
       data-action="submit"
@@ -46,12 +52,13 @@ const { lang } = Astro.props;
       {t(lang, 'orderTrip.sendOrder')}
     </button>
   </form>
-  <div id="success" class="h-[622px] flex flex-col justify-center items-center hidden">
-    <img class="h-[400px] w-[400px]" src="/circle_green_checkmark.svg" alt="" />
-    <h2 class="text-center text-4xl pt-4">{t(lang, 'orderTrip.success')}</h2>
+
+  <div id="success" class="success hidden">
+    <img src="/circle_green_checkmark.svg" alt="" width="96" height="96" />
+    <h2 class="tori-display">{t(lang, 'orderTrip.success')}</h2>
   </div>
-  <h2 id="failure" class="text-red-500 pt-3 text-center hidden">{t(lang, 'orderTrip.failure')}</h2>
-</div>
+  <p id="failure" class="failure hidden">{t(lang, 'orderTrip.failure')}</p>
+</section>
 
 <script is:inline async src="https://www.google.com/recaptcha/api.js"></script>
 <script is:inline>
@@ -87,3 +94,119 @@ const { lang } = Astro.props;
     };
   })();
 </script>
+
+<style>
+  .order {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: clamp(3rem, 6vw, 5rem) clamp(1.5rem, 4vw, 3rem) 2rem;
+    text-align: center;
+  }
+
+  .order-title {
+    font-size: clamp(2.4rem, 5vw, 3.6rem);
+    margin-top: 0.6rem;
+  }
+
+  .order-lead {
+    max-width: 46ch;
+    margin: 1rem auto 2.5rem;
+    color: #4b4838;
+    font-family: var(--font-display);
+  }
+
+  .phone-link {
+    color: var(--color-copper);
+    text-decoration: none;
+    border-bottom: 1px solid var(--color-copper);
+    padding-bottom: 1px;
+  }
+
+  #order-form {
+    display: grid;
+    gap: 1rem;
+    text-align: left;
+  }
+
+  .field label {
+    display: block;
+    margin-bottom: 0.3rem;
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--color-moss-soft);
+  }
+
+  .field input,
+  .field textarea {
+    width: 100%;
+    background: var(--color-bone-2);
+    border: 1px solid var(--color-rule);
+    border-radius: 10px;
+    padding: 0.9rem 1rem;
+    font: inherit;
+    font-family: var(--font-display);
+    font-size: 1.05rem;
+    color: var(--color-ink);
+    transition: border-color 0.3s, background 0.3s;
+  }
+
+  .field textarea {
+    resize: vertical;
+    min-height: 6rem;
+  }
+
+  .field input:focus,
+  .field textarea:focus {
+    outline: none;
+    border-color: var(--color-copper);
+    background: var(--color-bone);
+  }
+
+  .submit {
+    margin-top: 1rem;
+    padding: 1rem 2rem;
+    background: var(--color-moss);
+    color: var(--color-bone);
+    border: none;
+    border-radius: 999px;
+    font-family: var(--font-display);
+    font-size: 1.05rem;
+    cursor: pointer;
+    letter-spacing: 0.04em;
+    transition: background 0.3s, color 0.3s;
+  }
+
+  .submit:hover {
+    background: var(--color-copper);
+    color: var(--color-ink);
+  }
+
+  .success {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .success.hidden {
+    display: none;
+  }
+
+  .success h2 {
+    font-size: clamp(1.6rem, 3vw, 2.2rem);
+  }
+
+  .failure {
+    color: #a04628;
+    margin-top: 1.5rem;
+    font-family: var(--font-display);
+    font-size: 1.05rem;
+  }
+
+  .failure.hidden {
+    display: none;
+  }
+</style>

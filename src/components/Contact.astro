@@ -9,9 +9,53 @@ interface Props {
 const { lang } = Astro.props;
 ---
 
-<div id="contact" class="text-center py-6">
-  <h2 class="text-center text-4xl">{t(lang, 'contactUs.title')}</h2>
-  <p>{t(lang, 'contactUs.name')}</p>
-  <p>{t(lang, 'contactUs.phone')}</p>
-  <p>{t(lang, 'contactUs.email')}</p>
-</div>
+<aside class="contact">
+  <p class="tori-mono contact-kicker">{t(lang, 'contactUs.title')}</p>
+  <p class="contact-name tori-display">{t(lang, 'contactUs.name')}</p>
+  <p class="contact-line">
+    <a href="tel:+37251142533">{t(lang, 'contactUs.phone')}</a>
+  </p>
+  <p class="contact-line">
+    <a href={`mailto:${t(lang, 'contactUs.email')}`}>{t(lang, 'contactUs.email')}</a>
+  </p>
+</aside>
+
+<style>
+  .contact {
+    text-align: center;
+    padding: clamp(1rem, 3vw, 2rem) 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.3rem;
+  }
+
+  .contact-kicker {
+    margin-bottom: 0.6rem;
+  }
+
+  .contact-name {
+    font-size: clamp(1.6rem, 3vw, 2.2rem);
+    font-style: italic;
+    color: var(--color-copper);
+  }
+
+  .contact-line {
+    font-family: var(--font-display);
+    font-size: 1.05rem;
+    color: var(--color-ink);
+  }
+
+  .contact-line a {
+    color: inherit;
+    text-decoration: none;
+    border-bottom: 1px solid var(--color-rule);
+    padding-bottom: 1px;
+    transition: border-color 0.3s, color 0.3s;
+  }
+
+  .contact-line a:hover {
+    color: var(--color-copper);
+    border-color: var(--color-copper);
+  }
+</style>

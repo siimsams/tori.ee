@@ -1,6 +1,8 @@
 ---
 import { Picture } from 'astro:assets';
 import Layout from '../../layouts/Layout.astro';
+import Divider from '../Divider.astro';
+import Signature from '../Signature.astro';
 import type { Lang } from '../../i18n';
 import { t, tArray, langPath } from '../../i18n';
 import kanuu from '../../assets/kanuu.jpg';
@@ -14,94 +16,471 @@ interface Props {
 
 const { lang } = Astro.props;
 const orderHref = `${langPath(lang, 'index')}#order`;
-const overlayClass = 'absolute inset-0 -z-10';
-const overlayImgClass = 'w-full h-full object-cover brightness-50';
 const safetyItems = tArray(lang, 'moreInfo.archery_safety_list');
+
+const subKickers: Record<Lang, { routes: string; archery: string; grant: string; sauna: string; safety: string }> = {
+  ee: {
+    routes: 'Marsruudid · Valikul neli',
+    archery: 'Vibu · Metsa­vaikuses',
+    grant: 'Projekt · Tunnustus',
+    sauna: 'Saun · Õhtune lõpetus',
+    safety: 'Ohutus · Kuus reeglit',
+  },
+  en: {
+    routes: 'Routes · Four options',
+    archery: 'Archery · Forest silence',
+    grant: 'Project · Recognition',
+    sauna: 'Sauna · Evening finale',
+    safety: 'Safety · Six rules',
+  },
+  ru: {
+    routes: 'Маршруты · Четыре варианта',
+    archery: 'Лук · Тишина леса',
+    grant: 'Проект · Признание',
+    sauna: 'Сауна · Вечерний финал',
+    safety: 'Безопасность · Шесть правил',
+  },
+};
+
+const trips = [1, 2, 3, 4].map((i) => ({
+  num: `№ ${i}`,
+  title: t(lang, `moreInfo.trip_${i}_title`),
+  description: t(lang, `moreInfo.trip_${i}_description`),
+  duration: t(lang, `moreInfo.trip_${i}_duration`),
+}));
 ---
 
 <Layout lang={lang} page="more_info">
-  <header class="3xl:w-[1950px] mx-auto relative grid grid-cols-1 md:grid-cols-2">
-    <div class="my-20 md:mx-5 pb-4 text-center relative md:col-span-1">
-      <h2 class="text-5xl pb-5 md:text-black text-white">{t(lang, 'moreInfo.header_title')}</h2>
-      <p class="pb-9 max-w-[520px] mx-auto md:text-black text-white px-6">
-        {t(lang, 'moreInfo.header_description')}
-      </p>
-      <a
-        href={orderHref}
-        class="px-10 py-3 border-[3px] md:border-black border-white border-solid md:text-black text-white"
-      >
-        {t(lang, 'moreInfo.header_button')}
+  <header class="mi-hero">
+    <svg class="leaf leaf-left" aria-hidden="true"><use href="#leaf-sprig" /></svg>
+    <svg class="leaf leaf-right" aria-hidden="true"><use href="#leaf-fern" /></svg>
+
+    <div class="mi-hero-copy">
+      <p class="tori-mono">Kanuu · Vibu · Saun</p>
+      <h1 class="tori-display mi-hero-title">{t(lang, 'moreInfo.header_title')}</h1>
+      <p class="mi-hero-body">{t(lang, 'moreInfo.header_description')}</p>
+      <a class="tori-pill" href={orderHref}>
+        <span>{t(lang, 'moreInfo.header_button')}</span><span aria-hidden="true">→</span>
       </a>
     </div>
-    <div class="absolute inset-0 -z-10 md:relative md:col-span-1">
+    <figure class="mi-hero-media">
       <Picture
         src={kanuu}
         formats={['avif', 'webp']}
-        alt="Canoe"
-        class="w-full h-full object-cover md:brightness-100 brightness-[0.35]"
+        alt="Canoe on Pärnu river"
+        pictureAttributes={{ class: 'mi-hero-pic' }}
+        class="mi-hero-img"
       />
-    </div>
+    </figure>
   </header>
 
-  <section class="3xl:w-[1950px] mx-auto xl:px-36 grid-cols-1 md:grid-cols-2 md:gap-5 px-6 py-10 grid">
-    {[1, 2, 3, 4].map((i) => (
-      <div class="md:col-span-1 pb-4">
-        <h2 class="text-center text-4xl pb-5">{t(lang, `moreInfo.trip_${i}_title`)}</h2>
-        <p class="text-center">{t(lang, `moreInfo.trip_${i}_description`)}</p>
-        <p class="text-center font-semibold pt-1">{t(lang, `moreInfo.trip_${i}_duration`)}</p>
-      </div>
-    ))}
-  </section>
+  <Divider leaf="sprig" />
 
-  <section class="3xl:w-[1950px] mx-auto relative grid grid-cols-2">
-    <div class="relative py-20 text-center md:col-span-1 col-span-2">
-      <div class={overlayClass}>
-        <Picture
-          src={vibu}
-          formats={['avif', 'webp']}
-          fallbackFormat="jpg"
-          alt="Bow hunt"
-          class={overlayImgClass}
-        />
-      </div>
-      <h2 class="relative text-5xl pb-5 text-white">{t(lang, 'moreInfo.archery_title')}</h2>
-      <p class="relative pb-9 max-w-[520px] mx-auto text-white px-6">
-        {t(lang, 'moreInfo.archery_description')}
-      </p>
-      <a href={orderHref} class="relative px-10 py-3 border-[3px] border-white border-solid text-white">
-        {t(lang, 'moreInfo.archery_button')}
-      </a>
-    </div>
-    <div class="my-20 mx-5 pb-4 relative md:col-span-1 col-span-2">
-      <h2 class="text-5xl pb-5 text-black text-center">{t(lang, 'moreInfo.archery_safety_title')}</h2>
-      <ul class="list-disc pl-10">
-        {safetyItems.map((item) => <li>{item}</li>)}
-      </ul>
+  <section class="mi-section">
+    <p class="tori-mono center">{subKickers[lang].routes}</p>
+    <h2 class="tori-display section-title">{t(lang, 'canoeTrips.title')}</h2>
+
+    <div class="trips">
+      {trips.map((trip) => (
+        <article class="trip">
+          <span class="trip-num">{trip.num}</span>
+          <h3 class="tori-display trip-title">{trip.title}</h3>
+          <p class="trip-body">{trip.description}</p>
+          <p class="trip-duration tori-mono">{trip.duration}</p>
+        </article>
+      ))}
     </div>
   </section>
 
-  <section class="3xl:w-[1950px] mx-auto relative grid grid-cols-2 pb-14">
-    <div class="my-20 mx-5 pb-4 relative md:col-span-1 col-span-2">
-      <h2 class="text-5xl pb-5 text-black text-center">{t(lang, 'moreInfo.grant_title')}</h2>
-      <p class="text-center pb-9">{t(lang, 'moreInfo.grant_text')}</p>
-      <Picture src={euro} formats={['avif', 'webp']} alt="Euro support" />
+  <Divider leaf="fern" />
+
+  <section class="mi-section split">
+    <div class="split-media arched">
+      <Picture
+        src={vibu}
+        formats={['avif', 'webp']}
+        fallbackFormat="jpg"
+        alt="Bow hunting range"
+        pictureAttributes={{ class: 'split-pic' }}
+        class="split-img"
+      />
     </div>
-    <div class="relative py-20 text-center md:col-span-1 col-span-2">
-      <div class={overlayClass}>
-        <Picture
-          src={saun}
-          formats={['avif', 'webp']}
-          alt="Hot tub"
-          class={overlayImgClass}
-        />
-      </div>
-      <h2 class="relative text-5xl pb-5 text-white">{t(lang, 'moreInfo.sauna_title')}</h2>
-      <p class="relative max-w-[520px] mx-auto text-white pb-9 px-6">
-        {t(lang, 'moreInfo.sauna_description')}
-      </p>
-      <a href={orderHref} class="relative px-10 py-3 border-[3px] border-white border-solid text-white">
-        {t(lang, 'moreInfo.archery_button')}
+    <div class="split-copy">
+      <p class="tori-mono">{subKickers[lang].archery}</p>
+      <h2 class="tori-display section-title left">{t(lang, 'moreInfo.archery_title')}</h2>
+      <p class="split-body">{t(lang, 'moreInfo.archery_description')}</p>
+      <a class="tori-pill" href={orderHref}>
+        <span>{t(lang, 'moreInfo.archery_button')}</span><span aria-hidden="true">→</span>
       </a>
     </div>
   </section>
+
+  <section class="mi-section safety">
+    <p class="tori-mono center">{subKickers[lang].safety}</p>
+    <h2 class="tori-display section-title">{t(lang, 'moreInfo.archery_safety_title')}</h2>
+    <ol class="safety-list">
+      {safetyItems.map((item, i) => (
+        <li>
+          <span class="safety-num">{String(i + 1).padStart(2, '0')}</span>
+          <span class="safety-body">{item}</span>
+        </li>
+      ))}
+    </ol>
+  </section>
+
+  <Divider leaf="willow" />
+
+  <section class="mi-section split">
+    <div class="split-media arched">
+      <Picture
+        src={saun}
+        formats={['avif', 'webp']}
+        alt="Hot tub on the river bank"
+        pictureAttributes={{ class: 'split-pic' }}
+        class="split-img"
+      />
+    </div>
+    <div class="split-copy">
+      <p class="tori-mono">{subKickers[lang].sauna}</p>
+      <h2 class="tori-display section-title left">{t(lang, 'moreInfo.sauna_title')}</h2>
+      <p class="split-body">{t(lang, 'moreInfo.sauna_description')}</p>
+      <a class="tori-pill" href={orderHref}>
+        <span>{t(lang, 'moreInfo.archery_button')}</span><span aria-hidden="true">→</span>
+      </a>
+    </div>
+  </section>
+
+  <Divider leaf="sprig" />
+
+  <section class="mi-grant">
+    <p class="tori-mono">{subKickers[lang].grant}</p>
+    <h2 class="tori-display grant-title">{t(lang, 'moreInfo.grant_title')}</h2>
+    <p class="grant-body">{t(lang, 'moreInfo.grant_text')}</p>
+    <figure class="grant-badge">
+      <Picture
+        src={euro}
+        formats={['avif', 'webp']}
+        alt="European Union LEADER funding acknowledgement"
+        pictureAttributes={{ class: 'grant-pic' }}
+        class="grant-img"
+      />
+    </figure>
+  </section>
+
+  <Signature lang={lang} />
 </Layout>
+
+<style>
+  .mi-hero {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: clamp(3rem, 6vw, 5rem) clamp(1.5rem, 4vw, 3rem);
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    align-items: center;
+  }
+
+  @media (min-width: 900px) {
+    .mi-hero {
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+    }
+  }
+
+  .leaf {
+    position: absolute;
+    width: 110px;
+    height: auto;
+    opacity: 0.4;
+    pointer-events: none;
+  }
+
+  .leaf-left {
+    top: 1rem;
+    left: 0.8rem;
+    color: var(--color-moss-soft);
+    transform: rotate(-18deg);
+  }
+
+  .leaf-right {
+    top: 1.4rem;
+    right: 0.8rem;
+    color: var(--color-copper);
+    transform: rotate(22deg);
+  }
+
+  @media (max-width: 640px) {
+    .leaf {
+      width: 70px;
+    }
+  }
+
+  .mi-hero-copy {
+    text-align: left;
+  }
+
+  .mi-hero-copy .tori-mono {
+    margin-bottom: 1rem;
+  }
+
+  .mi-hero-title {
+    font-size: clamp(2.4rem, 6vw, 4.6rem);
+    max-width: 14ch;
+  }
+
+  .mi-hero-body {
+    margin: 1.6rem 0 2rem;
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    color: #4b4838;
+    max-width: 46ch;
+  }
+
+  .mi-hero-media {
+    border-radius: 999px 999px 16px 16px;
+    overflow: hidden;
+    border: 1px solid var(--color-rule);
+    margin: 0;
+    aspect-ratio: 4 / 5;
+    max-height: 560px;
+  }
+
+  .mi-hero-media :global(.mi-hero-pic),
+  .mi-hero-media :global(.mi-hero-img) {
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+
+  .mi-hero-media :global(img) {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: saturate(0.88);
+  }
+
+  .mi-section {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: clamp(2rem, 5vw, 4rem) clamp(1.5rem, 4vw, 3rem);
+  }
+
+  .center {
+    text-align: center;
+  }
+
+  .section-title {
+    font-size: clamp(2.2rem, 4.5vw, 3.4rem);
+    text-align: center;
+    margin: 0.6rem auto 2.5rem;
+    max-width: 18ch;
+  }
+
+  .section-title.left {
+    text-align: left;
+    margin: 0.6rem 0 1.4rem;
+  }
+
+  .trips {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  @media (min-width: 800px) {
+    .trips {
+      grid-template-columns: 1fr 1fr;
+      column-gap: 4rem;
+      row-gap: 3rem;
+    }
+  }
+
+  .trip {
+    text-align: left;
+    padding-top: 1.2rem;
+    border-top: 1px solid var(--color-rule);
+  }
+
+  .trip-num {
+    font-family: var(--font-display);
+    font-style: italic;
+    color: var(--color-copper);
+    font-size: 1.4rem;
+  }
+
+  .trip-title {
+    font-size: clamp(1.6rem, 2.8vw, 2.2rem);
+    margin-top: 0.3rem;
+    line-height: 1.05;
+  }
+
+  .trip-body {
+    margin-top: 1rem;
+    color: #3f3c2f;
+    max-width: 58ch;
+  }
+
+  .trip-duration {
+    margin-top: 1rem;
+    color: var(--color-moss);
+  }
+
+  .split {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    align-items: center;
+  }
+
+  @media (min-width: 900px) {
+    .split {
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+    }
+    .split.rev .split-copy {
+      order: 2;
+    }
+    .split.rev .split-media {
+      order: 1;
+    }
+  }
+
+  .split-media {
+    border: 1px solid var(--color-rule);
+    overflow: hidden;
+    aspect-ratio: 5 / 6;
+    border-radius: 12px;
+  }
+
+  .split-media.arched {
+    border-radius: 999px 999px 12px 12px;
+  }
+
+  .split-media :global(.split-pic),
+  .split-media :global(.split-img) {
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+
+  .split-media :global(img) {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: saturate(0.88);
+  }
+
+  .split-media :global(.split-img.plain) + :global(img),
+  .split-media:has(:global(.plain)) :global(img) {
+    filter: none;
+  }
+
+  .split-copy {
+    text-align: left;
+  }
+
+  .split-copy .tori-mono {
+    margin-bottom: 0.4rem;
+  }
+
+  .split-body {
+    font-family: var(--font-display);
+    font-size: 1.05rem;
+    color: #3f3c2f;
+    margin-bottom: 1.6rem;
+    max-width: 52ch;
+  }
+
+  .safety {
+    max-width: 760px;
+  }
+
+  .safety-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+
+  .safety-list li {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 1.2rem;
+    align-items: baseline;
+    padding: 1rem 0;
+    border-top: 1px dashed var(--color-rule);
+  }
+
+  .safety-list li:last-child {
+    border-bottom: 1px dashed var(--color-rule);
+  }
+
+  .safety-num {
+    font-family: var(--font-display);
+    font-style: italic;
+    color: var(--color-copper);
+    font-size: 1.4rem;
+    line-height: 1;
+  }
+
+  .safety-body {
+    font-family: var(--font-display);
+    font-size: 1rem;
+    color: #3f3c2f;
+  }
+
+  /* Grant acknowledgement (EU LEADER funding credit) */
+  .mi-grant {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: clamp(2rem, 5vw, 3.5rem) clamp(1.5rem, 4vw, 3rem) clamp(3rem, 6vw, 5rem);
+    text-align: center;
+  }
+
+  .mi-grant .tori-mono {
+    margin-bottom: 0.8rem;
+  }
+
+  .grant-title {
+    font-size: clamp(1.8rem, 3.4vw, 2.6rem);
+    margin: 0 auto 1.6rem;
+    max-width: 20ch;
+  }
+
+  .grant-body {
+    max-width: 60ch;
+    margin: 0 auto 2.5rem;
+    color: #3f3c2f;
+    font-family: var(--font-display);
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  .grant-badge {
+    max-width: 420px;
+    margin: 0 auto;
+    padding: 1.2rem 1.5rem;
+    background: #ffffff;
+    border: 1px solid var(--color-rule);
+    border-radius: 12px;
+    box-shadow: 0 6px 22px rgba(28, 26, 21, 0.06);
+  }
+
+  .grant-badge :global(.grant-pic),
+  .grant-badge :global(.grant-img) {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  .grant-badge :global(img) {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
+</style>

@@ -1,0 +1,14 @@
+---
+interface Props {
+  leaf?: 'sprig' | 'fern' | 'willow';
+}
+
+const { leaf = 'sprig' } = Astro.props;
+const href = `#leaf-${leaf}`;
+---
+
+<div class="tori-divider" role="separator" aria-hidden="true">
+  <span class="tori-divider-line"></span>
+  <svg><use href={href} /></svg>
+  <span class="tori-divider-line"></span>
+</div>

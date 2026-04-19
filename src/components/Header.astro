@@ -7,24 +7,174 @@ interface Props {
 }
 
 const { lang } = Astro.props;
+
+const kickers: Record<Lang, string> = {
+  ee: 'Kanuu · Vibu · Saun · aastast 1996',
+  en: 'Canoe · Archery · Sauna · since 1996',
+  ru: 'Каноэ · Лук · Сауна · с 1996 года',
+};
+
+const taglines: Record<Lang, string> = {
+  ee: 'Aeglane vesi,<br /><em>pikk õhtu.</em>',
+  en: 'Slow water,<br /><em>long evening.</em>',
+  ru: 'Тихая вода,<br /><em>долгий вечер.</em>',
+};
+
+const subs: Record<Lang, string> = {
+  ee: 'Tori Matkakeskus on väike pereettevõte Pärnu jõe ääres. Kolmkümmend aastat oleme viinud külalisi Soomaa vaikusesse kanuuga, vibuga, või lihtsalt saunatünni auru sisse.',
+  en: 'Tori Matkakeskus is a small family business on the banks of the Pärnu River. For thirty years we have taken guests into the silence of Soomaa by canoe, with a bow, or simply into the steam of the sauna tub.',
+  ru: 'Наше небольшое семейное предприятие на берегу реки Пярну. Уже тридцать лет мы ведём гостей в тишину Соомаа: на каноэ, с луком или просто в пар банной бочки.',
+};
+
+const captions: Record<Lang, string> = {
+  ee: 'Pärnu jõgi · Hommik',
+  en: 'Pärnu River · Morning',
+  ru: 'Река Пярну · Утро',
+};
+
+const coords = '58.4815°N · 24.8109°E';
 ---
 
-<header class="h-[85vh] grid items-center relative text-white">
-  <div class="3xl:w-[1950px] 3xl:mx-auto xl:pl-36 pl-6 z-0">
-    <h1 class="lg:text-7xl text-5xl break-all font-sans font-bold" set:html={t(lang, 'header.title')} />
-    <p class="pt-3 pb-8 max-w-[520px]">{t(lang, 'header.subtitle')}</p>
-    <a href="#order" class="px-10 py-3 border-[3px] border-white border-solid">{t(lang, 'menu.order')}</a>
-  </div>
-  <video
-    id="myVideo"
-    autoplay
-    muted
-    loop
-    playsinline
-    poster="/media/hero_video.jpg"
-    class="h-full w-full object-cover max-w-none brightness-[0.75] -z-10 absolute top-0 left-0"
-  >
-    <source src="/media/hero_video.webm" type="video/webm" />
-    <source src="/media/hero_video.mp4" type="video/mp4" />
-  </video>
+<header class="hero">
+  <svg class="leaf leaf-left" aria-hidden="true"><use href="#leaf-sprig" /></svg>
+  <svg class="leaf leaf-right" aria-hidden="true"><use href="#leaf-fern" /></svg>
+
+  <p class="tori-mono hero-kicker">{kickers[lang]}</p>
+
+  <h1 class="tori-display hero-title" set:html={taglines[lang]} />
+
+  <p class="hero-sub">{subs[lang]}</p>
+
+  <a class="tori-pill hero-cta" href="#order">
+    <span>{t(lang, 'menu.order')}</span><span aria-hidden="true">→</span>
+  </a>
+
+  <figure class="hero-media">
+    <video
+      autoplay
+      muted
+      loop
+      playsinline
+      poster="/media/hero_video.jpg"
+    >
+      <source src="/media/hero_video.webm" type="video/webm" />
+      <source src="/media/hero_video.mp4" type="video/mp4" />
+    </video>
+  </figure>
+
+  <figcaption class="hero-caption">
+    <span class="tori-mono">{captions[lang]}</span>
+    <span class="tori-mono">{coords}</span>
+  </figcaption>
 </header>
+
+<style>
+  .hero {
+    position: relative;
+    padding: clamp(2rem, 7vw, 6rem) clamp(1rem, 4vw, 3rem)
+      clamp(2.5rem, 6vw, 5rem);
+    text-align: center;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .leaf {
+    position: absolute;
+    width: clamp(48px, 11vw, 120px);
+    height: auto;
+    opacity: 0.45;
+    pointer-events: none;
+  }
+
+  .leaf-left {
+    top: clamp(0.8rem, 3vw, 2.2rem);
+    left: clamp(0.3rem, 2vw, 1.5rem);
+    color: var(--color-moss-soft);
+    transform: rotate(-20deg);
+  }
+
+  .leaf-right {
+    top: clamp(1rem, 3.5vw, 3.6rem);
+    right: clamp(0.3rem, 2vw, 1.5rem);
+    color: var(--color-copper);
+    transform: rotate(25deg);
+    opacity: 0.4;
+  }
+
+  @media (max-width: 420px) {
+    .leaf-right {
+      display: none;
+    }
+  }
+
+  .hero-kicker {
+    margin-bottom: 1.6rem;
+    padding: 0 0.4rem;
+  }
+
+  .hero-title {
+    font-size: clamp(2.4rem, 9vw, 7rem);
+    max-width: 14ch;
+    margin: 0 auto;
+  }
+
+  .hero-sub {
+    max-width: 46ch;
+    margin: 1.8rem auto 0;
+    font-size: clamp(0.98rem, 2.4vw, 1.1rem);
+    color: #4b4838;
+    font-family: var(--font-display);
+  }
+
+  .hero-cta {
+    margin-top: 2rem;
+  }
+
+  .hero-media {
+    margin: clamp(2rem, 5vw, 4rem) auto 0;
+    max-width: 960px;
+    border-radius: 999px 999px 20px 20px;
+    overflow: hidden;
+    border: 1px solid var(--color-rule);
+    position: relative;
+    padding: 0;
+  }
+
+  .hero-media video {
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    object-fit: cover;
+    display: block;
+    filter: saturate(0.88) contrast(0.98) brightness(0.96);
+  }
+
+  .hero-media::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: radial-gradient(
+      ellipse at center,
+      transparent 50%,
+      rgba(246, 241, 231, 0.4) 100%
+    );
+  }
+
+  .hero-caption {
+    max-width: 960px;
+    margin: 1rem auto 0;
+    display: flex;
+    justify-content: space-between;
+    gap: 0.4rem 1rem;
+    padding: 0 0.3rem;
+    flex-wrap: wrap;
+  }
+
+  @media (max-width: 480px) {
+    .hero-caption {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+  }
+</style>
