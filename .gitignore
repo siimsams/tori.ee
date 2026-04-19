@@ -59,10 +59,7 @@ typings/
 # dotenv environment variables file
 .env
 
-# Parcel related files
+# Build output
 dist/
-.cache/
-.parcel-cache
+.astro/
 .DS_Store
-
-i18n/

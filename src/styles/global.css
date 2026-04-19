@@ -1,0 +1,7 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Oswald", sans-serif;
+  --font-body: "Open Sans", sans-serif;
+  --breakpoint-3xl: 1920px;
+}

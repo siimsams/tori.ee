@@ -1,0 +1,61 @@
+---
+import type { Lang } from '../i18n';
+import { t, LANGS, LANG_LABELS, langPath } from '../i18n';
+
+interface Props {
+  lang: Lang;
+  page: 'index' | 'more_info';
+}
+
+const { lang, page } = Astro.props;
+
+const orderHref = page === 'index' ? '#order' : `${langPath(lang, 'index')}#order`;
+const pricesHref = page === 'index' ? '#prices' : `${langPath(lang, 'index')}#prices`;
+const locationHref = page === 'index' ? '#location' : `${langPath(lang, 'index')}#location`;
+const servicesHref = langPath(lang, 'more_info');
+
+const servicesClass = page === 'more_info' ? 'underline' : 'hover:underline';
+---
+
+<nav
+  id="navBar"
+  class="3xl:w-[1950px] xl:px-36 px-6 py-5 z-20 top-0 w-full mx-auto center flex items-center justify-between flex-wrap bg-white"
+>
+  <div class="z-20 space-x-3">
+    {LANGS.map((l) => (
+      <a href={langPath(l, page)} class={l === lang ? 'underline' : 'hover:underline'}>
+        {LANG_LABELS[l]}
+      </a>
+    ))}
+  </div>
+  <menu class="hidden lg:block space-x-3">
+    <a href={orderHref} class="hover:underline">{t(lang, 'menu.order')}</a>
+    <a href={pricesHref} class="hover:underline">{t(lang, 'menu.prices')}</a>
+    <a href={servicesHref} class={servicesClass}>{t(lang, 'menu.services')}</a>
+    <a href={locationHref} class="hover:underline">{t(lang, 'menu.location')}</a>
+  </menu>
+  <button
+    title="hamburger menu button"
+    id="menuButton"
+    class="lg:hidden block z-20"
+    type="button"
+  >
+    <svg id="openIcon" class="h-6 w-6 fill-current text-gray-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+      <path d="M4 11h16v2H4zm0-8h16v2H4zm0 16h16v2H4z" />
+    </svg>
+    <svg id="closeIcon" class="h-6 w-6 fill-current text-gray-500 hidden" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+      <path d="M6 18L18 6M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+    </svg>
+  </button>
+  <div
+    id="menu"
+    class="fixed z-10 top-0 left-0 w-screen h-screen bg-white bg-opacity-90 hidden grid place-items-center"
+  >
+    <ul class="space-y-8 text-center">
+      <li><a href={orderHref}>{t(lang, 'menu.order')}</a></li>
+      <li><a href={pricesHref}>{t(lang, 'menu.prices')}</a></li>
+      <li><a href={servicesHref} class={servicesClass}>{t(lang, 'menu.services')}</a></li>
+      <li><a href={locationHref}>{t(lang, 'menu.location')}</a></li>
+    </ul>
+  </div>
+</nav>

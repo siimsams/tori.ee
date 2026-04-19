@@ -1,0 +1,107 @@
+---
+import { Picture } from 'astro:assets';
+import Layout from '../../layouts/Layout.astro';
+import type { Lang } from '../../i18n';
+import { t, tArray, langPath } from '../../i18n';
+import kanuu from '../../assets/kanuu.jpg';
+import vibu from '../../assets/vibu.png';
+import saun from '../../assets/saun-blur-grain.jpg';
+import euro from '../../assets/euro.jpg';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const orderHref = `${langPath(lang, 'index')}#order`;
+const overlayClass = 'absolute inset-0 -z-10';
+const overlayImgClass = 'w-full h-full object-cover brightness-50';
+const safetyItems = tArray(lang, 'moreInfo.archery_safety_list');
+---
+
+<Layout lang={lang} page="more_info">
+  <header class="3xl:w-[1950px] mx-auto relative grid grid-cols-1 md:grid-cols-2">
+    <div class="my-20 md:mx-5 pb-4 text-center relative md:col-span-1">
+      <h2 class="text-5xl pb-5 md:text-black text-white">{t(lang, 'moreInfo.header_title')}</h2>
+      <p class="pb-9 max-w-[520px] mx-auto md:text-black text-white px-6">
+        {t(lang, 'moreInfo.header_description')}
+      </p>
+      <a
+        href={orderHref}
+        class="px-10 py-3 border-[3px] md:border-black border-white border-solid md:text-black text-white"
+      >
+        {t(lang, 'moreInfo.header_button')}
+      </a>
+    </div>
+    <div class="absolute inset-0 -z-10 md:relative md:col-span-1">
+      <Picture
+        src={kanuu}
+        formats={['avif', 'webp']}
+        alt="Canoe"
+        class="w-full h-full object-cover md:brightness-100 brightness-[0.35]"
+      />
+    </div>
+  </header>
+
+  <section class="3xl:w-[1950px] mx-auto xl:px-36 grid-cols-1 md:grid-cols-2 md:gap-5 px-6 py-10 grid">
+    {[1, 2, 3, 4].map((i) => (
+      <div class="md:col-span-1 pb-4">
+        <h2 class="text-center text-4xl pb-5">{t(lang, `moreInfo.trip_${i}_title`)}</h2>
+        <p class="text-center">{t(lang, `moreInfo.trip_${i}_description`)}</p>
+        <p class="text-center font-semibold pt-1">{t(lang, `moreInfo.trip_${i}_duration`)}</p>
+      </div>
+    ))}
+  </section>
+
+  <section class="3xl:w-[1950px] mx-auto relative grid grid-cols-2">
+    <div class="relative py-20 text-center md:col-span-1 col-span-2">
+      <div class={overlayClass}>
+        <Picture
+          src={vibu}
+          formats={['avif', 'webp']}
+          fallbackFormat="jpg"
+          alt="Bow hunt"
+          class={overlayImgClass}
+        />
+      </div>
+      <h2 class="relative text-5xl pb-5 text-white">{t(lang, 'moreInfo.archery_title')}</h2>
+      <p class="relative pb-9 max-w-[520px] mx-auto text-white px-6">
+        {t(lang, 'moreInfo.archery_description')}
+      </p>
+      <a href={orderHref} class="relative px-10 py-3 border-[3px] border-white border-solid text-white">
+        {t(lang, 'moreInfo.archery_button')}
+      </a>
+    </div>
+    <div class="my-20 mx-5 pb-4 relative md:col-span-1 col-span-2">
+      <h2 class="text-5xl pb-5 text-black text-center">{t(lang, 'moreInfo.archery_safety_title')}</h2>
+      <ul class="list-disc pl-10">
+        {safetyItems.map((item) => <li>{item}</li>)}
+      </ul>
+    </div>
+  </section>
+
+  <section class="3xl:w-[1950px] mx-auto relative grid grid-cols-2 pb-14">
+    <div class="my-20 mx-5 pb-4 relative md:col-span-1 col-span-2">
+      <h2 class="text-5xl pb-5 text-black text-center">{t(lang, 'moreInfo.grant_title')}</h2>
+      <p class="text-center pb-9">{t(lang, 'moreInfo.grant_text')}</p>
+      <Picture src={euro} formats={['avif', 'webp']} alt="Euro support" />
+    </div>
+    <div class="relative py-20 text-center md:col-span-1 col-span-2">
+      <div class={overlayClass}>
+        <Picture
+          src={saun}
+          formats={['avif', 'webp']}
+          alt="Hot tub"
+          class={overlayImgClass}
+        />
+      </div>
+      <h2 class="relative text-5xl pb-5 text-white">{t(lang, 'moreInfo.sauna_title')}</h2>
+      <p class="relative max-w-[520px] mx-auto text-white pb-9 px-6">
+        {t(lang, 'moreInfo.sauna_description')}
+      </p>
+      <a href={orderHref} class="relative px-10 py-3 border-[3px] border-white border-solid text-white">
+        {t(lang, 'moreInfo.archery_button')}
+      </a>
+    </div>
+  </section>
+</Layout>

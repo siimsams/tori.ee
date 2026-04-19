@@ -1,0 +1,17 @@
+---
+import type { Lang } from '../i18n';
+import { t } from '../i18n';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+---
+
+<div id="contact" class="text-center py-6">
+  <h2 class="text-center text-4xl">{t(lang, 'contactUs.title')}</h2>
+  <p>{t(lang, 'contactUs.name')}</p>
+  <p>{t(lang, 'contactUs.phone')}</p>
+  <p>{t(lang, 'contactUs.email')}</p>
+</div>

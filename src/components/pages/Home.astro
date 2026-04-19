@@ -1,0 +1,31 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../Header.astro';
+import Reviews from '../Reviews.astro';
+import Services from '../Services.astro';
+import Prices from '../Prices.astro';
+import OrderForm from '../OrderForm.astro';
+import Contact from '../Contact.astro';
+import LocationMap from '../LocationMap.astro';
+import type { Lang } from '../../i18n';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+---
+
+<Layout lang={lang} page="index">
+  <Header lang={lang} />
+  <Reviews lang={lang} />
+  <Services lang={lang} />
+  <Prices lang={lang} />
+  <section class="3xl:w-[1950px] mx-auto xl:px-36 px-6 py-10 grid grid-cols-1 md:grid-cols-2 md:gap-5">
+    <div class="md:col-span-1">
+      <OrderForm lang={lang} />
+      <Contact lang={lang} />
+    </div>
+    <LocationMap lang={lang} />
+  </section>
+</Layout>

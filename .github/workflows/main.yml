@@ -4,81 +4,67 @@ jobs:
   staging:
     name: 🎉 Staging
     runs-on: ubuntu-latest
-    environment: 
+    environment:
       name: STAGING
       url: https://uus.tori.ee/
     steps:
-    - name: 🚚 Get latest code
-      uses: actions/checkout@v3
-      
-    - name: ☕ Use Node.js 22
-      uses: actions/setup-node@v3
-      with:
-        node-version: '22'
+      - name: 🚚 Get latest code
+        uses: actions/checkout@v4
 
-    - name: 📁 Cache dependencies
-      uses: actions/cache@v3
-      with:
-        path: ~/.npm  # npm cache files are stored in `~/.npm` on Linux/macOS
-        key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-        restore-keys: |
-          ${{ runner.os }}-node-
-        
-    - name: 🔨 Build Project
-      run: |
-        npm ci
-        npm run build:prod
+      - name: ☕ Use Node.js 22
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'npm'
 
-    - name: ✍️ Create .env file
-      run: |
-        echo '${{ secrets.RECAPTCHA }}' > ./dist/.env
-        echo '${{ vars.RECIPIENT }}' >> ./dist/.env
-        
-    - name: 📂 Sync files
-      uses: SamKirkland/FTP-Deploy-Action@v4.3.4
-      with:
-        local-dir: ./dist/
-        server: tori.ee
-        username: staging.tori.ee
-        password: ${{ secrets.PASSWORD }}
-        protocol: ftps
-  
+      - name: 🔨 Build Project
+        run: |
+          npm ci
+          npm run build
+
+      - name: ✍️ Create .env file
+        run: |
+          echo '${{ secrets.RECAPTCHA }}' > ./dist/.env
+          echo '${{ vars.RECIPIENT }}' >> ./dist/.env
+
+      - name: 📂 Sync files
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.6
+        with:
+          local-dir: ./dist/
+          server: tori.ee
+          username: staging.tori.ee
+          password: ${{ secrets.PASSWORD }}
+          protocol: ftps
+
   production:
     name: 🍾 Production
     runs-on: ubuntu-latest
-    environment: 
+    environment:
       name: PROD
       url: https://tori.ee/
     needs: [staging]
     steps:
       - name: 🚚 Get latest code
-        uses: actions/checkout@v3
-            
-      - name: ☕ Use Node.js 18
-        uses: actions/setup-node@v3
+        uses: actions/checkout@v4
+
+      - name: ☕ Use Node.js 22
+        uses: actions/setup-node@v4
         with:
-           node-version: '18'
-      
-      - name: 📁 Cache dependencies
-        uses: actions/cache@v3
-        with:
-          path: ~/.npm  # npm cache files are stored in `~/.npm` on Linux/macOS
-          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-node-
-              
+          node-version: '22'
+          cache: 'npm'
+
       - name: 🔨 Build Project
         run: |
           npm ci
-          npm run build:prod
-      
+          npm run build
+
       - name: ✍️ Create .env file
         run: |
           echo '${{ secrets.RECAPTCHA }}' > ./dist/.env
           echo '${{ vars.RECIPIENT }}' >> ./dist/.env
-              
+
       - name: 📂 Sync files
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.6
         with:
           local-dir: ./dist/
           server: tori.ee

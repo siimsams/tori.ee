@@ -1,0 +1,68 @@
+---
+import { Picture } from 'astro:assets';
+import type { Lang } from '../i18n';
+import { t, langPath } from '../i18n';
+import kanuu from '../assets/kanuu-blur-grain.jpg';
+import vibu from '../assets/vibu-blur-grain.jpg';
+import saun from '../assets/saun-blur-grain.jpg';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const moreInfoHref = langPath(lang, 'more_info');
+const pictureClass = 'absolute inset-0 w-full h-full object-cover object-center filter brightness-[0.40] z-0';
+const imgClass = 'w-full h-full object-cover object-center';
+---
+
+<section class="3xl:w-[1950px] mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 py-8">
+  <div id="canoe" class="relative">
+    <div class="flex flex-col justify-center items-center text-center text-white p-4 py-10 aspect-square flex-shrink-0 relative z-10">
+      <h2 class="text-center text-4xl">{t(lang, 'canoeTrips.title')}</h2>
+      <p class="my-3">{t(lang, 'canoeTrips.description')}</p>
+      <a href={moreInfoHref} class="mt-4 px-10 py-3 border-[3px] border-white border-solid">
+        {t(lang, 'canoeTrips.readMore')}
+      </a>
+    </div>
+    <Picture
+      src={kanuu}
+      formats={['avif', 'webp']}
+      alt="Canoe trip near Tori Põrgu."
+      class={imgClass}
+      pictureAttributes={{ class: pictureClass }}
+    />
+  </div>
+  <div id="bow-hunting" class="relative">
+    <div class="flex flex-col justify-center items-center text-center text-white p-4 py-10 aspect-square flex-shrink-0 relative z-10">
+      <h2 class="text-center text-4xl">{t(lang, 'bowHunting.title')}</h2>
+      <p class="my-3">{t(lang, 'bowHunting.description')}</p>
+      <a href={moreInfoHref} class="mt-4 px-10 py-3 border-[3px] border-white border-solid">
+        {t(lang, 'bowHunting.readMore')}
+      </a>
+    </div>
+    <Picture
+      src={vibu}
+      formats={['avif', 'webp']}
+      alt="Bow hunting"
+      class={imgClass}
+      pictureAttributes={{ class: pictureClass }}
+    />
+  </div>
+  <div id="sauna" class="relative">
+    <div class="flex flex-col justify-center items-center text-center text-white p-4 py-10 aspect-square flex-shrink-0 relative z-10">
+      <h2 class="text-center text-4xl">{t(lang, 'sauna.title')}</h2>
+      <p class="my-3">{t(lang, 'sauna.description')}</p>
+      <a href={moreInfoHref} class="mt-4 px-10 py-3 border-[3px] border-white border-solid">
+        {t(lang, 'bowHunting.readMore')}
+      </a>
+    </div>
+    <Picture
+      src={saun}
+      formats={['avif', 'webp']}
+      alt="Sauna"
+      class={imgClass}
+      pictureAttributes={{ class: pictureClass }}
+    />
+  </div>
+</section>

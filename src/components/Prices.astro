@@ -1,0 +1,33 @@
+---
+import type { Lang } from '../i18n';
+import { t } from '../i18n';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+---
+
+<section id="prices" class="3xl:w-[1950px] mx-auto">
+  <ul class="xl:px-36 px-6 grid grid-cols-1 md:grid-cols-4 gap-4">
+    <li class="flex flex-col items-center">
+      <h2 class="text-center text-3xl mb-3">{t(lang, 'prices.title')}</h2>
+      <p class="text-center">{t(lang, 'prices.description')}</p>
+    </li>
+    <li class="flex flex-col items-center">
+      <h2 class="text-center text-3xl mb-3">{t(lang, 'prices.canoe.title')}</h2>
+      <p class="text-center">{t(lang, 'prices.canoe.schoolChildren')}</p>
+      <p class="text-center">{t(lang, 'prices.canoe.adults')}</p>
+      <p class="text-center">{t(lang, 'prices.canoe.hourTrip')}</p>
+    </li>
+    <li class="flex flex-col items-center">
+      <h2 class="text-center text-3xl mb-3">{t(lang, 'prices.bow.title')}</h2>
+      <p class="text-center">{t(lang, 'prices.bow.hunt')}</p>
+    </li>
+    <li class="flex flex-col items-center">
+      <h2 class="text-center text-3xl mb-3">{t(lang, 'prices.sauna.title')}</h2>
+      <p class="text-center">{t(lang, 'prices.sauna.tub')}</p>
+    </li>
+  </ul>
+</section>

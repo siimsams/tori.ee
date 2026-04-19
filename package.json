@@ -1,15 +1,12 @@
 {
   "name": "tori.ee",
-  "version": "1.0.0",
-  "description": "",
-  "default": "index.html",
+  "version": "2.0.0",
+  "description": "Simple webpage for my father's canoe business.",
+  "type": "module",
   "scripts": {
-    "start": "concurrently \"npm:serve\" \"npm:watch\" \"npm:tailwind\"",
-    "serve": "rm -rf .parcel-cache dist/ && parcel serve src/index.html src/en/index.html -p 1234 --open",
-    "tailwind": "tailwindcss -i ./src/input.css -o ./dist/output.css --watch",
-    "build:prod": "parcel build src/index.html src/en/index.html && cp www/mail.php dist/",
-    "i18n": "npx static-i18n -l ee -i ee -i en www --outputDir src",
-    "watch": "nodemon --watch www/ -e json,html -x \"npm run i18n\""
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
   },
   "repository": {
     "type": "git",
@@ -21,19 +18,10 @@
     "url": "https://github.com/siimsams/tori.ee/issues"
   },
   "homepage": "https://github.com/siimsams/tori.ee#readme",
-  "dependencies": {
-    "static-i18n": "^0.2.10"
-  },
   "devDependencies": {
-    "@parcel/packager-raw-url": "^2.15.2",
-    "@parcel/transformer-webmanifest": "^2.15.2",
-    "@tailwindcss/postcss": "^4.1.8",
-    "autoprefixer": "^10.4.21",
-    "concurrently": "^9.1.2",
-    "nodemon": "^3.1.10",
-    "parcel": "^2.15.2",
-    "postcss": "^8.5.4",
-    "sharp": "^0.33.5",
-    "tailwindcss": "^4.1.8"
+    "@tailwindcss/vite": "^4.1.8",
+    "astro": "^5.1.0",
+    "tailwindcss": "^4.1.8",
+    "typescript": "^5.7.0"
   }
 }
