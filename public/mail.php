@@ -8,8 +8,8 @@ $response = $_POST['token'];
 $formcontent=" Nimi: $name \n Telefon: $phone \n E-mail: $email \n Sõnum: \n $message";
 $safeEmail = preg_replace('/[\r\n]+/', '', $email);
 $safePhone = preg_replace('/[\r\n]+/', '', $phone);
-$subject = "Võimalik matk // $safePhone // $safeEmail";
-$mailheader = "From: noreply@tori.ee\r\nReply-To: $safeEmail\r\n";
+$subject = "=?UTF-8?B?" . base64_encode("Võimalik matk // $safePhone // $safeEmail") . "?=";
+$mailheader = "From: noreply@tori.ee\r\nReply-To: $safeEmail\r\nMIME-Version: 1.0\r\nContent-Type: text/plain; charset=UTF-8\r\nContent-Transfer-Encoding: 8bit\r\n";
 
 $env = parse_ini_file('.env');
 $secret = $env["RECAPTCHA_SECRET"];
