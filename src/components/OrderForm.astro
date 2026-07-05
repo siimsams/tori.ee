@@ -20,7 +20,7 @@ const orLabels: Record<Lang, string> = {
   <h2 class="tori-display order-title">{t(lang, 'orderTrip.title')}</h2>
   <p class="order-lead">
     {orLabels[lang]}
-    <a class="phone-link" href="tel:+37251142533">{t(lang, 'contactUs.phone')}</a>
+    <a class="phone-link" href={`tel:${t(lang, 'contactUs.phone').replace(/\s/g, '')}`}>{t(lang, 'contactUs.phone')}</a>
   </p>
 
   <form id="order-form" action="/mail.php" method="post">

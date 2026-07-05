@@ -13,7 +13,7 @@ const { lang } = Astro.props;
   <p class="tori-mono contact-kicker">{t(lang, 'contactUs.title')}</p>
   <p class="contact-name tori-display">{t(lang, 'contactUs.name')}</p>
   <p class="contact-line">
-    <a href="tel:+37251142533">{t(lang, 'contactUs.phone')}</a>
+    <a href={`tel:${t(lang, 'contactUs.phone').replace(/\s/g, '')}`}>{t(lang, 'contactUs.phone')}</a>
   </p>
   <p class="contact-line">
     <a href={`mailto:${t(lang, 'contactUs.email')}`}>{t(lang, 'contactUs.email')}</a>
